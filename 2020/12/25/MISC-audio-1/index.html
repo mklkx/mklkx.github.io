@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="mklkx"><link rel="alternative" href="/atom.xml" title="mklkx" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>MISC-audio-1 - mklkx</title>
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2020-12-25T12:20:03.000Z">2020 - 12 - 25 20:20:03</time><h1 class="post__title"><a href="/2020/12/25/MISC-audio-1/">MISC-audio-1</a></h1><div class="post__main echo"><h3 id="audio-1"><a href="#audio-1" class="headerlink" title="audio[1]"></a>audio[1]</h3><hr>
+<p><strong>启示：MISC永远是管中窥豹</strong></p>
+<blockquote>
+<p>之前看过一句话，MISC是CTF入门的好起点，因为它够有趣，正反馈及时。像密室逃脱，但必须记住，MISC永远是管中窥豹，你会的永远只是冰山一角。尽管它能让你得到短暂的快乐，尤其刷有WP的题下，极其容易陷入“搜索，（复现），提交，正确”的快乐里。</p>
+</blockquote>
+<blockquote>
+<p>但真正比赛时只能自己不断探索、尝试，多走很多弯路，最终也不一定能走出死胡同，因此目前笔者认为，在处处是脑洞的MISC学习过程中，学会写脚本并养成发散思维，是比得到该题的flag更重要的。</p>
+</blockquote>
+<hr>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a><em>1</em></h3><p><strong>RX-SSTV图像解码软件+Virtual Audio Cable虚拟音频线</strong></p>
+<h4 id="m00nwalk"><a href="#m00nwalk" class="headerlink" title="m00nwalk"></a><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/26?category=4&page=1">m00nwalk</a></h4><blockquote>
+<p><strong>Description</strong>:Decode this message from the moon.<br><strong>Hints</strong>:(1)How did pictures from the moon landing get sent back to Earth?(2)What is the CMU mascot?, that might help select a RX option</p>
+</blockquote>
+<p>经过Hints提示后，查阅资料得知，该题与慢扫描电视SSTV有关，下载<a target="_blank" rel="noopener" href="http://users.belgacom.net/hamradio/rxsstv.htm">程序</a>后,尝试了多次，都只得到了同老式电视信号极差时相似的雪花片。</p>
+<p>继续搜集资料，得一<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av75040294/">BILIBILI教学视频</a>。配置好参数后，依旧是雪花片，且观察到咱自己的音频轨道总是起伏不大甚至是0，愣了很久，才终于发现了华点（太菜了）</p>
+<p>视频中提到了<a target="_blank" rel="noopener" href="https://downloads.tomsguide.com/Virtual-Audio-Cable,0301-31100.html">Virtual Audio Cable虚拟音频线</a>，浅薄理解就是一个轨道，不通过各种其他的转译(如先前的方法，即是通过了电脑放出声音，再通过其他介质传播后被电脑收集，而此方法则是避免了中间过程)，直接将工具与音频相连，尽量产生更少的噪点。</p>
+<p>(1)Setup-&gt;Sound Control and Devices</p>
+<p>(2)播放-&gt;Line1</p>
+<p>(3)录制-&gt;Line1</p>
+<p>(4)根据Hints2,得卡内基梅隆大学得吉祥物为Scotty the Scottie Dog,SSTV中的RX选项设置为Scottie1.</p>
+<p>(5)播放音频</p>
+<p>(6)SSTV中-&gt;Receiving</p>
+<p>下图为正在处理过程中👇</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DL1oiF.jpg" alt="SSTV"></p>
+<p>Save as 导出最终图像👇</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DL12Mn.jpg" alt="result"></p>
+<p>翻转后得flag。</p>
+<hr>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a><em>2</em></h3><p><strong>RX-SSTV图像解码软件+steghide</strong></p>
+<h4 id="m00nwalk2"><a href="#m00nwalk2" class="headerlink" title="m00nwalk2"></a><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/28?category=4&page=1">m00nwalk2</a></h4><blockquote>
+<p><strong>Description</strong>:Revisit the last transmission. We think this transmission contains a hidden message. There are also some clues clue 1, clue 2, clue 3.<br><strong>Hints</strong>:Use the clues to extract the another flag from the .wav file</p>
+</blockquote>
+<p>看样子是上一题的延伸，分别对四个音频都采用同做法，可得四张图片👇</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DL1Rrq.jpg" alt="message"></p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DL14aT.jpg" alt="clue1"></p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DL1hZV.jpg" alt="clue2"></p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DL1Wq0.jpg" alt="clue3"></p>
+<p>根据第四张图片搜索Alan Eliasen the futureboy,得到一<a target="_blank" rel="noopener" href="https://futureboy.us/">网站</a>,根据clue1.jpg以及对链接含义,猜测下一步为“Steganography隐写术”。</p>
+<p>进入目标网页后尝试了一波，无果，此时看到：These pages use the steghide program to perform steganography, and the files generated are fully compatible with steghide. If you really want to be secure, or do brute-force attacks, you’ll want to use these programs on your own system.</p>
+<p>利用手头的steghide工具，对<strong>message.wav</strong>执行命令：<br><img src="https://s3.ax1x.com/2020/12/05/DL15IU.jpg" alt="steghide"></p>
+<p>在txt里得到flag.</p>
+<blockquote>
+<p><strong>启示</strong>：结合题意，理解出题人的意思很重要😂，最后一步对message.jpg操作了好久，啥都没有555</p>
+</blockquote>
+<hr>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a><em>3</em></h3><p><strong>Kinovea+base64加密的文件’头‘</strong></p>
+<h4 id="RoarCTF2019-黄金6年"><a href="#RoarCTF2019-黄金6年" class="headerlink" title="[RoarCTF2019]黄金6年"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[RoarCTF2019]%E9%BB%84%E9%87%916%E5%B9%B4">[RoarCTF2019]黄金6年</a></h4><blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+<blockquote>
+<p>是经典题目了（去补了一下为啥说这是亲爱的热爱的里面的梗😂一开始以为是纯将视频按帧查看，了解了一个好用的软件Kinovea</p>
+</blockquote>
+<p>视频按帧查看得到隐藏的二维码</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rfSBCj"><img src="https://s3.ax1x.com/2020/12/25/rfSBCj.jpg" alt="rfSBCj.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rfSr2n"><img src="https://s3.ax1x.com/2020/12/25/rfSr2n.jpg" alt="rfSr2n.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rfSD8s"><img src="https://s3.ax1x.com/2020/12/25/rfSD8s.jpg" alt="rfSD8s.jpg"></a></p>
+<p>通过试别，分别为iwantplay</p>
+<p>尝试后不对。</p>
+<p>查看视频的十六进制，得一串base64</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">õUmFyIRoHAQAzkrXlCgEFBgAFAQGAgADh7ek5VQIDPLAABKEAIEvsUpGAAwAIZmxhZy50eHQwAQADDx43HyOdLMGWfCE9WEsBZprAJQoBSVlWkJNS9TP5du2kyJ275JzsNo29BnSZCgMC3h+UFV9p1QEfJkBPPR6MrYwXmsMCMz67DN&#x2F;k5u1NYw9ga53a83&#x2F;B&#x2F;t2G9FkG&#x2F;IITuR+9gIvr&#x2F;LEdd1ZRAwUEAA&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+
+<p>解密后得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Rar!3µå</span><br><span class="line">áíé9U&lt;°¡ KìRflag.txt07#,Á|!&#x3D;XKfÀ%</span><br><span class="line">IYVRõ3ùví¤È»äì6½t</span><br><span class="line">Þ_iÕ&amp;@O&#x3D;­Ã3&gt;»ßäæíMc&#96;kÚóÁþÝôYü¹½ëü±wVQ</span><br></pre></td></tr></table></figure>
+
+<p>能看出这是将一个压缩包的十六进制编码进行了base64的结果</p>
+<p>根据脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import base64</span><br><span class="line">code&#x3D;&quot;UmFyIRoHAQAzkrXlCgEFBgAFAQGAgADh7ek5VQIDPLAABKEAIEvsUpGAAwAIZmxhZy50eHQwAQADDx43HyOdLMGWfCE9WEsBZprAJQoBSVlWkJNS9TP5du2kyJ275JzsNo29BnSZCgMC3h+UFV9p1QEfJkBPPR6MrYwXmsMCMz67DN&#x2F;k5u1NYw9ga53a83&#x2F;B&#x2F;t2G9FkG&#x2F;IITuR+9gIvr&#x2F;LEdd1ZRAwUEAA&#x3D;&#x3D;&quot;</span><br><span class="line">r&#x3D;base64.b64decode(code)</span><br><span class="line">test_file&#x3D;open(&quot;test.rar&quot;,&quot;wb&quot;)</span><br><span class="line">test_file.write(r)</span><br><span class="line">test_file.close()</span><br></pre></td></tr></table></figure>
+
+<p>得到还原后的压缩包，输入密码iwantplay,错误</p>
+<p>猜测密码为iwantplayctf，得到flag</p>
+<p>roarctf{CTF-from-RuMen-to-RuYuan}</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a><em>4</em></h3><p><strong>DTMF编码</strong></p>
+<h4 id="WUSTCTF2020-girlfriend"><a href="#WUSTCTF2020-girlfriend" class="headerlink" title="[WUSTCTF2020]girlfriend"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[WUSTCTF2020]girlfriend">[WUSTCTF2020]girlfriend</a></h4><blockquote>
+<p>得到的 flag 请包上 flag{} 提交。<br>感谢 Iven Huang 师傅供题。<br>比赛平台：<a target="_blank" rel="noopener" href="https://ctfgame.w-ais.cn/">https://ctfgame.w-ais.cn/</a></p>
+</blockquote>
+<p>得到一音频，很明显是电话音</p>
+<p>dtmf2num</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;dtmf2num girlfriend.wav</span><br><span class="line"></span><br><span class="line">DTMF2NUM 0.1c</span><br><span class="line">by Luigi Auriemma</span><br><span class="line">e-mail: aluigi@autistici.org</span><br><span class="line">web:    aluigi.org</span><br><span class="line"></span><br><span class="line">- open girlfriend.wav</span><br><span class="line">  wave size      7466540</span><br><span class="line">  format tag     1</span><br><span class="line">  channels:      2</span><br><span class="line">  samples&#x2F;sec:   44100</span><br><span class="line">  avg&#x2F;bytes&#x2F;sec: 176400</span><br><span class="line">  block align:   4</span><br><span class="line">  bits:          16</span><br><span class="line">  samples:       3733270</span><br><span class="line">  bias adjust:   215</span><br><span class="line">  volume peaks:  -12024 12025</span><br><span class="line">  normalize:     20742</span><br><span class="line">  resampling to: 8000hz</span><br><span class="line"></span><br><span class="line">- MF numbers:    47777777</span><br><span class="line"></span><br><span class="line">- DTMF numbers:  999*666*88*2*777*33*6*999*4*4444*777*555*333*777*444*33*66*3*7777</span><br></pre></td></tr></table></figure>
+
+<p>999*666这串字符是啥意思呢，一开始以为是乘起来的意思。</p>
+<p>后来知道是类似诺基亚手机的打字方式（按三次9就是y啦</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;youaremygirlfriends&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a><em>5</em></h3><p><strong>利用010editor进行二进制异或</strong></p>
+<h4 id="WUSTCTF2020-girlfriend-1"><a href="#WUSTCTF2020-girlfriend-1" class="headerlink" title="[WUSTCTF2020]girlfriend"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[WUSTCTF2020]girlfriend">[WUSTCTF2020]girlfriend</a></h4><blockquote>
+<p>得到的 flag 请包上 flag{} 提交。<br>感谢 Iven Huang 师傅供题。<br>比赛平台：<a target="_blank" rel="noopener" href="https://ctfgame.w-ais.cn/">https://ctfgame.w-ais.cn/</a></p>
+</blockquote>
+<p>学到了</p>
+<p>得到一个后缀名为.m4a的音频，audacity没法处理，以为是高级音频的原因。在线网站转mp3失败</p>
+<p>查看二进制，发现有很多不知是Al还是A1的文本</p>
+<p>通过Tool-&gt;Hex-&gt;Binary XOR进行二进制异或</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/s04aZT"><img src="https://s3.ax1x.com/2021/01/15/s04aZT.jpg" alt="s04aZT.jpg" border="0" /></a></p>
+<p>得到了正常的音频文件，能听出是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">abcdfghijk</span><br></pre></td></tr></table></figure>
+
+<h3 id="6"><a href="#6" class="headerlink" title="6"></a><em>6</em></h3><p><strong>电动车(?)地址位</strong></p>
+<h4 id="SCTF2019-电单车"><a href="#SCTF2019-电单车" class="headerlink" title="[SCTF2019]电单车"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[SCTF2019]%E7%94%B5%E5%8D%95%E8%BD%A6">[SCTF2019]电单车</a></h4><blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+<p>得到一份音频文件，利用Audacity打开，观察频谱，得到一串长短波</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 0111010010101010 0 110 0010 0 011101001010101001100010</span><br></pre></td></tr></table></figure>
+
+<p>参考以下文章<br><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/wireless/191534.html">https://www.freebuf.com/articles/wireless/191534.html</a></p>
+<p>flag{01110100101010100110}</p>
+<h3 id="7"><a href="#7" class="headerlink" title="7"></a><em>7</em></h3><p><strong>不要形成固定思维</strong></p>
+<h4 id="GUET-CTF2019-soul-sipse"><a href="#GUET-CTF2019-soul-sipse" class="headerlink" title="[GUET-CTF2019]soul sipse"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[GUET-CTF2019]soul%20sipse">[GUET-CTF2019]soul sipse</a></h4><blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+<p>得到out.wav，通过au打开，查看频谱等对音频进行处理的方法，都未果，一时陷入僵局</p>
+<p>binwalk后发现不只是.wav这么简单</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">steghide out.wav</span><br></pre></td></tr></table></figure>
+
+<p>得到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;share.weiyun.com&#x2F;5wVTIN3</span><br></pre></td></tr></table></figure>
+
+<p>获得一张图片</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\u0034\u0030\u0037\u0030\u000d\u000a\u0031\u0032\u0033\u0034\u000d\u000a</span><br></pre></td></tr></table></figure>
+
+<p>控制台Unicode解码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4070</span><br><span class="line">1234</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>尝试flag{5304}或flag{2836}</p>
+<h3 id="8"><a href="#8" class="headerlink" title="8"></a><em>8</em></h3><p><strong>新工具Sonic Visualiser</strong></p>
+<h4 id="UTCTF2020-spectogram"><a href="#UTCTF2020-spectogram" class="headerlink" title="[UTCTF2020]spectogram"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[UTCTF2020]spectogram">[UTCTF2020]spectogram</a></h4><blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+<p>.wav</p>
+<p>先常规走一走，au查看频谱，没有。</p>
+<p>试过隐写，也无。</p>
+<p>看了大佬的WP得到了新工具Sonic Visualiser，目测是个高级的AU，调整参数后得到flag</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/shYbKP"><img src="https://s3.ax1x.com/2021/01/21/shYbKP.jpg" alt="shYbKP.jpg" border="0" /></a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">utflag&#123;sp3tr0gr4m0ph0n3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9"><a href="#9" class="headerlink" title="9"></a><em>9</em></h3><p><strong>新工具DeepSound2.0&amp;通过文件hash值爆破</strong></p>
+<h4 id="INSHack2018-so-deep"><a href="#INSHack2018-so-deep" class="headerlink" title="INSHack2018 so deep"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[INSHack2018](not)%20so%20deep"><a href="not">INSHack2018</a> so deep</a></h4><blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+<p>前半段常规新手操作au查看final_flag.wav，得到一半flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSA&#123;Aud1o_st3G4n</span><br></pre></td></tr></table></figure>
+
+<p>后半部分需要一个新工具DeepSound<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1wsY5d2fp6cQJiDyUj2KWZA">https://pan.baidu.com/s/1wsY5d2fp6cQJiDyUj2KWZA</a><br>提取码：dqlu</p>
+<p>提示需要密码</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iYWrR"><img src="https://s3.ax1x.com/2021/03/01/6iYWrR.png" alt="6iYWrR.png" border="0" /></a></p>
+<p>第一步：python3 deepsound_john.py final_flag.wav &gt;hash</p>
+<p>提取hash值</p>
+<p>第二步：john hash</p>
+<p>通过hash值进行爆破得到密码：azerty</p>
+<p>返回deepsound进行破解得到flag2.txt</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0_1s_4lwayS_Th3_S4me&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结合得完整flag</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/MISC/">MISC</a></li></ul></footer></article><section class="reward"><a class="btn-reward" href="#">打赏</a><div class="reward-wrapper clearfix"><img src="/img/wechat.png" title="微信"></div></section></main><footer class="foot"><div class="foot-copy">&copy; 2016 - 2021 mklkx</div></footer>
+<script src="/js/scroller.js"></script>
+
+<script src="/js/main.js"></script>
+</body></html>
