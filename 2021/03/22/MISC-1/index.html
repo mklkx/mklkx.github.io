@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="mklkx"><link rel="alternative" href="/atom.xml" title="mklkx" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>MISC[1] - mklkx</title>
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-03-22T09:32:17.000Z">2021 - 03 - 22 17:32:17</time><h1 class="post__title"><a href="/2021/03/22/MISC-1/">MISC[1]</a></h1><div class="post__main echo"><h1 id="MISC-1"><a href="#MISC-1" class="headerlink" title="MISC[1]"></a>MISC[1]</h1><h3 id="simple"><a href="#simple" class="headerlink" title="simple"></a>simple</h3><hr>
+<p><em>1</em></p>
+<p>**picture.txt **</p>
+<blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0000000030EC0000006500100010000000006050B405106D167926B15E9A106D167938CDF6D9106D1679E6E55E6D0081001000000000000200A0F636F636000000000000000200000000000000420040000060EA000030CA7F522423058F684400800000004100F32010B40530AF3A3A0BFF8E65E3A762B05D40E12034B1C715252AC4E5BC8DA9A766B02C8D6ADD4FE51C79D31716569FB75AA7B060A00ABB1D8552034CA43CF7602EAFC7E05EA08E26F20DD21CB35086F75382FD7BDE8903D2794D4D82C248C3080EEF9CB63A34EE0FC1352C45EF0D7507A79B47D2E0F10289DA8958BB3C792EFDB60BB324F808170BC0B1EEB27AF29D831E146306C3E83DC330DAB90C1403F01F0445E6648EA39D1E864D9F293485506D523FA96586C3AE28ABAD0BDD9CA6B88350E980E89CA……B4B5651D6DDEE5874514449476920000468AF67C103CE000003CE0000037958407900000005016CFB0F81B000014D41476400000009EC1ECEA0024742537100000003B341C2C00000020808E3000008E30000025448494D0000000A0A1A0D074E40598</span><br></pre></td></tr></table></figure>
+
+<p>观察可得常见的文件格式（其实一眼看到的是504B），如8950等，写倒置脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">txt=<span class="string">&#x27;&#x27;</span></span><br><span class="line">txt_=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> txt:</span><br><span class="line">    txt_=i + txt_</span><br><span class="line"><span class="built_in">print</span> txt_</span><br></pre></td></tr></table></figure>
+
+<p>将结果导入010editor，得一张png文件。</p>
+<p>分离出一个加密压缩包，伪加密解密后得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flM&#123;Sg_i_igl1S_ll__SfM_FF_1ilfM&#123;Sa11gagc1lSSMgfnafg_fMa1n5iaF_c1lSFiSaf_1f&#123;S_l_FalS5_faSl_fgl5M1_&#123;ll!&#123;i5c&#125;if1__fg5&#123;__M&#123;ngU&#123;1l1gff1f1iS__Mf5iFMlciSgaU&#123;glgUF5M_1aa_f_i5&#123;nflllla1S1FS!cSg&#123;fUfFcS1&#123;&#123;ag1lU51acfUSffMcMSgfSfalFg_g_gfgfiSfla1i&#123;&#123;&#123;n&#123;_lg_&#125;&#123;ggi&#123;gglg&#123;&#123;flnliF&#123;M5faF1ig_agal&#123;_&#123;&#123;aMMilfUSa&#123;a5ggiiigfSSg&#123;M_Mng&#123;a&#125;fcMf1_Fl&#123;cM&#123;1fiflMSSM&#123;_l!Scf5FFcn&#123;g&#123;SFnMlf&#123;l__aScMl&#123;&#123;c_lS1Sic1!l5ga1_gfggllcllccaagMU1iala55FSfia5lScMMFiMaFff&#123;&#123;g&#123;fcicM!l_&#123;iffcg&#123;UlcMa&#123;&#123;5f5Mc&#123;McfagcM_Ma1Slcf&#123;cSg_SflM5U11_5i_fcc&#123;FagglaMUfS1g_&#123;lSc5f_lag5Sg_ccclca___ala1g1aSMfa_fcaFnSSi&#123;a1a&#123;gUif_FgaS&#123;lacSgfga&#123;F1fgScf1_M__&#123;1ag_5MMSiga11g_aMl5fM15a_gla5f1_UllgcSc&#123;Sagac&#123;accS_i&#123;Mf&#123;Sgccg_ici&#123;fgcl_gaMlffS&#123;&#123;i&#123;nnfaM&#125;aallSSg1ilUif&#123;Mi1SMiMl1aaMUl&#123;alaglM!1lgngScMac1fa1acafS1fgfM__S11_SM&#123;f&#125;la_cM_g&#123;fniifgc1M&#123;_lM!M5&#125;g5_l1USg&#123;cgl&#123;SaccigSU1fMgl5lcaiggMFfcaca1l&#123;Ugf_lalg1_g!&#123;iaala_M5l1Mc11afcgfgl5f1g_c&#123;llaUMf1lM1aF&#123;af1Sl5lf5l1l5a_cc_c_1ff&#125;f_ff&#125;MlU&#123;afM_1fcla&#123;&#123;gM&#123;_Sl_M_&#123;gM_&#123;g5gaMaFU&#123;&#123;!S1ala1lfl1lifl_Mlf5F&#123;l_g&#123;li__aM_gfSU&#123;lM_agM&#123;giff&#123;ii_&#123;ff_naaaif1gf_ag__lnFacgiSlSac_Ma5M&#123;fg&#123;&#123;fac&#123;gllfaa&#123;Mi5MnMff&#123;&#123;gc!fn_iU&#123;ll5i_Saa5M&#123;Mi&#125;&#123;g&#123;Ffl&#123;Ffac!a&#123;afffgl!_gMalF_c&#123;lac_MFMg5acMFcla5cMlU5aSff&#123;l_UFf_Ug1!g1F_c&#123;&#123;aMMg&#123;SlgUa1ca1ff5_c1g5&#123;fligg11_lla_fcf1&#123;Mla1MnglM&#123;5lSl1g__Sll_cUc5MSa&#123;_fiMiiS1c&#123;M1g_SSUifi1!Saa&#123;_glS1aaal&#123;llF1cFgig_Sf&#123;acf&#123;Uf1c1fa!gfFM_aS51lgaMa1aa_gfif_ia&#123;M_a_M1fMSaSSfMSl&#123;1gFcl151l_lFfMilffgf1gSSgcaf_SfMgaf&#123;&#125;ilaUMM_MU5ff551i5SnFgc15nSMa1M&#123;&#123;_fSlMg&#123;&#123;5fcS1g5fSgMMUi&#123;_ig5falf1nfgFaUMlff!g__la_F_c1&#123;i1!&#123;lc&#123;i&#123;1iglM_fUgl___a5fnMaFf&#123;_lfll_igf1lcalniMag_5nFS1MMaiM1ll5SlMiaf_5l&#123;af__MMgac_Mf__fUa1fc&#123;1&#123;_55SF!llfgU1l1U_Mal_l&#123;alglSglcnlfSfaacgSSgSc_Maa&#123;ffg51MaSfca1U_&#123;gfS1ff5l&#123;&#123;f1Ml_gSgc_n5iS1Sg_l__1nnM1lM15MillfaMff1!nl1fFSM5Fflf&#123;acagl&#123;Sf&#123;ggfSi1f!FSagf&#123;&#123;lFf5la5&#123;ff__lM&#123;M_fUlSgi</span><br></pre></td></tr></table></figure>
+
+<p>词频分析脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;file.txt&quot;</span>)</span><br><span class="line">txt = f.read()</span><br><span class="line">c = Counter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> txt:</span><br><span class="line">    c[i] = c[i]+<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>得到flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Counter(&#123;&#39;f&#39;: 180, &#39;l&#39;: 170, &#39;a&#39;: 160, &#39;g&#39;: 150, &#39;_&#39;: 150, &#39;&#123;&#39;: 140, &#39;M&#39;: 130, &#39;1&#39;: 120, &#39;S&#39;: 110, &#39;c&#39;: 100, &#39;i&#39;: 80, &#39;5&#39;: 70, &#39;F&#39;: 50, &#39;U&#39;: 40, &#39;n&#39;: 30, &#39;!&#39;: 20, &#39;&#125;&#39;: 10&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>flag_{M1Sc5FUn!}</p>
+<p><em>2</em></p>
+<p><strong>xxx</strong></p>
+<p>一个没有后缀名的文件，常规操作查看十六进制。</p>
+<p>看到压缩包的文件头，手动分离后，得一个加密压缩包，里面有一个doc文件“你找flag吗”，下一步就是找压缩包的密码了！</p>
+<p>对第一部分数据做处理，尝试base64解密，得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\RealVNC]</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\RealVNC\vnclicensewiz]</span><br><span class="line">&quot;_AnlClientId&quot;&#x3D;&quot;8f5cc378-2e1d-4670-80e0-d2d81d882561&quot;</span><br><span class="line">&quot;_AnlSelected&quot;&#x3D;&quot;0&quot;</span><br><span class="line">&quot;_AnlInclRate&quot;&#x3D;&quot;0.0025&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\RealVNC\vncserver]</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\RealVNC\VNCViewer4]</span><br><span class="line">&quot;dummy&quot;&#x3D;&quot;&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\RealVNC\VNCViewer4\MRU]</span><br><span class="line">&quot;00&quot;&#x3D;&quot;127.0.0.1&quot;</span><br><span class="line">&quot;Order&quot;&#x3D;hex:00,01</span><br><span class="line">&quot;01&quot;&#x3D;&quot;127.0.0.1:5900&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\RealVNC\WinVNC4]</span><br><span class="line">&quot;Password&quot;&#x3D;hex:37,5e,be,86,70,b3,c6,f3</span><br><span class="line">&quot;SecurityTypes&quot;&#x3D;&quot;VncAuth&quot;</span><br><span class="line">&quot;ReverseSecurityTypes&quot;&#x3D;&quot;None&quot;</span><br><span class="line">&quot;QueryConnect&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;PortNumber&quot;&#x3D;dword:0000170c</span><br><span class="line">&quot;LocalHost&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;IdleTimeout&quot;&#x3D;dword:00000e10</span><br><span class="line">&quot;HTTPPortNumber&quot;&#x3D;dword:000016a8</span><br><span class="line">&quot;Hosts&quot;&#x3D;&quot;+,&quot;</span><br><span class="line">&quot;AcceptKeyEvents&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;AcceptPointerEvents&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;AcceptCutText&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;SendCutText&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;DisableLocalInputs&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;DisconnectClients&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;AlwaysShared&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;NeverShared&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;DisconnectAction&quot;&#x3D;&quot;None&quot;</span><br><span class="line">&quot;RemoveWallpaper&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;RemovePattern&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;DisableEffects&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;UseHooks&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;PollConsoleWindows&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;CompareFB&quot;&#x3D;dword:00000001</span><br><span class="line">&quot;Protocol3.3&quot;&#x3D;dword:00000000</span><br><span class="line">&quot;dummy&quot;&#x3D;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>头一次解除这样的文件，后来才知道这是注册表的内容，搜索了一把，发现与安恒月赛的部分相似</p>
+<p>下一步应对</p>
+<p>“Password”=hex:37,5e,be,86,70,b3,c6,f3</p>
+<p>进行VNC解密，密码为!QAZ2wsx</p>
+<p>压缩包解密后得一个很多换行符的word，又卡住了</p>
+<p>经提醒，与某一场比赛类似，doc改成zip，可得很多xml文件。word/document.xml打开，又愣了好久，</p>
+<p>在后半部分发现</p>
+<p>&lt;w:t&gt;MZWGCZ33GY4TQZBVGFQTCOLEHBQTCMRRMNSTKOBRGQ4TSZBXMI3TAMJWGY4H2===</w:t></p>
+<p>试试一把梭</p>
+<p>base32:<br>b’flag{698d51a19d8a121ce581499d7b701668}’</p>
+<p><em>3</em></p>
+<p><strong>src：迷惑行为大赏（之）无中生you</strong></p>
+<p>给了一个表情包和一个加密压缩包。</p>
+<p>555，又一筹莫展了。CTFshow问了好几个师傅，提示更改高度，得到了”密码：没技术，是菜鸡”，emmm</p>
+<p>txt里是这样的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">​‎‍​​​​​‍​​​​​​‍‏​​​​​‏‎​​​​​‏​​​​​​‍‏‌​​​​‎‍‌​​​​‏‌‍​​​​‎‍‎​​​​‌‏‏​​​​‍‌‍​​​​‎‍‌​​​​‎​‍​​​​‏‌‍​​​​‎‎​​​​​‏‏‍​​​​‎‎​​​​​‍‎‏​​​​‏​​​​​​‎‍‍​​​​‎‏‍​​​​‌‏‏​​​​‏​‎​​​​‏‏​​​​​‎​​​​​​‍​‌​​​​‍‎​​​​​‍​‍​​​​‎‍‌​​​​‍‏‌​​​​‏‌‎​​​​‎‍‌​​​​‎​‎​​​​‍‏‌​​​​‎‌‍​​​​‎​​​​​​‎‎​​​​​‏‍​​​​​‏​‎​​​​‌‏‏​​​​‎‎​​​​​‎‍​​​​​‏‌‎​​​​‏‌‍​​​​‎‌‏​​​​‏‌​​​​​‍‌‍​​​​‎‍‎​​​​‎‍‏​​​​‍​​​​​​‏‌‎​​​​‍‎‎​​​​‎‌‍​​​​‍​‌​​​​‎‍‌​​​​‍‎‍​​​​‎‏‍​​​​‍‎‎​​​​‍‎‌​​​​‎‍‎​​​​‎​‏​​​​‎‌‎​​​​‏‎‌​​​​‎​‌​​​​‎‍‌​​​​‍‎‎​​​​‎‍‌​​​​‎‌​​​​​‎‌‏​​​​‍​‌​​​​‏​‏​​​​‏‏​​​​​‎‌‏​​​​‌‏‎​​​​‍‌‌​​​​‍​​​​​​‎​‎​​​​‎‍​​​​​‏‍‌​​​​‍​‍​​​​‎‌‍​​​​‎‍​​​​​‏‎​​​​​‏‏​​​​​‎​‍​​​​‎‍​​​​​‍‏​​​​​‎​​​​​​‎​‎​​​​‎‍‍​​​​‏‍‍​​​​‏‎‌​​​​‎‍‍​​​​‍‏‌​​​​‍‎‏​​​​‍​‎​​​​‎‌‍​​​​‌‏‏​​​​‏‍‍​​​​‏‎‏​​​​‎‍‏​​​​‍​​​​​​‎‌‍​​​​‎‍‌​​​​‎‏‍​​​​‏‏‍​​​​‏​‏​​​​‎​​​​​​‎​‎​​​​‏‏‍​​​​‎​‎​​​​‎‌‏​​​​‎‌‎​​​​‏‌‏​​​​‍‏‏​​​​‎‏‍​​​​‎‌‍​​​​‍‎‏​​​​‏​​​​​​‏‏‌​​​​‎‍‌​​​​‎‍‌​​​​‏‌‎​​​​‎‍‌​​​​‎‎​​​​​‍‏‍​​​​‏‍‍​​​​‌‏‎​​​​‎‌‍​​​​‍​​​​​​‏​​​​​​‌‏‎​​​​‎‍‍​​​​‎‍‍​​​​‏‍‍​​​​‎‌‌​​​​‎‏‍​​​​‏‌‎​​​​‎​‎​​​​‍​‎​​​​‏​​​​​​‎‍​​​​​‍‏‏​​​​‎​‎​​​​‎‍‏​​​​‎‍‌​​​​‏‌‍​​​​‏‏‍​​​​‏​‌​​​​‎‍‎​​​​‏‍‌​​​​‏‎‏​​​​‎‌‎​​​​‌‏‏​​​​‎​‎​​​​‏‏​​​​​‎‍‏​​​​‏‌‍​​​​‏​‏​​​​‍​‎​​​​‎‌‎​​​​‍‎‏​​​​‌‏‏​​​​‍​​​​​​‎‍‌​​​​‍‎‏​​​​‏​‏​​​​‍‎‏​​​​‎‍‏​​​​‎‍‎​​​​‎‏‏​​​​‏‎‎​​​​‎‍‌​​​​‍‎‏​​​​‏​‏​​​​‏‎‎​​​​‎​‍​​​​‏‌‍​​​​‍‏‏​​​​‍‏​​​​​‎​‎​​​​‍​‌​​​​‏​‏​​​​‏‌‏​​​​‎‏‏​​​​‍‎‏​​​​‍‏‏​​​​‏‌‏​​​​‎‍‌​​​​‍‎‎​​​​‍‎‌​​​​‏‌‎​​​​‎‍‏​​​​‌‏‎​​​​‏‎​​​​​‏‏‌​​​​‎​​​​​​‍​‌​​​​‍‏​​​​​‍‏‏​​​​‎‍‏​​​​‏‏‍​​​​‏‌‎​​​​‍​‎​​​​‎‎​​​​​‍‎‏​​​​‏​​​​​​‏‌‎​​​​‎‍‌​​​​‍​​​​​​‏‎‏​​​​‌‏‏​​​​‎‍‌​​​​‏‌‌​​​​‏​‏​​​​‎‎​​​​​‎‏‏​​​​‍‏​​​​​‍‎​​​​​‏‏​​​​​‎‌‎​​​​‏‏‍​​​​‍‎​​​​​‌‏‏​​​​‎‏‍​​​​‍​‌​​​​‍‏​​​​​‏‌‏​​​​‎‌‍​​​​‎‍​​​​​‏​‏​​​​‍‏‍​​​​‎‍​​​​​‏‌‌​​​​‎‌‌​​​​‌‏‎​​​​‎‏‎​​​​‏‌‏​​​​‏‏​​​​​‎​‎​​​​‎‌‏​​​​‍‎‏​​​​‍‎‏​​​​‏‏‌​​​​‎‎​​​​​‍‎‎​​​​‎‎​​​​​‏​‏​​​​‎​‍​​​​‌‏‏​​​​‎‎​​​​​‎‌​​​​​‎‏‎​​​​‎‍‌​​​​‎‍‌​​​​‎‏‍​​​​‎​‎​​​​‏‌‍​​​​‏​‎​​​​‍​‍​​​​‎‍‌​​​​‌‏‎​​​​‏‏​​​​​‎‍‌​​​​‎‍​​​​​‌‏‏​​​​‏‌‎​​​​‏​‏​​​​‎​‌​​​​‍​‌​​​​‎​‎​​​​‏‍‎​​​​‏​​​​​​‍‎‎​​​​‎‍‌​​​​‍​‏​​​​‎‌‏​​​​‍‏​​​​​‎‍‌​​​​‌‏‎​​​​‎‏‎​​​​‎‌‏​​​​‎​‍​​​​‍​‎​​​​‎‍​​​​​‎‍​​​​​‏‌‎​​​​‏‍‌​​​​‎‏‍​​​​‏‌‌​​​​‏​​​​​​‏‌‍​​​​‎‏‎​​​​‎‌‏​​​​‏‌‎​​​​‏‎‍​​​​‎‎​​​​​‏‌‎​​​​‏‌‍​​​​‍​‎​​​​‎‏‏​​​​‍‎‏​​​​‍‏​​​​​‍​‏​​​​‎​‍​​​​‍‏‍​​​​‍‏‏​​​​‎‍‌​​​​‎‏‏​​​​‍​‌​​​​‎‍‌​​​​‏‎​​​​​‎‏‏​​​​‍‎‎​​​​‏​​​​​​‍‏‎​​​​‎‏‏​​​​‏‌‏​​​​‏‌‎​​​​‏‎‏​​​​‎‍​​​​​‏‌‎​​​​‎​‎​​​​‍‏‏​​​​‎​‏​​​​‎‍‍​​​​‍‏‏​​​​‎‍​​​​​‎‌‍​​​​‍‏‌​​​​‏‏​​​​​‌‏‏​​​​‎‏‏​​​​‎‍‎​​​​‎​‍​​​​‏‎‎​​​​‎‍​​​​​‏‍​​​​​‎‍‌​​​​‎‍‍​​​​‎‏‏​​​​‏‍​​​​​‏‌‎​​​​‍‏‌​​​​‎‎​​​​​‍‏‍​​​​‏‍‍​​​​‎​‌​​​​‎‍‍​​​​‎‌‎​​​​‍‌‍​​​​‏‌‍​​​​‎‍​​​​​‌‏‎​​​​‏‎‏​​​​‍​​​​​​‎‍​​​​​‍​​​​​​‏‍‍​​​​‎‍​​​​​‎‌‏​​​​‏‌‏​​​​‏‎‌​​​​‏‏‌​​​​‎‍​​​​​‏‏‍​​​​‎‍‌​​​​‏‍‍​​​​‎‏‎​​​​‍​‌​​​​‍‏​​​​​‏‍‎​​​​‎‌‌​​​​‏‌‌​​​​‎‌‌​​​​‌‏‏​​​​‎​‌​​​​‌‏‎​​​​‏‌‎​​​​‎‌​​​​​‎​‎​​​​‎‍‎​​​​‎​‍​​​​‍​​​​​​‎‍​​​​​‍​​​​​​‏‌‎​​​​‍‎‌​​​​‎‍‍​​​​‍‎‏​​​​‏‎‏​​​​‏‎‎​​​​‎‌‌​​​​‏‌‍​​​​‏‍‍​​​​‍‏‏​​​​‎‍‌​​​​‎‍‍​​​​‎‏‏​​​​‏‏‍​​​​‎‎​​​​​‍​​​​​​‏‎‌​​​​‌‏‎​​​​‎​‍​​​​‍‎‎​​​​‎​‎​​​​‏​‏​​​​‎​‍​​​​‏‌‏​​​​‎‌‍​​​​‏‍​​​​​‎​‍​​​​‍‎‏​​​​‍‏‏​​​​‎‎​​​​​‎‌‎​​​​‍‏‌​​​​‍‏‏​​​​‎‌​​​​​‎‌‎​​​​‏‌‍​​​​‍‏​​​​​‏​‏​​​​‏​​​​​​‍‎‎​​​​‏‌‎​​​​‎‍‌​​​​‎‌‌​​​​‍​​​​​​‎‍‌​​​​‍‎‏​​​​‎‎​​​​​‍​‌​​​​‍‎‌​​​​‎​‏​​​​‏​‌​​​​‎‍​​​​​‍‏​​​​​‎​‌​​​​‎‎​​​​​‌‏‏​​​​‎‌‍​​​​‎‍‍​​​​‎‏‎​​​​‎‌‎​​​​‍‌‌​​​​‏‏​​​​​‎​‎​​​​‎‍‎​​​​‎​‎​​​​‍​‌​​​​‎‍‍​​​​‎‍​​​​​‏‍‍​​​​‎‍‍​​​​‏​​​​​​‎‍‍​​​​‏​‏​​​​‎‌‏​​​​‎‍​​​​​‌‏‏​​​​‏‌‎​​​​‎​‎​​​​‎‍​​​​​‍​‌​​​​‏‍‍​​​​‏‍‍​​​​‎‌‍​​​​‏‏‍​​​​‎‍‌​​​​‎‍‍​​​​‎‌‏​​​​‎‌‏​​​​‎‌‍​​​​‍​‏​​​​‎‌‍​​​​‏‌‏​​​​‎‍‌​​​​‍‏‌​​​​‎‏‍​​​​‍‎‎​​​​‏​‏​​​​‏‍‍​​​​‎‍‍​​​​‍‎‎​​​​‍‎‌​​​​‏‌‍​​​​‎​​​​​​‍​​​​​​‌‏‎​​​​‌‏‎​​​​‎‌‏​​​​‏‌​​​​​‏‎‌​​​​‏‍‌​​​​‏​​​​​​‍‎‎​​​​‎​‎​​​​‏‍​​​​​‏​‌​​​​‎‍‍​​​​‏​‏​​​​‎‍‌​​​​‎‏‏​​​​‍‎‎​​​​‏​‏​​​​‎‏‍​​​​‎‌‎​​​​‍‏‌​​​​‏​​​​​​‎‏‍​​​​‎​​​​​​‌‏‏​​​​‏​‏​​​​‏‏​​​​​‎​‍​​​​‏‌‏​​​​‎‌‍​​​​‏‍‌​​​​‎‏‍​​​​‏‌‌​​​​‍‏​​​​​‏‌‍​​​​‎‏‏​​​​‌‏‏​​​​‎‎​​​​​‎‌‌​​​​‎​‍​​​​‎‍‌​​​​‎‎​​​​​‎‏‍​​​​‎‍​​​​​‍​​​​​​‎‎​​​​​‏‍‌​​​​‎‍​​​​​‏‌‍​​​​‍‎‏​​​​‍​‌​​​​‎‌‏​​​​‏‏‍​​​​‎‌‍​​​​‎‌‍​​​​‏​​​​​​‏‌‏​​​​‍​‎​​​​‎​‌​​​​‏​​​​​​‍‏‌​​​​‍‏‏​​​​‍‏‎​​​​‏​‌​​​​‍‎‎​​​​‍‎‏​​​​‍​‎​​​​‎‌‍​​​​‍‎‏​​​​‏​​​​​​‎‌‍​​​​‎‌‏​​​​‌‏‎​​​​‍‌‍​​​​‏‎‎​​​​‎​‎​​​​‏‍​​​​​‏​​​​​​‏‌‎​​​​‎‎​​​​​‌‏‏​​​​‏‍‍​​​​‏‏​​​​​‎​‏​​​​‎‍‎​​​​‎‎​​​​​‏‎‍​​​​‎‌‍​​​​‍‎‎​​​​‎‎​​​​​‏‌‌​​​​‎‏‍​​​​‎‍‌​​​​‏‌‎​​​​‍‎‎​​​​‎‏‏​​​​‍‏​​​​​‏‌‎​​​​‏‎‌​​​​‎‍‍​​​​‎‍​​​​​‏‍‍​​​​‎‍‏​​​​‎‏‏​​​​‏‌‏​​​​‎​‍​​​​‏‎‎​​​​‎‏‍​​​​‍‏​​​​​‏‍‍​​​​‎‌‎​​​​‎‍​​​​​‎‍‌​​​​‍‎​​​​​‍​‍​​​​‎‍‍​​​​‍‏‍​​​​‏​​​​​​‎‍‏​​​​‎‌‍​​​​‎‌‏​​​​‎​‎​​​​‏​‏​​​​‎‎​​​​​‏‍​​​​​‏​‏​​​​‏‎‌​​​​‏​​​​​​‎‍‍​​​​‏‍‍​​​​‎‌‌​​​​‎‌‎​​​​‍‎‏​​​​‍‌‌​​​​‏‎‏​​​​‎​‏​​​​‍‎‏​​​​‏‍‍​​​​‍‏‏​​​​‎‎​​​​​‏‌‏​​​​‏​‏​​​​‎‏‍​​​​‎​‍​​​​‏‌‍​​​​‎​‎​​​​‍‎‍​​​​‏​‌​​​​‎‍‎​​​​‎‎​​​​​‏‏‌​​​​‎‏‏​​​​‏‌‌​​​​‎‌‌​​​​‍​​​​​​‎‏‍​​​​‌‏‏​​​​‍‎‌​​​​‎‌​​​​​‎‌‍​​​​‍​​​​​​‏‎​​​​​‍‍‌</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://offdev.net/demos/zwsp-steg-js">0宽度字符解密</a></p>
+<p>得到一串字符串</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">U2FsdGVkX19VMkZzZEdWa1gxK3A4VGlVNGRKZng1ZUlkTi9XY2lDR3VCaDBXOStLVDVPT3hxT082NUo4RUsxMUFKNWptWGE5R1pwY2RVazhKNzNTSmJaREdyVVlVZHp0R2d0WWpQalN5dUJNYVkzeXowS1NxYkh5SE12VEhEYXcvVEhvMkJFN3hmcEJmVDBlY0syK3FJYzl5ZEdlV2w1VjhZcFAxSzA1a3FmRUhHUjQ0bmxNTEEyZDZhM1ZPbVVaNkg4V0xVU1lhL3NqdDV6TFV0bTM5UUloajdkbTluZlk5cEF6MHJVc3VscDdIcmlwUlNJOWJURGx1cXMvUnVWcnlGZHpLWS9kU0w2U2pUTmtyUzVpb3FqQjQ1L0lPNXM2U2lBWEwvQkpJVWczZ2t0MDNhMmRnMEJZSGJPSkFhdDlVQ2VEZ3BOeUFLZ1RWbS8xNXN3WUpWdWhTU1lNU3ppRzVWTTR6RmVGaDhpWDBkK200TitodDNneWhVcDhaSGdaK1hxMmRoajFkc1ZQMVZaU2ZoUkE3TzRRdm5LdGJIeDE5REdRT09vNndlZ1pxOXZuRDZjaVlDcFltWUpYcmMvaFpSUVA4WHdYRTNhZnhtdWpQSE8wOEpJZmhaMkNCeXZycjQ2a1BPR2s&#x3D;</span><br></pre></td></tr></table></figure>
+
+<p>base一把梭</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">base64:</span><br><span class="line">b&#39;Salted__U2FsdGVkX1+p8TiU4dJfx5eIdN&#x2F;WciCGuBh0W9+KT5OOxqOO65J8EK11AJ5jmXa9GZpcdUk8J73SJbZDGrUYUdztGgtYjPjSyuBMaY3yz0KSqbHyHMvTHDaw&#x2F;THo2BE7xfpBfT0ecK2+qIc9ydGeWl5V8YpP1K05kqfEHGR44nlMLA2d6a3VOmUZ6H8WLUSYa&#x2F;sjt5zLUtm39QIhj7dm9nfY9pAz0rUsulp7HripRSI9bTDluqs&#x2F;RuVryFdzKY&#x2F;dSL6SjTNkrS5ioqjB45&#x2F;IO5s6SiAXL&#x2F;BJIUg3gkt03a2dg0BYHbOJAat9UCeDgpNyAKgTVm&#x2F;15swYJVuhSSYMSziG5VM4zFeFh8iX0d+m4N+ht3gyhUp8ZHgZ+Xq2dhj1dsVP1VZSfhRA7O4QvnKtbHx19DGQOOo6wegZq9vnD6ciYCpYmYJXrc&#x2F;hZRQP8XwXE3afxmujPHO08JIfhZ2CByvrr46kPOGk&#39;</span><br></pre></td></tr></table></figure>
+
+<p>其中’Salted__’是网站自带的，去掉。</p>
+<p>Triple DES解密后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">	  		     	 		 	   	       	     </span><br><span class="line">       	  	       	     	   	   	       		      	  </span><br><span class="line"> 	 	     		  	  	       	 		      </span><br><span class="line">  	 	    	  	       	     	     	    		</span><br><span class="line">	      	       	  	       		       	    		       </span><br><span class="line">   	    	   	      	   	   	       	   	  	 </span><br><span class="line">	    	 	  	    		  	  	       	     </span><br><span class="line">   	     	  	  	     	     	   	    	      </span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>SNOW.EXE -C -p “没技术，是菜鸡” 文件</p>
+<p>得flag{l0ts_0f_?????????????}</p>
+<p><em>3</em></p>
+<p><strong>challenge.wav： 记得给我打电话</strong></p>
+<p>电话音参考网站<a target="_blank" rel="noopener" href="http://www.dialabc.com/sound/dtmf.html">DTMF Tone</a>，</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DL3h6A.jpg" alt="DTMF"></p>
+<p>45774391614390919680552035340229102217126562041792203410479326635706552497458</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; print(hex(num))</span><br><span class="line">0x6533633533636265633936656138626465306332393465353230623337613532</span><br></pre></td></tr></table></figure>
+
+<p>十六进制转字符串<br>e3c53cbec96ea8bde0c294e520b37a52</p>
+<p>flag包裹即可</p>
+<p><em>4</em></p>
+<p><strong>2020太湖杯：misc</strong></p>
+<p>分离出压缩包后得：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">U2FsdGVkX194m4B5HqBSGYPLTS4bywdKDJh13lrSj&#x2F;OcwgSAoHBw9X&#x2F;p2IdEtGx7</span><br><span class="line">EdJFR6rcjyPA+M+aKLZvqE7h7EBFA5LyHYk&#x2F;5Cns4LV02vM7Dk+T70FlWOlJ3XeA</span><br><span class="line">9pJwFdAWzeN&#x2F;0A74u+hLG&#x2F;oLF1g3djo77yVTCBCs0r7khTOWahv0SYR33tHSq3Yz</span><br><span class="line">JGTBS1Zsj2i&#x2F;sGC8tTnNfsLl0SQ2JeTJhP&#x2F;aNU2LmPVTyc3y4kTx+ysw8vasHwen</span><br><span class="line">WoBXFtOe2WkorJOCrqdQ8Qqd78TzZ0jRMv6MJO2ytUy&#x2F;3mebHU9LAlWKFluNEh5t</span><br><span class="line">&#x2F;cUVvtigLS6PquYRX5ziEx52HDkW+WgfRnum&#x2F;AregLJ4c4f6AvG2gBjHVKO6sGEi</span><br><span class="line">uh59jcyN1SvsQEvXd7cOD&#x2F;KWZjE5gqVGUJqXyhauqWPVYUlcuHH6abtQwNuDb+jZ</span><br><span class="line">xMg5QaDzwPhpGRly7NhKU5OgCdhdK17TX7z2&#x2F;RuNYj6pyfRYNZmQdOFl9B28+law</span><br><span class="line">KO8l5b18WF5JV6chou7riwwDLqQrKMDjUUKZUtdMn0ReDQbR8reeqw&#x2F;u+Lkyhl6w</span><br><span class="line">+222QWgQ2yRd2dhHb1kqNncUInAEqTPNKRBnia8F&#x2F;+FycBv+KAwCFPwx9oNTFBYN</span><br><span class="line">4EJL&#x2F;RjiXEkkSCnyH48VynuuOeX2uNlAti214mCbWWH+pxLn4PHIWf3JK819kiDc</span><br><span class="line">jqyQ5y3v+EUEr9Sb1WVwiITDW5XtzVP+Yr&#x2F;IJ0ikl41zMu9BAQPermoa8hZJdE8m</span><br><span class="line">b3oSet+pAM7PtnyI7FGJ5Ynkpq05AiJMrN+UgV0E&#x2F;ELc0UhWw3O0c4u+eYtQkzu&#x2F;</span><br><span class="line">9+UCRy1Fi+QWFlO3cuWBA4GMGTE1FHWnqnZ683FwrM5bcb6TTu3&#x2F;Q5sppFmqNrOX</span><br><span class="line">+ctx5b5xiYeSZ8XFI2ks6L7aFrQYu833GiERnIiZEX8vFqjdnD+tcuQ6Zg9Z7oxh</span><br><span class="line">ATDP9H5d1e9IaxwOA&#x2F;fDP0qvdKJ+OS5OPljnboywCPp7QqFHZfyC7d2GIraadSOL</span><br><span class="line">+eIwfavCqgfGwpWMW5H359IKZASi&#x2F;HexzEcYrA7OZ8GzSxO9Lmk&#x2F;ea4BD4JD2law</span><br><span class="line">EIiDE7yhJApimzJ4IG8EMXFn&#x2F;rOM3O2PkuSTKFsXu7&#x2F;XZ3ozAJsPun5RJcMuUFXQ</span><br><span class="line">X++DqXqe6Kbo&#x2F;hEKwHETq0VbL6qEKkQKf5ce3i6tuZG8OqqPsye0Ku5D2LREqqGG</span><br><span class="line">ysshULZWmvlx4u2FUtj4Xg&#x3D;&#x3D;</span><br><span class="line">waoootu.epj.nv o</span><br><span class="line">www.verymuch.netWish everybody have fun!!!!!!</span><br></pre></td></tr></table></figure>
+
+<p>希尔密码：</p>
+<p>密文：<br>waoootu.epj.nv o</p>
+<p>密钥：<br><a target="_blank" rel="noopener" href="http://www.verymuch.net/">www.verymuch.net</a></p>
+<p>明文：<br>love and peaceee</p>
+<p>rabbit解密：</p>
+<p>密文：<br>上述类base64</p>
+<p>密钥：<br>love and peaceee</p>
+<p>明文：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LR2TMNLCGBOHKNDGGVRFY5JWGZTDAXDVMZTDCYK4OU4GCZRYLR2TSNTCHBOHKNJUMM4VY5JVGBSTOXDVHE3DIZC4OU2TIM3ELR2TQYLGHBOHKOJWGQYFY5JWGQ3DSXDVHE3GEOC4OU2TAZJXLR2TOZRTMROHKOBVME4VY5JVGRQTIXDVHAYDEOC4OU4GCZRYLR2TSNTCHBOHKNRRGY3VY5JVHA2WKXDVHAZDOMS4OU2WGMDBLR2TKNDDHFOHKODGMU3FY5JYMFSTMXDVG5QTOYK4OU3DENBQLR2TSNRUMROHKNRSGEYVY5JVMZTDKXDVHE3GEOC4OU3TSNJXLR2TQYLFGZOHKNLGMY2VY5JVGRRTSXDVHE3DIMC4OU2TMYRULR2TKNDDHFOHKNJWMM4VY5JUMZSWKXDVGU4TGN24OU4TMM3GLR2TMY3FGJOHKOBSG4ZFY5JYGM4GCXDVGVRGGMS4OU4GCZJWLR2TKOBVMVOHKNJUHEZFY5JYGM4GCXDVG43TGZK4OU3DEMJRLR2TKNDDHFOHKNRSGQYFY5JUMYYGMXDVHAYDKZK4OU4DKYJZLR2TSNTCHBOHKNRRGBSFY5JZGVRWIXDVGU2DGNS4OU3DENBQLR2TIZTFMVOHKNRWGJTFY5JYGI3TEXDVGY2DMOK4OU4GCMZWLR2TKNTCGROHKNJUMM4VY5JZHA2TQXDVGYYTAZC4OU2TIYZZLR2TKMZXGNOHKNDGMVSVY5JVGRRTSXDVG5QTOYK4OU4DOMLDLR2TSNRUGBOHKNJWMM4VY5JUMYYGMXDVGVTGMNK4OU2TIYZZLR2TMNBWHFOHKNJUMM4VY5JUMVQTMXDVHAZTQYK4OU2TIYZZLR2TONZTMVOHKNJUME2FY5JVHE4DEXDVHE4DKOC4OU2TSOBS</span><br></pre></td></tr></table></figure>
+
+<p>卡住了，傻逼</p>
+<p>base32:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\u65b0\u4f5b\u66f0\uff1a\u8af8\u96b8\u54c9\u50e7\u964d\u543d\u8af8\u9640\u6469\u96b8\u50e7\u7f3d\u85a9\u54a4\u8028\u8af8\u96b8\u6167\u585e\u8272\u5c0a\u54c9\u8fe6\u8ae6\u7a7a\u6240\u964d\u6211\u5ff5\u96b8\u7957\u8ae6\u5ff5\u54c9\u9640\u56b4\u54c9\u56c9\u4fee\u5937\u963f\u6ce2\u8272\u838a\u5bc2\u8ae6\u585e\u5492\u838a\u773e\u6211\u54c9\u6240\u4f0f\u805e\u85a9\u96b8\u610d\u95cd\u5436\u6240\u4fee\u662f\u8272\u6469\u8a36\u56b4\u54c9\u9858\u610d\u54c9\u5373\u4fee\u54c9\u7a7a\u871c\u9640\u56c9\u4f0f\u5ff5\u54c9\u6469\u54c9\u4ea6\u838a\u54c9\u773e\u54a4\u5982\u9858\u5982</span><br></pre></td></tr></table></figure>
+
+<p>unicode解密：</p>
+<p>新佛曰：諸隸哉僧降吽諸陀摩隸僧缽薩咤耨諸隸慧塞色尊哉迦諦空所降我念隸祗諦念哉陀嚴哉囉修夷阿波色莊寂諦塞咒莊眾我哉所伏聞薩隸愍闍吶所修是色摩訶嚴哉願愍哉即修哉空蜜陀囉伏念哉摩哉亦莊哉眾咤如願如</p>
+<p>新佛曰解密：</p>
+<p>Live beautifully, dream passionately, love completely.</p>
+<p>压缩包解密得fun.wav,调成频谱图后，得</p>
+<p>flag{m1sc_1s_funny2333}</p>
+<p><em>5</em></p>
+<blockquote>
+<blockquote>
+<p><strong>[BJDCTF 2nd]TARGZ-y1ng</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>哎？ 我的tar zxvf怎么不好使了？<br>解压密码不需要爆破<br>得到的 flag 建议用 flag{} 包上提交。</p>
+</blockquote>
+<p>得到一名为hW1ES89jF.tar.gz，由于题干说解压密码不需要爆破，尝试后发现上一级的压缩包名为下一级的密码。</p>
+<p>本想手分，但是太麻烦了，学着写脚本。</p>
+<p>更改之后的脚本如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import zipfile,os</span><br><span class="line">def unzip(zipname):</span><br><span class="line">    while True:</span><br><span class="line">        passwd &#x3D; zipname.split(&#39;.&#39;)[0]#hW1ES89jF</span><br><span class="line">        zf &#x3D; zipfile.ZipFile(zipname,&#39;r&#39;)</span><br><span class="line">        zf.extractall(pwd&#x3D;passwd.encode())</span><br><span class="line">        zf.close()#一定要关闭，否则会报错进程重复</span><br><span class="line">        os.remove(zipname)#关闭已经处理过的压缩包</span><br><span class="line">        zipname &#x3D; zf.namelist()[0]</span><br><span class="line">        zf.close()</span><br><span class="line">unzip(&quot;hW1ES89jF.tar.gz&quot;)</span><br><span class="line"></span><br><span class="line">#BJD&#123;wow_you_can_rea11y_dance&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>6</em></p>
+<blockquote>
+<blockquote>
+<p><strong>[HBNIS2018]excel破解</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。来源：<a target="_blank" rel="noopener" href="https://github.com/hebtuerror404/CTF_competition_warehouse_2018">https://github.com/hebtuerror404/CTF_competition_warehouse_2018</a></p>
+</blockquote>
+<p>得到一xls表格，更改后缀名为zip/rar，十六进制查看，搜索flag得</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rQq7M8"><img src="https://s3.ax1x.com/2020/12/16/rQq7M8.jpg" alt="rQq7M8.jpg"></a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;office_easy_cracked&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>7</em></p>
+<blockquote>
+<blockquote>
+<p><strong>[SWPU2019]伟大的侦探</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+<p>下载得到一部分加密得压缩包。密码.txt和名为misc的文件夹。</p>
+<p>密码.txt👇</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">压缩包密码:摂m墷m卪倕ⅲm仈Z</span><br><span class="line">呜呜呜,我忘记了压缩包密码的编码了,大家帮我解一哈。</span><br></pre></td></tr></table></figure>
+
+<p>拖进010editor中改变编码方式（为了避免混淆，删除语句中可能形成干扰的部分）</p>
+<p>最后在EBCDIC编码中发现可能的语句</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rQvntH"><img src="https://s3.ax1x.com/2020/12/16/rQvntH.jpg" alt="rQvntH.jpg"></a></p>
+<p>wllm_is_the_best_team!</p>
+<p>解压压缩包，得到一些跳舞的小人👇</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rQvd9s"><img src="https://s3.ax1x.com/2020/12/16/rQvd9s.jpg" alt="rQvd9s.jpg"></a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1 2 3 4 5 6 </span><br><span class="line">3 2 9 5 11 12 </span><br><span class="line">13 14 15 2 2 9</span><br></pre></td></tr></table></figure>
+
+<p>尝试第一种方法：</p>
+<p>在英文中，e的使用频率最高，而这18张图中2的使用频率最高：</p>
+<p>2-&gt;e</p>
+<p>试着对应起来：<br>xxexxx<br>xexxxx<br>xxxeex</p>
+<p>感觉不可能。</p>
+<p>第二种方法：</p>
+<p>搜索引擎搜索“小人密码”，发现为福尔摩斯中出现过的一种解密方法👇</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rlSlcR"><img src="https://s3.ax1x.com/2020/12/16/rlSlcR.jpg" alt="rlSlcR.jpg"></a></p>
+<p>试着对应起来：</p>
+<p>iloveh<br>olmesa<br>ndwllm</p>
+<p>flag{iloveholmesandwllm}</p>
+<p><em>8</em></p>
+<blockquote>
+<blockquote>
+<p><strong>[WUSTCTF2020]find_me</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。感谢 Iven Huang 师傅供题。比赛平台：<a target="_blank" rel="noopener" href="https://ctfgame.w-ais.cn/">https://ctfgame.w-ais.cn/</a></p>
+</blockquote>
+<p>右键查看文件的详细信息或者EXIFTOOL查看元数据👇</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">⡇⡓⡄⡖⠂⠀⠂⠀⡋⡉⠔⠀⠔⡅⡯⡖⠔⠁⠔⡞⠔⡔⠔⡯⡽⠔⡕⠔⡕⠔⡕⠔⡕⠔⡕⡍&#x3D;</span><br></pre></td></tr></table></figure>
+
+<p>盲文在线解密网站：<br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=mangwen">https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=mangwen</a></p>
+<p><em>9</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[MRCTF2020]%E4%BD%A0%E8%83%BD%E7%9C%8B%E6%87%82%E9%9F%B3%E7%AC%A6%E5%90%97">[MRCTF2020]你能看懂音符吗</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。<br>感谢Galaxy师傅供题。</p>
+</blockquote>
+</blockquote>
+<p>得到一个损坏的压缩包。十六进制查看后发现文件头损坏</p>
+<p>RAR正确文件头如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0000h: 52 61 72 21  Rar!</span><br></pre></td></tr></table></figure>
+
+<p>得到你能看懂音符吗.docx，由于笔者默认打开所有隐藏字符，故能直接看到隐藏字符。可以猜测为音符编码</p>
+<p>无法复制，更改后缀为.zip，\word\document.xml中能得到该文档的内容信息：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;w:t&gt;♭♯♪‖¶♬♭♭♪♭‖‖♭♭♬‖♫♪‖♩♬‖♬♬♭♭♫‖♩♫‖♬♪♭♭♭‖¶∮‖‖‖‖♩♬‖♬♪‖♩♫♭♭♭♭♭§‖♩♩♭♭♫♭♭♭‖♬♭‖¶§♭♭♯‖♫∮‖♬¶‖¶∮‖♬♫‖♫♬‖♫♫§&#x3D;&lt;&#x2F;w:t&gt;...&lt;w:t&gt;这都让你发现了，可是你能看懂吗？&lt;&#x2F;w:t&gt;</span><br></pre></td></tr></table></figure>
+
+<p>找到了<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=yinyue">在线音乐符号解密的网站</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MRCTF&#123;thEse_n0tes_ArE_am@zing~&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>10</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[%E5%AE%89%E6%B4%B5%E6%9D%AF%202019]%E5%90%B9%E7%9D%80%E8%B4%9D%E6%96%AF%E6%89%AB%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%BD%A0%E8%83%BD%E7%9C%8B%E6%87%82%E9%9F%B3%E7%AC%A6%E5%90%97">[安洵杯 2019]吹着贝斯扫二维码</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+</blockquote>
+<p>555,我讨厌拼图，giao</p>
+<p>得到压缩包里很多无后缀的文件。通过010editor，可得这些都为jpg文件。</p>
+<p>打开得到碎片化的二维码。拼！</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/s8kmFK"><img src="https://s3.ax1x.com/2021/01/11/s8kmFK.png" alt="s8kmFK.png"></a></p>
+<p>人都傻了，得到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">BASE Family Bucket ??? 85-&gt;64-&gt;85-&gt;13-&gt;16-&gt;32</span><br></pre></td></tr></table></figure>
+
+<p>根据提示，一步一步来吧。中间还用到了rot13</p>
+<p>得ThisIsSecret!233</p>
+<p>打开压缩包，得到flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;Qr_Is_MeAn1nGfuL&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>11</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E4%BB%8E%E5%A8%83%E5%A8%83%E6%8A%93%E8%B5%B7">从娃娃抓起</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0086 1562 2535 5174</span><br><span class="line">bnhn s wwy vffg vffg rrhy fhnv</span><br><span class="line"></span><br><span class="line">请将你得到的这句话转为md5提交，md5统一为32位小写。</span><br><span class="line">提交格式：flag&#123;md5&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之前做过类似的题，那道题为”计算机要从娃娃抓起”，用到了中国电码。试试看</p>
+<p>第一排数字正好对应中国电码中的“人工智能”</p>
+<p>第二排两个重复的vffg猜测为“娃娃”</p>
+<p>另，若熟悉五笔打字的话，就能知道第二行其实是五笔编码“也要从娃娃抓起”</p>
+<p>“人工智能也要从娃娃抓起”的32位小写md5就是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3b4b5dccd2c008fe7e2664bd1bc19292</span><br></pre></td></tr></table></figure>
+
+<p><em>12</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[DDCTF2018](%E2%95%AF%C2%B0%E2%96%A1%C2%B0%EF%BC%89%E2%95%AF%EF%B8%B5%20%E2%94%BB%E2%94%81%E2%94%BB">[DDCTF2018](╯°□°）╯︵ ┻━┻</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">d4e8e1f4a0f7e1f3a0e6e1f3f4a1a0d4e8e5a0e6ece1e7a0e9f3baa0c4c4c3d4c6fbb9b2b2e1e2b9b9b7b4e1b4b7e3e4b3b2b2e3e6b4b3e2b5b0b6b1b0e6e1e5e1b5fd</span><br></pre></td></tr></table></figure>
+
+<p>十六进制丢进010editor中，未果。</p>
+<p>进制转换，得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">212 232 225 244 160 247 225 243 160 230 225 243 244 161 160 212 232 229 160 230 236 225 231 160 233243186160196196195212198251185178178225226185185183180225180183227228179178178227230180179226181176182177176230225229225181253</span><br></pre></td></tr></table></figure>
+
+<p>未见有意义字符串。</p>
+<p>对128取余试试，212-》84-》T</p>
+<p>成了，依次操作得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">That was fast! The flag is: DDCTF&#123;922ab9974a47cd322cf43b50610faea5&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>13</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%B0%8F%E6%98%93%E7%9A%84U%E7%9B%98">小易的U盘</a></p>
+<blockquote>
+<p>小易的U盘中了一个奇怪的病毒，电脑中莫名其妙会多出来东西。小易重装了系统，把U盘送到了攻防实验室，希望借各位的知识分析出里面有啥。请大家加油噢，不过他特别关照，千万别乱点他U盘中的资料，那是机密。 注意：得到的 flag 请包上 flag{} 提交</p>
+</blockquote>
+</blockquote>
+<p>额，这道题还挺啊这的。</p>
+<p>一开始以为是流量分析啥的，后来发现二进制查看就是个压缩包，还原rar后缀名。</p>
+<p>得到一串exe和一堆有的没的（例如不要在上班时间打开的某雷链接</p>
+<p>找到autorun.inf,写着</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[AutoRun]</span><br><span class="line">Open&#x3D;autoflag - 副本 (32)</span><br></pre></td></tr></table></figure>
+
+<p>把autoflag - 副本 (32).exe放进ida，main函数直接得flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;29a0vkrlek3eu10ue89yug9y4r0wdu10&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>14</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[GUET-CTF2019]zips">[GUET-CTF2019]zips</a></p>
+<blockquote>
+<p>注意：得到的 flag 请包上 flag{} 提交</p>
+</blockquote>
+</blockquote>
+<p>附件里有一名为222.zip的加密压缩包，通过ziperello暴力破解得密码723456</p>
+<p>得到名为111.zip的加密压缩包，其中存在flag.zip以及一提示文件头损坏的setup.sh</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sJ4yVI"><img src="https://s3.ax1x.com/2021/01/12/sJ4yVI.png" alt="sJ4yVI.png"></a></p>
+<p>上图为111.zip的二进制查看。常见的伪加密。504B0102 1400 1400 <em>0</em>000此处改为偶数即可。</p>
+<p>setup.sh👇</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">#</span><br><span class="line">zip -e --password&#x3D;&#96;python -c &quot;print(__import__(&#39;time&#39;).time())&quot;&#96; flag.zip flag</span><br></pre></td></tr></table></figure>
+
+<p>按照提示执行这段代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;python2 -c &quot;print(__import__(&#39;time&#39;).time())&quot;</span><br><span class="line">1610439451.64</span><br><span class="line"></span><br><span class="line">&gt;python2 -c &quot;print(__import__(&#39;time&#39;).time())&quot;</span><br><span class="line">1610439453.74</span><br><span class="line"></span><br><span class="line">&gt;python2 -c &quot;print(__import__(&#39;time&#39;).time())&quot;</span><br><span class="line">1610439472.66</span><br></pre></td></tr></table></figure>
+
+<p>可看出跟时间戳有关（python3执行有精度差异</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;python3 -c &quot;print(__import__(&#39;time&#39;).time())&quot;</span><br><span class="line">1610439561.7353652</span><br></pre></td></tr></table></figure>
+
+<p>对flag.zip进行掩码爆破（出题时时间戳比已知的数字小，至于小多少就自行猜测了</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sJTiiq"><img src="https://s3.ax1x.com/2021/01/12/sJTiiq.png" alt="sJTiiq.png"></a></p>
+<p>密码1558080832.15</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;fkjabPqnLawhvuikfhgzyffj&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>15</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[MRCTF2020]%E5%8D%83%E5%B1%82%E5%A5%97%E8%B7%AF">[MRCTF2020]千层套路</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。<br>感谢天璇战队供题。<br>天璇战队平台：<a target="_blank" rel="noopener" href="http://ctf.merak.codes/">http://ctf.merak.codes/</a></p>
+</blockquote>
+</blockquote>
+<p>这道题算是能得到锻炼的好题叭</p>
+<p>首先是套娃解zip，名字就是下一层的密码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import zipfile,os</span><br><span class="line">def unzip(zipname):</span><br><span class="line">    while True:</span><br><span class="line">        passwd &#x3D; zipname.split(&#39;.&#39;)[0]</span><br><span class="line">        zf &#x3D; zipfile.ZipFile(zipname,&#39;r&#39;)</span><br><span class="line">        zf.extractall(pwd&#x3D;passwd.encode())</span><br><span class="line">        zf.close()</span><br><span class="line">        os.remove(zipname)</span><br><span class="line">        zipname &#x3D; zf.namelist()[0]</span><br><span class="line">        zf.close()</span><br><span class="line">unzip(&quot;0573.zip&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>得到qr.txt：40000行格式为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(255, 255, 255)</span><br></pre></td></tr></table></figure>
+
+<p>不难想到是RGB成像。</p>
+<p>40000=200*200</p>
+<p>修改手头脚本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">x &#x3D; y &#x3D; 200</span><br><span class="line">img &#x3D; Image.new(&quot;RGB&quot;,(x,y))</span><br><span class="line">file &#x3D; open(&#39;qr.txt&#39;,&#39;r&#39;)</span><br><span class="line"></span><br><span class="line">for width in range(0,x):</span><br><span class="line">    for height in range(0,y):</span><br><span class="line">        line &#x3D; file.readline()</span><br><span class="line">        print line</span><br><span class="line">        if(line[1:2] &#x3D;&#x3D; &#39;2&#39;):</span><br><span class="line">            rgbs &#x3D; line[1:4]+&#39;,&#39;+line[6:9]+&#39;,&#39;+line[11:14]</span><br><span class="line">        if(line[1:2] &#x3D;&#x3D; &#39;0&#39;):</span><br><span class="line">            rgbs &#x3D; line[1:2] +&#39;,&#39;+ line[4:5] +&#39;,&#39;+ line[7:8]</span><br><span class="line">        rgb &#x3D; rgbs.split(&#39;,&#39;)</span><br><span class="line">        img.putpixel((width,height),(int(rgb[0]),int(rgb[1]),int(rgb[2])))</span><br><span class="line">img.save(&#39;rgb.jpg&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>得到一张二维码。扫码得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MRCTF&#123;ta01uyout1nreet1n0usandtimes&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>调通脚本的过程真是太有成就感了</p>
+</blockquote>
+<p><em>16</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E4%BA%8C%E7%BB%B4%E7%A0%81">二维码</a></p>
+<blockquote>
+<p>一不小心把存放flag的二维码给撕破了，各位大侠帮忙想想办法吧 注意：得到的 flag 请包上 flag{} 提交</p>
+</blockquote>
+</blockquote>
+<p>我爱PS（当然不可能了：）</p>
+<p>修了半天依然不能识别，于是还是手拼叭淦</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sYloo8"><img src="https://s3.ax1x.com/2021/01/12/sYloo8.png" alt="sYloo8.png"></a></p>
+<p><em>17</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[WUSTCTF2020]%E7%88%AC">[WUSTCTF2020]爬</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。<br>感谢 Iven Huang 师傅供题。<br>比赛平台：<a target="_blank" rel="noopener" href="https://ctfgame.w-ais.cn/">https://ctfgame.w-ais.cn/</a></p>
+</blockquote>
+</blockquote>
+<p>有一说一，在做了上一题的死亡二维码后，看到这道题的头都大了。</p>
+<p>无后缀名的文件-》查看二进制-》.pdf-》提示flag在图片后面-》转word-》移动图片无发现-》.zip-&gt;查看word/media-》得到两张图片</p>
+<p>一张是已知的【爬】，一张就是出题人想隐藏的</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sYGD6H"><img src="https://s3.ax1x.com/2021/01/12/sYGD6H.jpg" alt="sYGD6H.jpg"></a></p>
+<p>手输十六进制</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">77637466323032307b746831735f31735f405f7064665f616e645f7930755f63616e5f7573655f70686f7430736830707d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wctf2020&#123;th1s_1s_@_pdf_and_y0u_can_use_phot0sh0p&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>看来出题人是想让咱们通过PS将pdf转换成word，这是笔者目前不会的，望告知（目前笔者用的是【迅读PDF大师】</p>
+</blockquote>
+<p><em>17</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[MRCTF2020]CyberPunk">[MRCTF2020]CyberPunk</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。<br>感谢天璇战队供题。<br>天璇战队平台：<a target="_blank" rel="noopener" href="http://ctf.merak.codes/">http://ctf.merak.codes/</a></p>
+</blockquote>
+</blockquote>
+<p>exe运行起来后👇</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">I love cyberpunk2077!</span><br><span class="line">It will on 2020.9.17</span><br><span class="line">Since it has been open,I will give you the flag</span><br></pre></td></tr></table></figure>
+
+<p>修改系统时间即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MRCTF&#123;We1cOm3_70_cyber_security&#125;每隔10s刷新一次</span><br><span class="line">当前时间:</span><br><span class="line">月: 9</span><br><span class="line">日: 17</span><br></pre></td></tr></table></figure>
+
+<p><em>18</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[SWPU2019]Network">[SWPU2019]Network</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+</blockquote>
+<p>一道平平无奇的脚本题</p>
+<p>63 127 255 通过进制转换联想到00 01 10 11</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f &#x3D; open(&quot;attachment.txt&quot;, &quot;r&quot;)</span><br><span class="line">s &#x3D; &#39;&#39;</span><br><span class="line">tmp &#x3D; &#39;&#39;</span><br><span class="line">while 1:</span><br><span class="line">    num &#x3D; f.readline()</span><br><span class="line">    if not num:</span><br><span class="line">        break</span><br><span class="line">    if num.rstrip() &#x3D;&#x3D; &#39;63&#39;:</span><br><span class="line">        tmp &#x3D; &#39;00&#39;</span><br><span class="line">    elif num.rstrip() &#x3D;&#x3D; &#39;127&#39;:</span><br><span class="line">        tmp &#x3D; &#39;01&#39;</span><br><span class="line">    elif num.rstrip() &#x3D;&#x3D; &#39;191&#39;:</span><br><span class="line">        tmp &#x3D; &#39;10&#39;</span><br><span class="line">    elif num.rstrip() &#x3D;&#x3D; &#39;255&#39;:</span><br><span class="line">        tmp &#x3D; &#39;11&#39;</span><br><span class="line">    s +&#x3D; tmp</span><br><span class="line"></span><br><span class="line">print s</span><br></pre></td></tr></table></figure>
+
+<p>转十六进制</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">number &#x3D; &#39;&#39;</span><br><span class="line">for i in range(0, len(s), 8):</span><br><span class="line">    number +&#x3D; chr(int(s[i:i + 8], 2))</span><br><span class="line"></span><br><span class="line">print number</span><br><span class="line"></span><br><span class="line">f2 &#x3D; open(&#39;1.zip&#39;, &#39;w&#39;)</span><br><span class="line">f2.write(number.decode(&#39;hex&#39;))</span><br><span class="line">f2.close()</span><br></pre></td></tr></table></figure>
+
+<p>得到1.zip（通过number能看出该文本为压缩包的二进制</p>
+<p>压缩包内有flag.txt，内容为多重base64加密</p>
+<p>解码得flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;189ff9e5b743ae95f940a6ccc6dbd9ab&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>19</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[GUET-CTF2019]%E8%99%9A%E5%81%87%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85">[GUET-CTF2019]虚假的压缩包</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+</blockquote>
+<p>真实的压缩包.zip和虚假的压缩包.zip</p>
+<p>不得不说，虽然360会忽略掉很多本该被注意的错误，但是有的时候还是很有用的（比如伪加密</p>
+<p>直接用360可打开【虚假的压缩包.zip】</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">数学题</span><br><span class="line">n &#x3D; 33</span><br><span class="line">e &#x3D; 3</span><br><span class="line">解26</span><br><span class="line"></span><br><span class="line">-------------------------</span><br><span class="line">答案是</span><br></pre></td></tr></table></figure>
+
+<p>简单的RSA</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">答案是5</span><br></pre></td></tr></table></figure>
+
+<p>解开真实的压缩包</p>
+<p>一张图和一个文件</p>
+<p>图平平无奇，用到的是misc入门方法，更改高度，得到提示【^5】</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sNLu1s"><img src="https://s3.ax1x.com/2021/01/13/sNLu1s.jpg" alt="sNLu1s.jpg"></a></p>
+<p>【亦真亦假】里是一串无意义数字</p>
+<p>与5异或</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">original &#x3D; open(&quot;亦真亦假&quot;,&#39;r&#39;).read()</span><br><span class="line">flag &#x3D; open(&quot;flag&quot;,&#39;w&#39;)</span><br><span class="line">for i in original:</span><br><span class="line">    tmp &#x3D; int(i,16)^5</span><br><span class="line">    flag.write(hex(tmp)[2:])</span><br></pre></td></tr></table></figure>
+
+<p>得到504B0304为首的字符，更改后缀名为.zip后，能看到这是个word。更改后缀名为.docx</p>
+<p>得到一篇文章。</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sNLMXq"><img src="https://s3.ax1x.com/2021/01/13/sNLMXq.jpg" alt="sNLMXq.jpg"></a></p>
+<p>通过空格的位置，全选上色，得flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">FLAG&#123;_th2_7ru8_2iP_&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>20</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.calormen.com/jslogo/">[RCTF2019]draw</a></p>
+<blockquote>
+<p>得到的 flag 请包上 flag{} 提交。</p>
+</blockquote>
+</blockquote>
+<p>长见识了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cs pu lt 90 fd 500 rt 90 pd fd 100 rt 90 repeat 18[fd 5 rt 10] lt 135 fd 50 lt 135 pu bk 100 pd setcolor pick [ red orange yellow green blue violet ] repeat 18[fd 5 rt 10] rt 90 fd 60 rt 90 bk 30 rt 90 fd 60 pu lt 90 fd 100 pd rt 90 fd 50 bk 50 setcolor pick [ red orange yellow green blue violet ] lt 90 fd 50 rt 90 fd 50 pu fd 50 pd fd 25 bk 50 fd 25 rt 90 fd 50 pu setcolor pick [ red orange yellow green blue violet ] fd 100 rt 90 fd 30 rt 45 pd fd 50 bk 50 rt 90 fd 50 bk 100 fd 50 rt 45 pu fd 50 lt 90 pd fd 50 bk 50 rt 90 setcolor pick [ red orange yellow green blue violet ] fd 50 pu lt 90 fd 100 pd fd 50 rt 90 fd 25 bk 25 lt 90 bk 25 rt 90 fd 25 setcolor pick [ red orange yellow green blue violet ] pu fd 25 lt 90 bk 30 pd rt 90 fd 25 pu fd 25 lt 90 pd fd 50 bk 25 rt 90 fd 25 lt 90 fd 25 bk 50 pu bk 100 lt 90 setcolor pick [ red orange yellow green blue violet ] fd 100 pd rt 90 arc 360 20 pu rt 90 fd 50 pd arc 360 15 pu fd 15 setcolor pick [ red orange yellow green blue violet ] lt 90 pd bk 50 lt 90 fd 25 pu home bk 100 lt 90 fd 100 pd arc 360 20 pu home</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.calormen.com/jslogo/">https://www.calormen.com/jslogo/</a></p>
+<p>通过这个网站能得到画出来的LOGO</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RCTF_HeyLogo</span><br></pre></td></tr></table></figure>
+
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/MISC/">MISC</a></li></ul></footer></article><section class="reward"><a class="btn-reward" href="#">打赏</a><div class="reward-wrapper clearfix"><img src="/img/wechat.png" title="微信"></div></section></main><footer class="foot"><div class="foot-copy">&copy; 2016 - 2021 mklkx</div></footer>
+<script src="/js/scroller.js"></script>
+
+<script src="/js/main.js"></script>
+</body></html>
