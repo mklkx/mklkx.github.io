@@ -94,6 +94,28 @@
 <p>通过调整得如图水印</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">VNCTF&#123;Ff5_1S_bEauTiful&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="25"><a href="#25" class="headerlink" title="25"></a>25</h3><h4 id="VNCTF-2021-HAPPYNEWYEAR"><a href="#VNCTF-2021-HAPPYNEWYEAR" class="headerlink" title="[VNCTF 2021]HAPPYNEWYEAR"></a>[VNCTF 2021]HAPPYNEWYEAR</h4><blockquote>
+<p>祝大家牛年快乐！牛转钱坤！(flag为VNCTF{}）Hint1:<a target="_blank" rel="noopener" href="https://www.dcode.fr/tools-list#symbols">https://www.dcode.fr/tools-list#symbols</a>    Hint2:stegpy，但是不是那么白给的stegpy</p>
+</blockquote>
+<p>得到加密压缩包和password.png</p>
+<p>可以看出png里藏着古典密码，结合hint1，找到相应的加密方法：</p>
+<p>Chinese Code&amp;Sheikah Language</p>
+<p><img src="C:\Users\16231\Desktop\mklkx_blog\source_posts\MISC-image-2\HAPPY1.jpg" alt="HAPPY1"></p>
+<p><img src="C:\Users\16231\Desktop\mklkx_blog\source_posts\MISC-image-2\HAPPY2.jpg" alt="HAPPY2"></p>
+<p>组合得到压缩包密码：<img src="C:\Users\16231\Desktop\mklkx_blog\source_posts\MISC-image-2\Inkedpassword_LI.jpg" alt="Inkedpassword_LI"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f87840bdddcc01e4</span><br></pre></td></tr></table></figure>
+
+<p>打开压缩包，得到happynewyear.png</p>
+<p>接下来就是stegpy的内容</p>
+<p>stegpy工具的安装：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45728976/article/details/109018040">https://blog.csdn.net/weixin_45728976/article/details/109018040</a></p>
+<p>附上改动后的出题人脚本，实现爆破</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import os</span><br><span class="line">from subprocess import Popen,PIPE</span><br><span class="line">import sys</span><br><span class="line">def checkwebp(pic):</span><br><span class="line">    print(&quot;IF you don&#39;t need a password for the pic please input 1&quot;) # 无密钥</span><br><span class="line">    print(&quot;IF you know the password of the pic please input 2&quot;) # 有密钥且已知</span><br><span class="line">    print(&quot;IF not input 3 I will use the password.txt&quot;) # 有密钥但未知</span><br><span class="line">    choice &#x3D; input()</span><br><span class="line">    if choice &#x3D;&#x3D; &#39;1&#39;:</span><br><span class="line">        os.system(&quot;stegpy &#123;&#125;&quot;.format(pic))</span><br><span class="line">    elif choice &#x3D;&#x3D; &#39;2&#39;:</span><br><span class="line">        print(&quot;INPUT THE password:&quot;)</span><br><span class="line">        password &#x3D; input()</span><br><span class="line">        cmd &#x3D; [&quot;stegpy&quot;, &quot;-p&quot;,pic]</span><br><span class="line">        subp &#x3D; Popen([sys.executable, &#39;-c&#39;, &#39;import pty, sys; pty.spawn(sys.argv[1:])&#39;, *cmd],stdin&#x3D;PIPE,stdout&#x3D;PIPE,stderr&#x3D;PIPE)</span><br><span class="line">        print(subp.stdout.read(len(&quot;Enter password (will not be echoed):&quot;)))</span><br><span class="line">        subp.stdin.write(bytes((password+&#39;\n&#39;).encode(&#39;utf-8&#39;)))</span><br><span class="line">        subp.stdin.flush()</span><br><span class="line">        print(subp.stdout.readlines())</span><br><span class="line">        # print(subp.stdout.readlines()[1])</span><br><span class="line">        print(&#39;\n&#39;)</span><br><span class="line">    elif choice &#x3D;&#x3D; &#39;3&#39;:</span><br><span class="line">        file &#x3D; open(&#39;password.txt&#39;, &#39;r&#39;)</span><br><span class="line">        line &#x3D; file.readline()</span><br><span class="line">        while line:</span><br><span class="line">            print(line)</span><br><span class="line">            cmd &#x3D; [&quot;stegpy&quot;, &quot;-p&quot;, pic]</span><br><span class="line">            subp &#x3D; Popen([sys.executable, &#39;-c&#39;, &#39;import pty, sys; pty.spawn(sys.argv[1:])&#39;, *cmd], stdin&#x3D;PIPE, stdout&#x3D;PIPE,stderr&#x3D;PIPE)</span><br><span class="line">            print(subp.stdout.read(len(&quot;Enter password (will not be echoed):&quot;)))</span><br><span class="line">            subp.stdin.write(bytes((line + &#39;\n&#39;).encode(&#39;utf-8&#39;)))</span><br><span class="line">            subp.stdin.flush()</span><br><span class="line">            print(&#39;result:&#39;)</span><br><span class="line">            print(subp.stdout.readlines()[1])</span><br><span class="line">            # print(subp.stdout.readlines()[1])</span><br><span class="line">            print(&#39;\n&#39;)</span><br><span class="line">            line &#x3D; file.readline()</span><br><span class="line">    else :</span><br><span class="line">        print(&#39;Input Wrong!&#39;)</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &quot;__main__&quot;:</span><br><span class="line">    checkwebp(&#39;happynewyear.png&#39;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\16231\Desktop\mklkx_blog\source_posts\MISC-image-2\HAPPY4.jpg" alt="HAPPY4"></p>
+<p>得到flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">VNCTF&#123;HappyNewY3a5&#125;</span><br></pre></td></tr></table></figure>
+
 </div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/MISC/">MISC</a></li></ul></footer></article><section class="reward"><a class="btn-reward" href="#">打赏</a><div class="reward-wrapper clearfix"><img src="/img/wechat.jpg" title="微信"></div></section></main><footer class="foot"><div class="foot-copy">&copy; 2016 - 2021 煤矿路口西</div></footer>
 <script src="/js/scroller.js"></script>
 
