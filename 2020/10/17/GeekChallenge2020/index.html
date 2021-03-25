@@ -28,7 +28,7 @@
 <p>提到备份文件，想起前不久刷过的GITHUB上的题，跑过去看了一眼，（Web-Web前置技能-信息泄露-备份文件下载），想起了当时的思路👇</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python3 dirsearch.py -u &lt;url&gt; -e *</span><br></pre></td></tr></table></figure>
 
-<p>得👇<br><img src="https://s3.ax1x.com/2020/12/05/DL3SiD.png" alt="EZwww1"></p>
+<p>得👇<br><img src="DL3SiD.png" alt="EZwww1"></p>
 <p>搜索网页<a target="_blank" rel="noopener" href="http://47.100.46.169:3901/www.zip%E5%8F%AF%E5%BE%97%E4%B8%80%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%8Cflag!!!!.txt%E9%87%8C%E5%86%99%E7%9D%80">http://47.100.46.169:3901/www.zip可得一个压缩包，flag!!!!.txt里写着</a></p>
 <p>SYC{th1s_1s_4_f4ke_fl4g}</p>
 <p>好叭不是。</p>
@@ -44,7 +44,7 @@
 </blockquote>
 </blockquote>
 <p>同上一题，可得👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL3iQA.jpg" alt="EZgit"></p>
+<p><img src="DL3iQA.jpg" alt="EZgit"></p>
 <p>观察得一/.git/</p>
 <p>想到曾经GITHUB里的（Web-Web前置技能-信息泄露-Git泄露）,通过</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python2 GitHack.py &lt;url&gt;</span><br></pre></td></tr></table></figure>
@@ -52,10 +52,10 @@
 <p>进入dist里</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s3.ax1x.com/2020/12/05/DL3Czd.jpg" alt="EZgit2"></p>
+<p><img src="DL3Czd.jpg" alt="EZgit2"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git diff </span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s3.ax1x.com/2020/12/05/DL3FsI.jpg" alt="EZgit3"><br>得flag.</p>
+<p><img src="DL3FsI.jpg" alt="EZgit3"><br>得flag.</p>
 <hr>
 <h4 id="RE"><a href="#RE" class="headerlink" title="RE"></a><em>RE</em></h4><h5 id="No-RE-no-gain"><a href="#No-RE-no-gain" class="headerlink" title="No RE no gain"></a><em>No RE no gain</em></h5><blockquote>
 <p><a target="_blank" rel="noopener" href="https://share.weiyun.com/ya8PBFfT">No RE no gain</a></p>
@@ -99,7 +99,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include(&quot;flag.php&quot;);</span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">$username &#x3D; $_GET[&#39;username&#39;];</span><br><span class="line">$passwd &#x3D; $_POST[&#39;passwd&#39;];</span><br><span class="line">if ($username &#x3D;&#x3D;&#x3D; &#39;admin&#39; &amp;&amp; $passwd &#x3D;&#x3D;&#x3D; &#39;syclover&#39;) &#123;</span><br><span class="line">    echo $flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>构造相应传参方式</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL3EeP.jpg" alt="postget"></p>
+<p><img src="DL3EeP.jpg" alt="postget"></p>
 <p>得flag.</p>
 <h4 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a><em>Misc</em></h4><h5 id="来拼图"><a href="#来拼图" class="headerlink" title="来拼图"></a><em>来拼图</em></h5><blockquote>
 <p>[来拼图]</p>
@@ -108,7 +108,7 @@
 </blockquote>
 </blockquote>
 <p>就，纯拼图。跟之前一场比赛类似，相对简便的方法是按文件大小排序后，再进行手动筛选👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL3Vdf.jpg" alt="pintu"></p>
+<p><img src="DL3Vdf.jpg" alt="pintu"></p>
 <hr>
 <h1 id="GeekChallenge2020-2"><a href="#GeekChallenge2020-2" class="headerlink" title="GeekChallenge2020"></a>GeekChallenge2020</h1><h3 id="10-19"><a href="#10-19" class="headerlink" title="10.19"></a>10.19</h3><hr>
 <h4 id="Web-2"><a href="#Web-2" class="headerlink" title="Web"></a><em>Web</em></h4><h5 id="flagshop"><a href="#flagshop" class="headerlink" title="[flagshop]"></a>[flagshop]</h5><blockquote>
@@ -120,7 +120,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">eval($_POST[&#39;liuzhuang&#39;]);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;谁是大恶人 那必定是我liuzhuang</span><br><span class="line">&#x2F;&#x2F;当你的服务器看到 0xliuzhuang 就知道要买台新机器了</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://s3.ax1x.com/2020/12/05/DL3kLt.png" alt="Hack"></p>
+<p><img src="DL3kLt.png" alt="Hack"></p>
 <h4 id="Crypto-1"><a href="#Crypto-1" class="headerlink" title="Crypto"></a><em>Crypto</em></h4><h5 id="成都养猪二厂"><a href="#成都养猪二厂" class="headerlink" title="成都养猪二厂"></a><em>成都养猪二厂</em></h5><blockquote>
 <p>[成都养猪二厂]</p>
 <blockquote>
@@ -164,9 +164,9 @@
 
 <p>但直接加密后为(34 66 108),不对。</p>
 <p>又想了好久，还怕自己算错了，找了个<a target="_blank" rel="noopener" href="https://matrix.reshish.com/zh/inverCalculation.php">在线网站</a>发现应该decode(😂)，先求逆矩阵，得</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL1xIO.jpg" alt="crypto1"></p>
+<p><img src="DL1xIO.jpg" alt="crypto1"></p>
 <p>与密文相乘得</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL1vdK.jpg" alt="crypto2"></p>
+<p><img src="DL1vdK.jpg" alt="crypto2"></p>
 <p>mod26后得明文KEY,输入exe得flag。</p>
 <h5 id="babyRSA"><a href="#babyRSA" class="headerlink" title="[babyRSA]"></a>[babyRSA]</h5><blockquote>
 <p>题目地址：<a target="_blank" rel="noopener" href="https://share.weiyun.com/lbPVqZN2">https://share.weiyun.com/lbPVqZN2</a> 题目描述：因为每晚都有小毛贼翻过v先生的栅栏去对猪圈搞破坏，v先生的养猪场不久就倒闭了。失落的v先生感觉不会再爱这个世界了。在他起身去找工作之前留下了一张纸条。</p>
@@ -212,7 +212,7 @@
 <p>那么问题来了，师傅的姓名是啥，生日又是啥呢。</p>
 <p>直接在列表里搜索出题人x1hy9，进空间逛了一圈，啥都没有。</p>
 <p>接下来就是毫无头绪了，索性队友Google了出题人的ID，找到了博客👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL39RH.jpg" alt="blog"></p>
+<p><img src="DL39RH.jpg" alt="blog"></p>
 <p>原来简介里QQ的昵称就是师傅的姓名（原来师傅的名字这么诗意……</p>
 <p>结合个人资料里的生日信息，得到相册密码，解开相册，那道flag。</p>
 <p>老折磨王了。</p>

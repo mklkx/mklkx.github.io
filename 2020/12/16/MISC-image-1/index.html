@@ -17,11 +17,11 @@
 <p>看不到图？ 是不是屏幕太小了 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>此为原始图像👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqXz60.png" alt="大白1"></p>
+<p><img src="DqXz60.png" alt="大白1"></p>
 <p>观察到大白为半身图，丢进winhex查看，实为png图像没错；结合提示（<strong>如果在kali中无法正常浏览图片也可以做接下来的操作</strong>），更改图片高度</p>
 <p>#方法如下<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34281477/article/details/92002276">winhex参数</a></p>
 <p>更改后保存得👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/Dqxx1A.jpg" alt="大白2"></p>
+<p><img src="Dqxx1A.jpg" alt="大白2"></p>
 <p><strong>出现的问题</strong></p>
 <blockquote>
 <p>途中遇到提示“winhex无法创建，请确定文件夹存在，文件没有收到保护”。查询得-&gt;修改winhex菜单：选项–常规，临时文件目录为XXX，关闭winhex重新打开文件操作即可。</p>
@@ -36,76 +36,77 @@
 </blockquote>
 </blockquote>
 <p>此为原始图像👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/Dqj9mT.png" alt="LSB1"></p>
+<p><img src="Dqj9mT.png" alt="LSB1"></p>
 <p>观察到此为一普通图像，根据题目提示，执行cmd代码调用Stegsolve-&gt;</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar C:\Users\16231\Desktop\Stegsolve.jar</span><br></pre></td></tr></table></figure>
 
 <p>打开需处理的图片后，通过&lt;&gt;调整可观察到👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjC0U.png" alt="LSB2"><br><img src="https://s3.ax1x.com/2020/12/05/DqjP7F.png" alt="LSB3"><br><img src="https://s3.ax1x.com/2020/12/05/DqjFk4.png" alt="LSB4"></p>
+<p><img src="DqjC0U.png" alt="LSB2"></p>
+<p><img src="DqjP7F.png" alt="LSB3"></p>
+<p><img src="DqjFk4.png" alt="LSB4"></p>
 <p>即，在该图像的RED,GREEN,BLUE通道上方出现了与其他图像不同的内容。于是选择操作Analyse-DataExtract👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjktJ.png" alt="LSB5"></p>
+<p><img src="DqjktJ.png" alt="LSB5"></p>
 <p>通过SaveBin导出flag.png可得👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjAh9.png" alt="LSB6"></p>
+<p><img src="DqjAh9.png" alt="LSB6"></p>
 <p>通过软件扫描二维码可得cumtctf{1sb_i4_s0_Ea4y}，更改头部得到flag。</p>
 <h3 id="3"><a href="#3" class="headerlink" title="3"></a><em>3</em></h3><p><strong>binwalk查看隐藏文件+压缩包暴力破解</strong></p>
 <h4 id="ningen"><a href="#ningen" class="headerlink" title="ningen"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#ningen">ningen</a></h4><blockquote>
 <p>人类的科学日益发展，对自然的研究依然无法满足，传闻日本科学家秋明重组了基因序列，造出了名为ningen的超自然生物。某天特工小明偶然截获了日本与俄罗斯的秘密通信，文件就是一张ningen的特写，小明通过社工，知道了秋明特别讨厌中国的六位银行密码，喜欢四位数。你能找出黑暗科学家秋明的秘密么？ 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>此为原始图像👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjM7D.jpg" alt="ningen1"></p>
 <p>日常操作，打开winhex里，观察到其中存在一个ningen.txt👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/Dqj1tH.png" alt="ningen2"></p>
+<p><img src="Dqj1tH.png" alt="ningen2"></p>
 <p>再丢进Kali里通过binwalk查看，可观察到其中隐藏着一个zip👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjlAe.png" alt="ningen3"></p>
+<p><img src="DqjlAe.png" alt="ningen3"></p>
 <p>于是更改文件的后缀名为zip后，打开我们的暴力破解压缩包的软件（如Ziperello）根据提示设置密码为数字，长度为4位，瞬间爆出👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjG9A.png" alt="ningen4"></p>
+<p><img src="DqjG9A.png" alt="ningen4"></p>
 <p>打开压缩包文件后，输入密码可看到txt文件里的内容，得到flag</p>
 <h3 id="4"><a href="#4" class="headerlink" title="4"></a><em>4</em></h3><p><strong>灵活运用常见方法(可能正是因为灵活，才叫爱因斯坦吧)</strong></p>
 <h4 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6">爱因斯坦</a></h4><blockquote>
 <p>注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>此为原始图像👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjZ11.jpg" alt="misc1"></p>
+<p><img src="DqjZ11.jpg" alt="misc1"></p>
 <p>常见思路一：第一步，丢进binwalk查看</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/Dqje6x.jpg" alt="misc2"></p>
+<p><img src="Dqje6x.jpg" alt="misc2"></p>
 <p>发现一个zip文件，第二步：改后缀名，尝试爆破。但由于不知密码结构，只好选择所有打印字符，爆破了好久也无法。只好推翻。</p>
 <p>常见思路二：第一步，丢进winhex。查找关键字flag，只找到加密文件flag.txt，对于密码依旧无法。卒。</p>
 <p>试过了浅薄的笔者会的方法后，一时进入了死胡同。后发现漏了一个简单的细节没有查看-&gt;<br><strong>文件属性！！！</strong><br>这也是极易被忽略的的一点。</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjmX6.png" alt="misc3"></p>
+<p><img src="DqjmX6.png" alt="misc3"></p>
 <p>害,这一顿费劲。通过密码解开flag.txt，得到flag即可。</p>
 <h3 id="5"><a href="#5" class="headerlink" title="5"></a><em>5</em></h3><p><strong>试别被隐藏的zip文件+认识elf文件</strong></p>
 <h4 id="FLAG"><a href="#FLAG" class="headerlink" title="FLAG"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#FLAG">FLAG</a></h4><blockquote>
 <p>感谢 牌森 同学提供题目~<br>注意：请将 hctf 替换为 flag 提交，格式 flag{}</p>
 </blockquote>
 <p>此为原始图像👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/Dqz1NF.png" alt="FLAG1"></p>
+<p><img src="Dqz1NF.png" alt="FLAG1"></p>
 <p>丢进Stegsolve,常规操作后可得</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqXxlq.png" alt="FLAG2"></p>
+<p><img src="DqXxlq.png" alt="FLAG2"></p>
 <p>查询可知，图中被标记的部分正是zip文件的文件头（学到了</p>
 <p>于是导出save bin为zip文件，压缩包内为一命名为“1”的文件，通过file查看可知此为一elf文件👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqXvpn.png" alt="FLAG3"></p>
+<p><img src="DqXvpn.png" alt="FLAG3"></p>
 <blockquote>
 <p>elf文件格式：在计算机科学中，是一种用于二进制文件、可执行文件、目标代码、共享库和核心转储格式文件。</p>
 </blockquote>
 <p>通过strings 1可得flag👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqjSXV.png" alt="FLAG4"></p>
+<p><img src="DqjSXV.png" alt="FLAG4"></p>
 <p>适当处理后即可。</p>
 <h3 id="6"><a href="#6" class="headerlink" title="6"></a><em>6</em></h3><p><strong>基础操作+1</strong></p>
 <h4 id="另外一个世界"><a href="#另外一个世界" class="headerlink" title="另外一个世界"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C">另外一个世界</a></h4><blockquote>
 <p>注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
-<p><img src="https://s3.ax1x.com/2020/12/05/Dqz0AO.jpg" alt="monster1"></p>
+<p><img src="Dqz0AO.jpg" alt="monster1"></p>
 <p>strings一下,得二进制👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqzdHK.png" alt="monster2"></p>
+<p><img src="DqzdHK.png" alt="monster2"></p>
 <p>二进制转字符串，套flag，搞定！</p>
 <p><strong>启示:这道题的逻辑思路倒很顺。刷题还是不够多，strings作为基础操作，的确是应该想到的。get</strong></p>
 <h3 id="7"><a href="#7" class="headerlink" title="7"></a><em>7</em></h3><p><strong>修改文件头</strong></p>
 <h4 id="BJDCTF-2nd-最简单的misc-y1ng"><a href="#BJDCTF-2nd-最简单的misc-y1ng" class="headerlink" title="[BJDCTF 2nd]最简单的misc-y1ng"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[BJDCTF%202nd]%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84misc-y1ng">[BJDCTF 2nd]最简单的misc-y1ng</a></h4><blockquote>
 <p>得到的 flag 建议用 flag{} 包上提交。</p>
 </blockquote>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqzaB6.png" alt="secret1"></p>
+<p><img src="DqzaB6.png" alt="secret1"></p>
 <p>丢进winhex,对比手头其他png文件可发现本文件缺少文件头，粘贴缺失部分后另存为.png文件，可得到一张图片👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqzBND.png" alt="secret2"></p>
+<p><img src="DqzBND.png" alt="secret2"></p>
 <p>将图中十六进制转文本可得flag。</p>
 <h3 id="8"><a href="#8" class="headerlink" title="8"></a><em>8</em></h3><p><strong>linux操作+Brainfuck解密</strong></p>
 <h4 id="面具下的flag"><a href="#面具下的flag" class="headerlink" title="面具下的flag"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag">面具下的flag</a></h4><blockquote>
@@ -118,13 +119,11 @@
 <p>该题还用到了brainfuck解密</p>
 <h3 id="9"><a href="#9" class="headerlink" title="9"></a><em>9</em></h3><p><strong>隐写工具F5-steganography的使用+zip伪加密的破解</strong></p>
 <h4 id="刷新过的图片"><a href="#刷新过的图片" class="headerlink" title="刷新过的图片"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87">刷新过的图片</a></h4><blockquote>
-<blockquote>
 <p>浏览图片的时候刷新键有没有用呢 注意：得到的 flag 请包上 flag{} 提交</p>
-</blockquote>
 </blockquote>
 <p>hint提及刷新键，故考虑F5-steganography。</p>
 <p>笔者的kali不知怎么无法git clone，故下载了安装包后启动终端，亦可。</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DqzD4e.png" alt="刷新过的图片1"></p>
+<p><img src="DqzD4e.png" alt="刷新过的图片1"></p>
 <p>得一txt文件，根据文件头50 4B 03 04，更改后缀名为.zip，发现为加密压缩包。</p>
 <p>更改00 14 00 0X 00为00 14 00 00 00后即可正常打开，得flag。</p>
 <h3 id="10"><a href="#10" class="headerlink" title="10"></a><em>10</em></h3><p><strong>python中pillow库的使用</strong></p>
@@ -133,7 +132,7 @@
 </blockquote>
 <p>这道题真的找了好久，各种方法都试过了，大佬们的方法我愣是复现不了，最终python的pillow库救了我，开整！</p>
 <p>winhex中看到jpg的文件尾FF D9后出现了大篇幅的数字，观察得最大为f👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DLClrR.png" alt="meihua1"></p>
+<p><img src="DLClrR.png" alt="meihua1"></p>
 <p>故用脚本将hex转化为ascii</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f1 &#x3D; open(r&#39;C:\Users\16231\Desktop\ascii1.txt&#39;,&#39;w+&#39;)</span><br><span class="line">with open(r&#39;C:\Users\16231\Desktop\hex.txt&#39;,&#39;r&#39;)as f2:</span><br><span class="line">    while 1:</span><br><span class="line">        x &#x3D; f2.read(2)</span><br><span class="line">        if not x:</span><br><span class="line">            break</span><br><span class="line">        s &#x3D; &#39;0x&#39; + x</span><br><span class="line">        f1.write(chr(int(s,16)))</span><br><span class="line">f1.close()</span><br></pre></td></tr></table></figure>
 
@@ -146,7 +145,7 @@
 </blockquote>
 <p>附件为图片，右击属性详情信息有东西。新佛曰开头，解密后得gemlovecom。</p>
 <p>根据提示为gemlove，“<strong>猜</strong>”故尝试outguess解密：</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/Dqz6gA.png" alt="圣火昭昭1"></p>
+<p><img src="Dqz6gA.png" alt="圣火昭昭1"></p>
 <p>cat后得flag。</p>
 <h3 id="12"><a href="#12" class="headerlink" title="12"></a><em>12</em></h3><h4 id="GXYCTF2019-gakki"><a href="#GXYCTF2019-gakki" class="headerlink" title="[GXYCTF2019]gakki"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[GXYCTF2019]gakki">[GXYCTF2019]gakki</a></h4><blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
@@ -174,7 +173,7 @@
 <p>…. . .-.. .-.. —– ..-. — .-. ..- –</p>
 <p>hell0forum</p>
 <p>得到赵丽颖图片👇</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/r1aLlT"><img src="https://s3.ax1x.com/2020/12/16/r1aLlT.png" alt="r1aLlT.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/r1aLlT"><img src="r1aLlT.png" alt="r1aLlT.png"></a></p>
 <p>png文件考虑lsb隐写。</p>
 <p>下载工具<a target="_blank" rel="noopener" href="https://github.com/livz/cloacked-pixel">cloacked-pixel-master</a></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python2 lsb.py extract 1.png new 123456</span><br></pre></td></tr></table></figure>
@@ -248,7 +247,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">I give U a gift:Yzcllfc0lN</span><br></pre></td></tr></table></figure>
 
 <p><em>2.png</em>中藏着很多.txt</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/s20gIg"><img src="https://s3.ax1x.com/2021/01/19/s20gIg.jpg" alt="s20gIg.jpg" border="0" /></a></p>
+<p><img src="s20gIg.jpg" alt="s20gIg"></p>
 <p>正如我们所知.7z也是压缩包的后缀名之一</p>
 <p>直接binwalk -e 2.png，未果</p>
 <p>统一替换377A为504B后分离，得1000个txt</p>
@@ -270,7 +269,7 @@
 <p>然后就得到了正常显示的11.Png！！</p>
 <p>（学到了，怪不得对于有的格式我的010editor会显示得更详细</p>
 <p>Stegsolve进行处理，在blue2发现二维码！</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/s2rzyn"><img src="https://s3.ax1x.com/2021/01/19/s2rzyn.jpg" alt="s2rzyn.jpg" border="0" /></a></p>
+<p><img src="s2rzyn.jpg" alt="s2rzyn"></p>
 <p>得到</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ZmxhZ3s0X3</span><br></pre></td></tr></table></figure>
 
@@ -302,7 +301,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bpgdec bpg-0.9.8-win64\Untitled1.bpg</span><br></pre></td></tr></table></figure>
 
 <p>得到out.png</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sh1AEj"><img src="https://s3.ax1x.com/2021/01/21/sh1AEj.png" alt="sh1AEj.png" border="0" /></a></p>
+<p><img src="sh1AEj.png" alt="sh1AEj.png"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">YnNpZGVzX2RlbGhpe0JQR19pNV9iM3R0M3JfN2g0bl9KUEd9Cg&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
 
 <p>base一把梭</p>

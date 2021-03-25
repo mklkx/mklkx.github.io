@@ -29,9 +29,9 @@
 <p>(5)播放音频</p>
 <p>(6)SSTV中-&gt;Receiving</p>
 <p>下图为正在处理过程中👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL1oiF.jpg" alt="SSTV"></p>
+<p><img src="DL1oiF.jpg" alt="SSTV"></p>
 <p>Save as 导出最终图像👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL12Mn.jpg" alt="result"></p>
+<p><img src="DL12Mn.jpg" alt="result"></p>
 <p>翻转后得flag。</p>
 <hr>
 <h3 id="2"><a href="#2" class="headerlink" title="2"></a><em>2</em></h3><p><strong>RX-SSTV图像解码软件+steghide</strong></p>
@@ -39,13 +39,13 @@
 <p><strong>Description</strong>:Revisit the last transmission. We think this transmission contains a hidden message. There are also some clues clue 1, clue 2, clue 3.<br><strong>Hints</strong>:Use the clues to extract the another flag from the .wav file</p>
 </blockquote>
 <p>看样子是上一题的延伸，分别对四个音频都采用同做法，可得四张图片👇</p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL1Rrq.jpg" alt="message"></p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL14aT.jpg" alt="clue1"></p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL1hZV.jpg" alt="clue2"></p>
-<p><img src="https://s3.ax1x.com/2020/12/05/DL1Wq0.jpg" alt="clue3"></p>
+<p><img src="DL1Rrq.jpg" alt="message"></p>
+<p><img src="DL14aT.jpg" alt="clue1"></p>
+<p><img src="DL1hZV.jpg" alt="clue2"></p>
+<p><img src="DL1Wq0.jpg" alt="clue3"></p>
 <p>根据第四张图片搜索Alan Eliasen the futureboy,得到一<a target="_blank" rel="noopener" href="https://futureboy.us/">网站</a>,根据clue1.jpg以及对链接含义,猜测下一步为“Steganography隐写术”。</p>
 <p>进入目标网页后尝试了一波，无果，此时看到：These pages use the steghide program to perform steganography, and the files generated are fully compatible with steghide. If you really want to be secure, or do brute-force attacks, you’ll want to use these programs on your own system.</p>
-<p>利用手头的steghide工具，对<strong>message.wav</strong>执行命令：<br><img src="https://s3.ax1x.com/2020/12/05/DL15IU.jpg" alt="steghide"></p>
+<p>利用手头的steghide工具，对<strong>message.wav</strong>执行命令：<br><img src="DL15IU.jpg" alt="steghide"></p>
 <p>在txt里得到flag.</p>
 <blockquote>
 <p><strong>启示</strong>：结合题意，理解出题人的意思很重要😂，最后一步对message.jpg操作了好久，啥都没有555</p>
@@ -59,9 +59,9 @@
 <p>是经典题目了（去补了一下为啥说这是亲爱的热爱的里面的梗😂一开始以为是纯将视频按帧查看，了解了一个好用的软件Kinovea</p>
 </blockquote>
 <p>视频按帧查看得到隐藏的二维码</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rfSBCj"><img src="https://s3.ax1x.com/2020/12/25/rfSBCj.jpg" alt="rfSBCj.jpg"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rfSr2n"><img src="https://s3.ax1x.com/2020/12/25/rfSr2n.jpg" alt="rfSr2n.jpg"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/rfSD8s"><img src="https://s3.ax1x.com/2020/12/25/rfSD8s.jpg" alt="rfSD8s.jpg"></a></p>
+<p><img src="rfSBCj.jpg" alt="rfSBCj.jpg"></p>
+<p><img src="rfSr2n.jpg" alt="rfSr2n.jpg"></p>
+<p><img src="rfSD8s.jpg" alt="rfSD8s.jpg"></p>
 <p>通过试别，分别为iwantplay</p>
 <p>尝试后不对。</p>
 <p>查看视频的十六进制，得一串base64</p>
@@ -97,7 +97,7 @@
 <p>得到一个后缀名为.m4a的音频，audacity没法处理，以为是高级音频的原因。在线网站转mp3失败</p>
 <p>查看二进制，发现有很多不知是Al还是A1的文本</p>
 <p>通过Tool-&gt;Hex-&gt;Binary XOR进行二进制异或</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/s04aZT"><img src="https://s3.ax1x.com/2021/01/15/s04aZT.jpg" alt="s04aZT.jpg" border="0" /></a></p>
+<p><img src="s04aZT.jpg" alt="s04aZT"></p>
 <p>得到了正常的音频文件，能听出是</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">abcdfghijk</span><br></pre></td></tr></table></figure>
 
@@ -136,7 +136,7 @@
 <p>先常规走一走，au查看频谱，没有。</p>
 <p>试过隐写，也无。</p>
 <p>看了大佬的WP得到了新工具Sonic Visualiser，目测是个高级的AU，调整参数后得到flag</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/shYbKP"><img src="https://s3.ax1x.com/2021/01/21/shYbKP.jpg" alt="shYbKP.jpg" border="0" /></a></p>
+<p><img src="shYbKP.jpg" alt="shYbKP"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">utflag&#123;sp3tr0gr4m0ph0n3&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="9"><a href="#9" class="headerlink" title="9"></a><em>9</em></h3><p><strong>新工具DeepSound2.0&amp;通过文件hash值爆破</strong></p>
@@ -148,7 +148,7 @@
 
 <p>后半部分需要一个新工具DeepSound<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1wsY5d2fp6cQJiDyUj2KWZA">https://pan.baidu.com/s/1wsY5d2fp6cQJiDyUj2KWZA</a><br>提取码：dqlu</p>
 <p>提示需要密码</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iYWrR"><img src="https://s3.ax1x.com/2021/03/01/6iYWrR.png" alt="6iYWrR.png" border="0" /></a></p>
+<p><img src="6iYWrR.jpg" alt="6iYWrR"></p>
 <p>第一步：python3 deepsound_john.py final_flag.wav &gt;hash</p>
 <p>提取hash值</p>
 <p>第二步：john hash</p>

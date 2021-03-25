@@ -17,7 +17,7 @@
 
 <p>恢复被删除的目录或文件</p>
 <p>得到RECOVERED_FILES/file.17</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6CpQmT"><img src="https://s3.ax1x.com/2021/02/28/6CpQmT.png" alt="6CpQmT.png" border="0" /></a></p>
+<p><img src="6CpQmT.png" alt="6CpQmT"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;fugly_cats_need_luv_2&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="22"><a href="#22" class="headerlink" title="22"></a><em>22</em></h3><h4 id="greatescape"><a href="#greatescape" class="headerlink" title="greatescape"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#greatescape">greatescape</a></h4><blockquote>
@@ -34,23 +34,21 @@
 <p>binwalk foremost都无果的情况下</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zsteg -a diskimage.png</span><br></pre></td></tr></table></figure>
 
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iNTjH"><img src="https://s3.ax1x.com/2021/03/01/6iNTjH.png" alt="6iNTjH.png" border="0" /></a></p>
+<p><img src="6iNTjH.png" alt="6iNTjH"></p>
 <p>“b8,rgb,lsb,xy”中存在东西</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zsteg -e &#39;b8,rgb,lsb,xy&#39; diskimage.png &gt; disk.dat</span><br></pre></td></tr></table></figure>
 
 <p>导出</p>
 <p>用testdisk进行分析</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iU1V1"><img src="https://s3.ax1x.com/2021/03/01/6iU1V1.png" alt="6iU1V1.png" border="0" /></a></p>
+<p><img src="6iU1V1.png" alt="6iU1V1"></p>
 <p>回车</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iU3Ux"><img src="https://s3.ax1x.com/2021/03/01/6iU3Ux.png" alt="6iU3Ux.png" border="0" /></a></p>
+<p><img src="6iU3Ux.png" alt="6iU3Ux"></p>
 <p>回车</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iU3Ux"><img src="https://s3.ax1x.com/2021/03/01/6iU3Ux.png" alt="6iU3Ux.png" border="0" /></a></p>
-<p>回车</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iU856"><img src="https://s3.ax1x.com/2021/03/01/6iU856.png" alt="6iU856.png" border="0" /></a></p>
+<p><img src="6iU856.png" alt="6iU856"></p>
 <p>找到其中最与众不同的那一个</p>
 <p>根据提示，按C拷贝到想要的位置</p>
 <p>查看</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6iUJPK"><img src="https://s3.ax1x.com/2021/03/01/6iUJPK.png" alt="6iUJPK.png" border="0" /></a></p>
+<p><img src="6iUJPK.png" alt="6iUJPK"></p>
 <p>得到flag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CTF&#123;FAT12_FTW&#125;</span><br></pre></td></tr></table></figure>
 
@@ -66,14 +64,14 @@
 <p>可以看到有一个0.fat</p>
 <p>但无法直接操作</p>
 <p>通过‘提取’得到0.fat</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6VXsun"><img src="https://s3.ax1x.com/2021/03/04/6VXsun.png" alt="6VXsun.png" border="0"></a></p>
+<p><img src="6VXsun.png" alt="6VXsun"></p>
 <p>[FAT文件可以使用VeraCrypto进行挂载]</p>
 <p><a target="_blank" rel="noopener" href="https://www.veracrypt.fr/en/Downloads.html">https://www.veracrypt.fr/en/Downloads.html</a></p>
 <p>存在密码，rctf能解</p>
 <p>到这一步挂载成功：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6VXouR"><img src="https://s3.ax1x.com/2021/03/04/6VXouR.png" alt="6VXouR.png" border="0" /></a></p>
+<p><img src="6VXouR.png" alt="6VXouR"></p>
 <p>看看是啥：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6VXyBq"><img src="https://s3.ax1x.com/2021/03/04/6VXyBq.png" alt="6VXyBq.png" border="0"></a></p>
+<p><img src="6VXouR.png" alt="6VXouR"></p>
 <p>给了另一个密码：RCTF2019</p>
 <p>这里体现了神奇之处：在挂载输入密码的时候，不同的密码可以进入不同的文件系统</p>
 <p>重新挂载：</p>
@@ -95,7 +93,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 pslist</span><br></pre></td></tr></table></figure>
 
 <p>查看进程</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6mEkTO"><img src="https://s3.ax1x.com/2021/03/05/6mEkTO.png" alt="6mEkTO.png" border="0" /></a></p>
+<p><img src="6mEkTO.png" alt="6mEkTO"></p>
 <p>关注</p>
 <p>TrueCrypt.exe   3364<br>notepad.exe     3552<br>mspaint.exe     2648</p>
 <p>分别dumpit</p>
@@ -109,7 +107,7 @@
 <p>使用editbox插件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 editbox</span><br></pre></td></tr></table></figure>
 
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6mVbIU"><img src="https://s3.ax1x.com/2021/03/05/6mVbIU.png" alt="6mVbIU.png" border="0" /></a></p>
+<p><img src="6mVbIU.png" alt="6mVbIU"></p>
 <p>得到网盘链接，但已失效，对应题干中的VOL</p>
 <p>3)TrueCrypt</p>
 <p>TrueCrypt破解工具Elcomsoft Forensic Disk Decryptor</p>
@@ -119,7 +117,7 @@
 
 <p>得到VOL的时候就该想到需要挂载，使用VeraCrypt,按之前学到的用法</p>
 <p>此处注意需要勾选TrueCrypt</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6me96s"><img src="https://s3.ax1x.com/2021/03/05/6me96s.png" alt="6me96s.png" border="0" /></a></p>
+<p><img src="6me96s.png" alt="6me96s"></p>
 <p>得到fffflag.zip</p>
 <p>fffflag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RoarCTF&#123;wm_D0uB1e_TC-cRypt&#125;</span><br></pre></td></tr></table></figure>
