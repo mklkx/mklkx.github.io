@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="煤矿路口西"><link rel="alternative" href="/atom.xml" title="The blog of mklkx" type="application/atom+xml"><link rel="icon" href="/favicon.svg"><title>内存取证和文件恢复常见操作 - The blog of mklkx</title>
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-04-05T12:48:45.000Z">2021 - 04 - 05 20:48:45</time><h1 class="post__title"><a href="/2021/04/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%92%8C%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/">内存取证和文件恢复常见操作</a></h1><div class="post__main echo"><h1 id="内存取证和文件恢复常见操作"><a href="#内存取证和文件恢复常见操作" class="headerlink" title="内存取证和文件恢复常见操作"></a>内存取证和文件恢复常见操作</h1><hr>
+<h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><ul>
+<li>Volatility</li>
+<li>Elcomsoft Forensic Disk Decryptor</li>
+<li>EasyRecovery</li>
+<li>MedAnalyze</li>
+<li>FTK</li>
+</ul>
+<h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><ul>
+<li>分析进程、内存数据</li>
+<li>提取分析指定进程的特定内存数据</li>
+</ul>
+<h2 id="VMDK"><a href="#VMDK" class="headerlink" title="VMDK"></a>VMDK</h2><ul>
+<li>本质上是物理硬盘的虚拟版，也会存在跟物理硬盘的分区和扇区类似的填充区域，可以利用这些填充区域把我们需要隐藏的数据进行处理，从而避免文件增加VMDK文件的大小，也可避免由于VMDK文件大小的改变所带来的可能导致虚拟机错误的问题。</li>
+</ul>
+<h2 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h2><p>常见的磁盘分区格式：</p>
+<ul>
+<li>Windows:FAT12-&gt;FAT16-&gt;FAT32-&gt;NTFS</li>
+<li>Linux:EXT2-&gt;EXT3-&gt;EXT4</li>
+</ul>
+<h2 id="以【-HDCTF2019-你能发现什么蛛丝马迹吗】展开"><a href="#以【-HDCTF2019-你能发现什么蛛丝马迹吗】展开" class="headerlink" title="以【[HDCTF2019]你能发现什么蛛丝马迹吗】展开"></a>以【[HDCTF2019]你能发现什么蛛丝马迹吗】展开</h2><h3 id="查看系统版本"><a href="#查看系统版本" class="headerlink" title="查看系统版本"></a>查看系统版本</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># volatility -f memory.img imageinfo</span><br></pre></td></tr></table></figure>
+
+<p><img src="image1.png" alt="image1"></p>
+<p>查看进程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># volatility -f memory.img --profile&#x3D;Win2003SP0x86 pslist</span><br></pre></td></tr></table></figure>
+
+<p><img src="image2.png" alt="image2"></p>
+<p>针对Win2003SP0x86产生报错，故排除这个镜像</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># volatility -f memory.img --profile&#x3D;Win2003SP1x86 pslist</span><br></pre></td></tr></table></figure>
+
+<p><img src="image3.png" alt="image3"></p>
+<p>根据时间可以发现DumpIt.exe有东西</p>
+<p>与该命令相似的为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># volatility -f memory.img --profile&#x3D;Win2003SP2x86 pstree</span><br></pre></td></tr></table></figure>
+
+<p>不同点在于pstree顾名思义显示的是进程树，表明了各进程之间的从属关系。</p>
+<p><img src="image4.png" alt="image4"></p>
+<p>而</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># volatility -f memory.img --profile&#x3D;Win2003SP2x86 psscan</span><br></pre></td></tr></table></figure>
+
+<p>则更加全面地进行了扫描，从而显示出被隐藏的进程，如病毒等</p>
+<p><img src="image5.png" alt="image5"></p>
+<h3 id="将内存中的某个进程数据以-dmp-的格式保存出来"><a href="#将内存中的某个进程数据以-dmp-的格式保存出来" class="headerlink" title="将内存中的某个进程数据以 dmp 的格式保存出来"></a>将内存中的某个进程数据以 dmp 的格式保存出来</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># volatility -f memory.img --profile&#x3D;Win2003SP2x86 memdump -p 1992 --dump-dir&#x3D;.&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="以【-V-amp-N2020-公开赛-内存取证】展开"><a href="#以【-V-amp-N2020-公开赛-内存取证】展开" class="headerlink" title="以【[V&amp;N2020 公开赛]内存取证】展开"></a>以【[V&amp;N2020 公开赛]内存取证】展开</h2><p>通过上述内存取证起手式得到系统版本</p>
+<p>查看进程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 pslist</span><br></pre></td></tr></table></figure>
+
+<p><img src="image6.png" alt="image6"></p>
+<p>关注</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TrueCrypt.exe 3364</span><br><span class="line">notepad.exe 3552</span><br><span class="line">mspaint.exe 2648</span><br><span class="line"></span><br><span class="line">#volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 3364 --dump-dir&#x3D;.&#x2F;</span><br><span class="line">#volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 3552 --dump-dir&#x3D;.&#x2F;</span><br><span class="line">#volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 2648 --dump-dir&#x3D;.&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>依次处理</p>
+<h3 id="1）notepad-gt-editbox"><a href="#1）notepad-gt-editbox" class="headerlink" title="1）notepad=&gt;editbox"></a>1）notepad=&gt;editbox</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 editbox</span><br></pre></td></tr></table></figure>
+
+<p><img src="image7.png" alt="image7"></p>
+<h3 id="2）mspaint-gt-Gimp"><a href="#2）mspaint-gt-Gimp" class="headerlink" title="2）mspaint=&gt;Gimp"></a>2）mspaint=&gt;Gimp</h3><p><a target="_blank" rel="noopener" href="https://www.gimp.org/downloads/">https://www.gimp.org/downloads/</a></p>
+<p>不断调节位移、宽度和高度，</p>
+<p><img src="image8.png" alt="image8"></p>
+<p>出现【1YxFCQ6goYBF6Q】</p>
+<h3 id="3）TrueCrypt-gt-Elcomsoft-Forensic-Disk-Decryptor"><a href="#3）TrueCrypt-gt-Elcomsoft-Forensic-Disk-Decryptor" class="headerlink" title="3）TrueCrypt=&gt;Elcomsoft Forensic Disk Decryptor"></a>3）TrueCrypt=&gt;Elcomsoft Forensic Disk Decryptor</h3><p>Decrypt or mount disk-&gt;TrueCrypt-&gt;select&amp;Memory dump&amp;Browse-&gt;mount</p>
+<p><img src="image9.png" alt="image9"></p>
+<p><img src="image10.png" alt="image10"></p>
+<p>发现多了个F盘，其中存在key</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uOjFdKu1jsbWI8N51jsbWI8N5</span><br></pre></td></tr></table></figure>
+
+<p>得到VOL的时候就该想到需要挂载，使用VeraCrypt,按之前学到的用法</p>
+<p>此处注意需要勾选TrueCrypt</p>
+<p><img src="image11.png" alt="image11"></p>
+<p>得到fffflag.zip</p>
+<h2 id="以【-XMAN2018排位赛-file】展开"><a href="#以【-XMAN2018排位赛-file】展开" class="headerlink" title="以【[XMAN2018排位赛]file】展开"></a>以【[XMAN2018排位赛]file】展开</h2><h3 id="extundelete恢复原理："><a href="#extundelete恢复原理：" class="headerlink" title="extundelete恢复原理："></a>extundelete恢复原理：</h3><p>在linux下可以通过“ls -id”来查看某个文件或者目录的inode值，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">~&#x2F;桌面# ls -id &#x2F; </span><br><span class="line">2 &#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>从而得到桌面的innode值为2</p>
+<p>而当使用extundelete来恢复文件时并不依赖特定的文件格式，</p>
+<p>首先extundelete会通过文件的inode信息来获得当前文件系统下所有文件的信息，包括文件名和inode，包括已存在的和删除的文件。</p>
+<p>再通过inode信息结合日志去查询该inode所在的block位置，包括直接块、间接块等信息。</p>
+<p>最后利用dd命令将这些信息备份出来，从而恢复数据文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete attachment.img --restore-all</span><br></pre></td></tr></table></figure>
+
+<p><img src="image12.png" alt="image12"></p>
+<h2 id="以【-BSidesSF2019-diskimage】展开"><a href="#以【-BSidesSF2019-diskimage】展开" class="headerlink" title="以【[BSidesSF2019]diskimage】展开"></a>以【[BSidesSF2019]diskimage】展开</h2><p>前期通过zsteg分离出png中的数据后，利用testdisk进行分析。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">testdisk disk.dat</span><br></pre></td></tr></table></figure>
+
+<p>一路回车</p>
+<p><img src="image13.png" alt="image13"></p>
+<p><img src="image14.png" alt="image14"></p>
+<p><img src="image15.png" alt="image15"></p>
+<p>选择最不同的那一个，根据提示进行copy，得到flag</p>
+<p>关于testdisk的(中文版官方指南)[<a target="_blank" rel="noopener" href="https://www.cgsecurity.org/wiki/Testdisk_%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97#.E9.97.AE.E9.A2.98.E4.B8.BE.E4.BE.8B]%E6%9C%89%E6%9B%B4%E5%8A%A0%E6%B7%B1%E5%85%A5%E7%9A%84%E5%8A%9F%E8%83%BD%E8%A7%A3%E8%AF%B4%E5%92%8C%E8%AF%A6%E7%BB%86%E7%94%A8%E6%B3%95">https://www.cgsecurity.org/wiki/Testdisk_%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97#.E9.97.AE.E9.A2.98.E4.B8.BE.E4.BE.8B]有更加深入的功能解说和详细用法</a></p>
+</div></header></article><section class="reward"><a class="btn-reward" href="#">打赏</a><div class="reward-wrapper clearfix"><img src="/img/wechat.jpg" title="微信"></div></section></main><footer class="foot"><div class="foot-copy">&copy; 2019 - 2021 煤矿路口西</div></footer>
+<script src="/js/scroller.js"></script>
+
+<script src="/js/main.js"></script>
+</body></html>
