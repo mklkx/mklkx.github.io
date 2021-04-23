@@ -4962,6 +4962,8 @@
     <url>/2021/04/21/MISC-image-0/</url>
     <content><![CDATA[<h1><span id="image0">image[0]</span></h1>
 <hr>
+<p><img src="0.png" alt="0"></p>
+<p>一张Png的百种姿势</p>
 <h2><span id="1bpg">1：bpg</span></h2>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">工具：bpg-0.9.8-win64</span><br><span class="line"></span><br><span class="line">命令：bpgdec -o out.png misc3.bpg</span><br></pre></td></tr></table></figure>
 <h2><span id="2idat块异常">2：IDAT块异常</span></h2>
@@ -5020,8 +5022,6 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Serial Number                   : 686578285826597329</span><br></pre></td></tr></table></figure>
 <p>686578285826597329=》hex(X&amp;Ys)</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">X Resolution                    : 3902939465</span><br><span class="line">Y Resolution                    : 2371618619</span><br><span class="line">X Position                      : 1082452817</span><br><span class="line">Y Position                      : 2980145261</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(hex(x))</span><br><span class="line">0xe8a22149</span><br><span class="line">&gt;&gt;&gt; print(hex(y))</span><br><span class="line">0x8d5c073b</span><br><span class="line">&gt;&gt;&gt; print(hex(a))</span><br><span class="line">0x4084eb51</span><br><span class="line">&gt;&gt;&gt; print(hex(b))</span><br><span class="line">0xb1a1686d</span><br></pre></td></tr></table></figure>
-<p><img src="0.png" alt="0"></p>
-<p>一张Png的百种姿势</p>
 ]]></content>
       <tags>
         <tag>MISC</tag>
