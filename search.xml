@@ -920,38 +920,41 @@
   <entry>
     <title>MISC-data-2</title>
     <url>/2021/03/22/MISC-data-2/</url>
-    <content><![CDATA[<h3 id="Data-2"><a href="#Data-2" class="headerlink" title="Data[2]"></a>Data[2]</h3><hr>
-<h3 id="21"><a href="#21" class="headerlink" title="21"></a><em>21</em></h3><h4 id="XMAN2018排位赛-file"><a href="#XMAN2018排位赛-file" class="headerlink" title="[XMAN2018排位赛]file"></a><a href="https://buuoj.cn/challenges#[XMAN2018%E6%8E%92%E4%BD%8D%E8%B5%9B]file">[XMAN2018排位赛]file</a></h4><blockquote>
+    <content><![CDATA[<h3><span id="data2">Data[2]</span></h3>
+<hr>
+<h3><span id="21"><em>21</em></span></h3>
+<h4><span id="xman2018排位赛file"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。来源：<a href="https://github.com/hebtuerror404/CTF_competition_warehouse_2018">https://github.com/hebtuerror404/CTF_competition_warehouse_2018</a></p>
 </blockquote>
 <p>得到attachment.img</p>
 <p>第一感觉是volatility,失败</p>
 <p>学到了新招</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete attachment.img --restore-all</span><br></pre></td></tr></table></figure>
-
 <p>恢复被删除的目录或文件</p>
 <p>得到RECOVERED_FILES/file.17</p>
 <p><img src="6CpQmT.png" alt="6CpQmT"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;fugly_cats_need_luv_2&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="22"><a href="#22" class="headerlink" title="22"></a><em>22</em></h3><h4 id="greatescape"><a href="#greatescape" class="headerlink" title="greatescape"></a><a href="https://buuoj.cn/challenges#greatescape">greatescape</a></h4><blockquote>
+<h3><span id="22"><em>22</em></span></h3>
+<h4><span id="greatescape"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>不明所以，稍作记录。</p>
 <p>得到一个数据包，通过追踪发现存在ssc.key，格式类似rsa私钥，另存为</p>
 <p>编辑-&gt;首选项-&gt;protocols-&gt;TLS 把刚才的key通过本地导入</p>
 <p>追踪http得到flag</p>
-<h3 id="23"><a href="#23" class="headerlink" title="23"></a><em>23</em></h3><h4 id="BSidesSF2019-diskimage"><a href="#BSidesSF2019-diskimage" class="headerlink" title="[BSidesSF2019]diskimage"></a><a href="https://buuoj.cn/challenges#[BSidesSF2019]diskimage">[BSidesSF2019]diskimage</a></h4><blockquote>
+<h3><span id="23"><em>23</em></span></h3>
+<h4><span id="bsidessf2019diskimage"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>得到一张图片</p>
 <p>binwalk foremost都无果的情况下</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zsteg -a diskimage.png</span><br></pre></td></tr></table></figure>
-
 <p><img src="6iNTjH.png" alt="6iNTjH"></p>
-<p>“b8,rgb,lsb,xy”中存在东西</p>
+<p>&quot;b8,rgb,lsb,xy&quot;中存在东西</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zsteg -e &#39;b8,rgb,lsb,xy&#39; diskimage.png &gt; disk.dat</span><br></pre></td></tr></table></figure>
-
 <p>导出</p>
 <p>用testdisk进行分析</p>
 <p><img src="6iU1V1.png" alt="6iU1V1"></p>
@@ -965,8 +968,9 @@
 <p><img src="6iUJPK.png" alt="6iUJPK"></p>
 <p>得到flag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CTF&#123;FAT12_FTW&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="24"><a href="#24" class="headerlink" title="24"></a><em>24</em></h3><h4 id="RCTF2019-disk"><a href="#RCTF2019-disk" class="headerlink" title="[RCTF2019]disk"></a><a href="https://buuoj.cn/challenges#[RCTF2019]disk">[RCTF2019]disk</a></h4><blockquote>
+<h3><span id="24"><em>24</em></span></h3>
+<h4><span id="rctf2019disk"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>得到encrypt.vmdk</p>
@@ -993,26 +997,29 @@
 <p>参考之前，但无法直接拖入010，换winhex试试</p>
 <p>winhex-&gt;Tools-&gt;Open Disk-&gt;Select Disk,选择挂载的盘</p>
 <p>得到后半部分</p>
-<p> <code>_and_corrupted_1nner_v0lume&#125;</code></p>
-<p>  <code>rctf&#123;unseCure_quick_form4t_vo1ume_and_corrupted_1nner_v0lume&#125;</code></p>
-<h3 id="25"><a href="#25" class="headerlink" title="25"></a><em>25</em></h3><h4 id="V-amp-N2020-公开赛-内存取证"><a href="#V-amp-N2020-公开赛-内存取证" class="headerlink" title="[V&amp;N2020 公开赛]内存取证"></a><a href="https://buuoj.cn/challenges#[V&N2020%20%E5%85%AC%E5%BC%80%E8%B5%9B]%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81">[V&amp;N2020 公开赛]内存取证</a></h4><blockquote>
-<p><a href="http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw">http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw</a><br>得到的 flag 请包上 flag{} 提交。<br>Hint:记事本</p>
+<p><code>_and_corrupted_1nner_v0lume&#125;</code></p>
+<p><code>rctf&#123;unseCure_quick_form4t_vo1ume_and_corrupted_1nner_v0lume&#125;</code></p>
+<h3><span id="25"><em>25</em></span></h3>
+<h4><span id="vampn2020-公开赛内存取证"></span></h4>
+<blockquote>
+<p><a href="http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw">http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw</a>
+得到的 flag 请包上 flag{} 提交。
+Hint:记事本</p>
 </blockquote>
 <p>这是一道复现地很费劲的题😂</p>
 <p>得到mem.raw和VOL(VOL对应后面链接失效的地方,按下不表)</p>
 <p>内存取证起手式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw imageinfo</span><br></pre></td></tr></table></figure>
-
 <p>得到可能版本后</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 pslist</span><br></pre></td></tr></table></figure>
-
 <p>查看进程</p>
 <p><img src="6mEkTO.png" alt="6mEkTO"></p>
 <p>关注</p>
-<p>TrueCrypt.exe   3364<br>notepad.exe     3552<br>mspaint.exe     2648</p>
+<p>TrueCrypt.exe   3364
+notepad.exe     3552
+mspaint.exe     2648</p>
 <p>分别dumpit</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 3364 --dump-dir&#x3D;.&#x2F;</span><br><span class="line"></span><br><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 3552 --dump-dir&#x3D;.&#x2F;</span><br><span class="line"></span><br><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 2648 --dump-dir&#x3D;.&#x2F;</span><br></pre></td></tr></table></figure>
-
 <p>挨个看</p>
 <p>1)mspaint</p>
 <p>此处需要用到Gimp工具，一个类似画图的工具得到密码：</p>
@@ -1020,7 +1027,6 @@
 <p>2)notepad</p>
 <p>使用editbox插件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 editbox</span><br></pre></td></tr></table></figure>
-
 <p><img src="6mVbIU.png" alt="6mVbIU"></p>
 <p>得到网盘链接，但已失效，对应题干中的VOL</p>
 <p>3)TrueCrypt</p>
@@ -1028,16 +1034,12 @@
 <p>Decrypt or mount disk-&gt;TrueCrypt-&gt;select&amp;Memory dump&amp;Browse-&gt;mount</p>
 <p>发现多了个盘，其中存在key</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uOjFdKu1jsbWI8N51jsbWI8N5</span><br></pre></td></tr></table></figure>
-
 <p>得到VOL的时候就该想到需要挂载，使用VeraCrypt,按之前学到的用法</p>
 <p>此处注意需要勾选TrueCrypt</p>
 <p><img src="6me96s.png" alt="6me96s"></p>
 <p>得到fffflag.zip</p>
 <p>fffflag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RoarCTF&#123;wm_D0uB1e_TC-cRypt&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 ]]></content>
       <tags>
         <tag>MISC</tag>
@@ -4962,8 +4964,7 @@
     <url>/2021/04/21/MISC-image-0/</url>
     <content><![CDATA[<h1><span id="image0">image[0]</span></h1>
 <hr>
-<p><img src="0.png" alt="0"></p>
-<p>一张Png的百种姿势</p>
+<p>一张图片的百种姿势</p>
 <h2><span id="1bpg">1：bpg</span></h2>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">工具：bpg-0.9.8-win64</span><br><span class="line"></span><br><span class="line">命令：bpgdec -o out.png misc3.bpg</span><br></pre></td></tr></table></figure>
 <h2><span id="2idat块异常">2：IDAT块异常</span></h2>
@@ -5015,6 +5016,11 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#coding&#x3D;utf-8</span><br><span class="line">text&#x3D;&#39;737363636373737373736373636373736363737363737373636373737373637363636373736373737373737373637373737373737363737363737363736373637373636373636373737363636363737363636373637373636373637373636373736373736363737363637373736363736373737363637363737363736373737363637373637373636363736363737363737373737363636373637373636373637363737363637363637373637373636373737363636373736363736363637373736363736373736373736363737363637373737363636363736373737363637373736363736373737363636373637373636363737373736363636373637373636363636373736373636363737363736373637373736363737373737373637&#39;.split(&#39;3&#39;)</span><br><span class="line">print(text)</span><br><span class="line">firstType &#x3D; &#39;6&#39;</span><br><span class="line">secondType &#x3D; &#39;7&#39;</span><br><span class="line">binaryString &#x3D; &#39;&#39;</span><br><span class="line"></span><br><span class="line">for char in text: #Foreach char</span><br><span class="line">    if char &#x3D;&#x3D; firstType: #Check if it is the first type</span><br><span class="line">        binaryString +&#x3D; &#39;0&#39; #Mark it as 0</span><br><span class="line">        # print(char)</span><br><span class="line">    else:</span><br><span class="line">        binaryString +&#x3D; &#39;1&#39; #Mark it as 1</span><br><span class="line">        # print(char)</span><br><span class="line"></span><br><span class="line">print(binaryString) #Print result</span><br><span class="line">print((len(binaryString)-1)&#x2F;7)</span><br><span class="line"></span><br><span class="line">binary&#x3D;&#39;&#39;</span><br><span class="line">for i in range(41):</span><br><span class="line">    binary +&#x3D; binaryString[7*i:7*i+7] + &#39; &#39;</span><br><span class="line">print(binary)</span><br><span class="line">#1100011 1110100 1100110 1110011 1101000 1101111 1110111 1111011 0110101 0110010 0111000 0110001 0110010 1100110 1100110 0111001 0111001 0110101 1100110 1100010 0110111 1100010 1100101 0110010 0110110 0111000 1100100 0111001 0110110 0110011 1100001 0111001 1100101 1100010 1100011 1100001 0110000 0110100 0110101 0111001 1111101 </span><br></pre></td></tr></table></figure>
 <h2><span id="16lsb改变通道改变排序方式">16：LSB改变通道，改变排序方式</span></h2>
 <h2><span id="17base">17：base</span></h2>
+<h2><span id="18取idatihdr部分重新排列">18：取IDAT,IHDR部分重新排列</span></h2>
+<p>1）IHDR领先</p>
+<p>2）IDAT尝试重新排列</p>
+<p>3）前后补全</p>
+<p>&lt;F5杯《Just Another 拼图》&gt;</p>
 <h1><span id="脑洞部分">脑洞部分</span></h1>
 <h2><span id="1010按位取">1：010按位取</span></h2>
 <p><img src="1-1.png" alt="1-1"></p>
@@ -5022,6 +5028,66 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Serial Number                   : 686578285826597329</span><br></pre></td></tr></table></figure>
 <p>686578285826597329=》hex(X&amp;Ys)</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">X Resolution                    : 3902939465</span><br><span class="line">Y Resolution                    : 2371618619</span><br><span class="line">X Position                      : 1082452817</span><br><span class="line">Y Position                      : 2980145261</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(hex(x))</span><br><span class="line">0xe8a22149</span><br><span class="line">&gt;&gt;&gt; print(hex(y))</span><br><span class="line">0x8d5c073b</span><br><span class="line">&gt;&gt;&gt; print(hex(a))</span><br><span class="line">0x4084eb51</span><br><span class="line">&gt;&gt;&gt; print(hex(b))</span><br><span class="line">0xb1a1686d</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>MISC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MISC-data-0</title>
+    <url>/2021/04/30/MISC-data-0/</url>
+    <content><![CDATA[<h1><span id="data0">DATA[0]</span></h1>
+<hr>
+<h3><span id="1usb流量分析">1：USB流量分析</span></h3>
+<h4><span id="usbkeyboarddatahacker">UsbKeyboardDataHacker</span></h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tshark -r .&#x2F;example.pcap -T fields -e usb.capdata</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python UsbKeyboardDataHacker.py .&#x2F;example.pcap </span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>MISC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>F5杯</title>
+    <url>/2021/04/24/F5%E6%9D%AF/</url>
+    <content><![CDATA[<h1><span id="ctfshow-f5杯">ctfshow-F5杯</span></h1>
+<hr>
+<h2><span id="1取idatihdr部分重新排列">1：取IDAT,IHDR部分重新排列</span></h2>
+<p>1）IHDR领先</p>
+<p>2）IDAT尝试重新排列</p>
+<p>3）前后补全</p>
+<h3><span id="just-another-拼图">Just Another 拼图</span></h3>
+<blockquote>
+<p>史上最简单的拼图misc题！贴心到连序号都已经全部标注好，令gaps彻底失业、眼科医院纷纷倒闭！唯一的问题是图里好像没有flag？这点小问题应该无关紧要吧。</p>
+<p>感谢@出题人说不要署名 师傅供题。</p>
+<blockquote>
+<p>strings *.jpg | grep IDAT</p>
+</blockquote>
+</blockquote>
+<p><img src="1-1.png" alt="1"></p>
+<h2><span id="2数列问题">2：数列问题</span></h2>
+<h3><span id="填字游戏">填字游戏</span></h3>
+<blockquote>
+<p>这什么鬼填字游戏啊，到底要填什么字啊。</p>
+<p>感谢@出题人说这次匿名 师傅供题</p>
+<blockquote>
+<p><a href="http://oeis.org/">http://oeis.org/</a></p>
+</blockquote>
+</blockquote>
+<p><img src="2-1.png" alt="2"></p>
+<p>通过搜索找到对应数字</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">65 69 97 53 121 70 108 52 103</span><br><span class="line"># AEa5yFl4g</span><br></pre></td></tr></table></figure>
+<h2><span id="3">3</span></h2>
+<blockquote>
+<p>两行代码一纸情书</p>
+<blockquote>
+<p>A very simple dll, I promise you can get flag in seconds</p>
+<p>感谢@Y4tacker师傅供题</p>
+</blockquote>
+</blockquote>
+<p>搜索ctf得到一大串字符串</p>
+<p>一把梭后发现base64末尾出现‘==’</p>
+<p>连续解码后得到flag</p>
 ]]></content>
       <tags>
         <tag>MISC</tag>

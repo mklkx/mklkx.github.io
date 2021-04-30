@@ -6,38 +6,41 @@
 <script src="/js/jquery-3.1.1.min.js"></script>
 
 <script src="/js/fancybox/jquery.fancybox.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-03-22T12:32:24.000Z">2021 - 03 - 22 20:32:24</time><h1 class="post__title"><a href="/2021/03/22/MISC-data-2/">MISC-data-2</a></h1><div class="post__main echo"><h3 id="Data-2"><a href="#Data-2" class="headerlink" title="Data[2]"></a>Data[2]</h3><hr>
-<h3 id="21"><a href="#21" class="headerlink" title="21"></a><em>21</em></h3><h4 id="XMAN2018排位赛-file"><a href="#XMAN2018排位赛-file" class="headerlink" title="[XMAN2018排位赛]file"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[XMAN2018%E6%8E%92%E4%BD%8D%E8%B5%9B]file">[XMAN2018排位赛]file</a></h4><blockquote>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-03-22T12:32:24.000Z">2021 - 03 - 22 20:32:24</time><h1 class="post__title"><a href="/2021/03/22/MISC-data-2/">MISC-data-2</a></h1><div class="post__main echo"><h3><span id="data2">Data[2]</span></h3>
+<hr>
+<h3><span id="21"><em>21</em></span></h3>
+<h4><span id="xman2018排位赛file"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。来源：<a target="_blank" rel="noopener" href="https://github.com/hebtuerror404/CTF_competition_warehouse_2018">https://github.com/hebtuerror404/CTF_competition_warehouse_2018</a></p>
 </blockquote>
 <p>得到attachment.img</p>
 <p>第一感觉是volatility,失败</p>
 <p>学到了新招</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extundelete attachment.img --restore-all</span><br></pre></td></tr></table></figure>
-
 <p>恢复被删除的目录或文件</p>
 <p>得到RECOVERED_FILES/file.17</p>
 <p><img src="6CpQmT.png" alt="6CpQmT"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;fugly_cats_need_luv_2&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="22"><a href="#22" class="headerlink" title="22"></a><em>22</em></h3><h4 id="greatescape"><a href="#greatescape" class="headerlink" title="greatescape"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#greatescape">greatescape</a></h4><blockquote>
+<h3><span id="22"><em>22</em></span></h3>
+<h4><span id="greatescape"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>不明所以，稍作记录。</p>
 <p>得到一个数据包，通过追踪发现存在ssc.key，格式类似rsa私钥，另存为</p>
 <p>编辑-&gt;首选项-&gt;protocols-&gt;TLS 把刚才的key通过本地导入</p>
 <p>追踪http得到flag</p>
-<h3 id="23"><a href="#23" class="headerlink" title="23"></a><em>23</em></h3><h4 id="BSidesSF2019-diskimage"><a href="#BSidesSF2019-diskimage" class="headerlink" title="[BSidesSF2019]diskimage"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[BSidesSF2019]diskimage">[BSidesSF2019]diskimage</a></h4><blockquote>
+<h3><span id="23"><em>23</em></span></h3>
+<h4><span id="bsidessf2019diskimage"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>得到一张图片</p>
 <p>binwalk foremost都无果的情况下</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zsteg -a diskimage.png</span><br></pre></td></tr></table></figure>
-
 <p><img src="6iNTjH.png" alt="6iNTjH"></p>
-<p>“b8,rgb,lsb,xy”中存在东西</p>
+<p>&quot;b8,rgb,lsb,xy&quot;中存在东西</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">zsteg -e &#39;b8,rgb,lsb,xy&#39; diskimage.png &gt; disk.dat</span><br></pre></td></tr></table></figure>
-
 <p>导出</p>
 <p>用testdisk进行分析</p>
 <p><img src="6iU1V1.png" alt="6iU1V1"></p>
@@ -51,8 +54,9 @@
 <p><img src="6iUJPK.png" alt="6iUJPK"></p>
 <p>得到flag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CTF&#123;FAT12_FTW&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="24"><a href="#24" class="headerlink" title="24"></a><em>24</em></h3><h4 id="RCTF2019-disk"><a href="#RCTF2019-disk" class="headerlink" title="[RCTF2019]disk"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[RCTF2019]disk">[RCTF2019]disk</a></h4><blockquote>
+<h3><span id="24"><em>24</em></span></h3>
+<h4><span id="rctf2019disk"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>得到encrypt.vmdk</p>
@@ -79,26 +83,29 @@
 <p>参考之前，但无法直接拖入010，换winhex试试</p>
 <p>winhex-&gt;Tools-&gt;Open Disk-&gt;Select Disk,选择挂载的盘</p>
 <p>得到后半部分</p>
-<p> <code>_and_corrupted_1nner_v0lume&#125;</code></p>
-<p>  <code>rctf&#123;unseCure_quick_form4t_vo1ume_and_corrupted_1nner_v0lume&#125;</code></p>
-<h3 id="25"><a href="#25" class="headerlink" title="25"></a><em>25</em></h3><h4 id="V-amp-N2020-公开赛-内存取证"><a href="#V-amp-N2020-公开赛-内存取证" class="headerlink" title="[V&amp;N2020 公开赛]内存取证"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[V&N2020%20%E5%85%AC%E5%BC%80%E8%B5%9B]%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81">[V&amp;N2020 公开赛]内存取证</a></h4><blockquote>
-<p><a target="_blank" rel="noopener" href="http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw">http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw</a><br>得到的 flag 请包上 flag{} 提交。<br>Hint:记事本</p>
+<p><code>_and_corrupted_1nner_v0lume&#125;</code></p>
+<p><code>rctf&#123;unseCure_quick_form4t_vo1ume_and_corrupted_1nner_v0lume&#125;</code></p>
+<h3><span id="25"><em>25</em></span></h3>
+<h4><span id="vampn2020-公开赛内存取证"></span></h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw">http://dd.zhaoj.in/3ehg38dgey84d3dhou32d3/mem.raw</a>
+得到的 flag 请包上 flag{} 提交。
+Hint:记事本</p>
 </blockquote>
 <p>这是一道复现地很费劲的题😂</p>
 <p>得到mem.raw和VOL(VOL对应后面链接失效的地方,按下不表)</p>
 <p>内存取证起手式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw imageinfo</span><br></pre></td></tr></table></figure>
-
 <p>得到可能版本后</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 pslist</span><br></pre></td></tr></table></figure>
-
 <p>查看进程</p>
 <p><img src="6mEkTO.png" alt="6mEkTO"></p>
 <p>关注</p>
-<p>TrueCrypt.exe   3364<br>notepad.exe     3552<br>mspaint.exe     2648</p>
+<p>TrueCrypt.exe   3364
+notepad.exe     3552
+mspaint.exe     2648</p>
 <p>分别dumpit</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 3364 --dump-dir&#x3D;.&#x2F;</span><br><span class="line"></span><br><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 3552 --dump-dir&#x3D;.&#x2F;</span><br><span class="line"></span><br><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 memdump -p 2648 --dump-dir&#x3D;.&#x2F;</span><br></pre></td></tr></table></figure>
-
 <p>挨个看</p>
 <p>1)mspaint</p>
 <p>此处需要用到Gimp工具，一个类似画图的工具得到密码：</p>
@@ -106,7 +113,6 @@
 <p>2)notepad</p>
 <p>使用editbox插件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw --profile&#x3D;Win7SP1x86_23418 editbox</span><br></pre></td></tr></table></figure>
-
 <p><img src="6mVbIU.png" alt="6mVbIU"></p>
 <p>得到网盘链接，但已失效，对应题干中的VOL</p>
 <p>3)TrueCrypt</p>
@@ -114,16 +120,12 @@
 <p>Decrypt or mount disk-&gt;TrueCrypt-&gt;select&amp;Memory dump&amp;Browse-&gt;mount</p>
 <p>发现多了个盘，其中存在key</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uOjFdKu1jsbWI8N51jsbWI8N5</span><br></pre></td></tr></table></figure>
-
 <p>得到VOL的时候就该想到需要挂载，使用VeraCrypt,按之前学到的用法</p>
 <p>此处注意需要勾选TrueCrypt</p>
 <p><img src="6me96s.png" alt="6me96s"></p>
 <p>得到fffflag.zip</p>
 <p>fffflag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RoarCTF&#123;wm_D0uB1e_TC-cRypt&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 </div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/MISC/">MISC</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="/js/Valine.min.js"></script>
 <script>new Valine({

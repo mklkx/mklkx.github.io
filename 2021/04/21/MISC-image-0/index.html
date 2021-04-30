@@ -8,8 +8,7 @@
 <script src="/js/fancybox/jquery.fancybox.min.js"></script>
 <meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-04-21T01:43:15.000Z">2021 - 04 - 21 09:43:15</time><h1 class="post__title"><a href="/2021/04/21/MISC-image-0/">MISC-image-0</a></h1><div class="post__main echo"><h1><span id="image0">image[0]</span></h1>
 <hr>
-<p><img src="0.png" alt="0"></p>
-<p>一张Png的百种姿势</p>
+<p>一张图片的百种姿势</p>
 <h2><span id="1bpg">1：bpg</span></h2>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">工具：bpg-0.9.8-win64</span><br><span class="line"></span><br><span class="line">命令：bpgdec -o out.png misc3.bpg</span><br></pre></td></tr></table></figure>
 <h2><span id="2idat块异常">2：IDAT块异常</span></h2>
@@ -61,6 +60,11 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#coding&#x3D;utf-8</span><br><span class="line">text&#x3D;&#39;737363636373737373736373636373736363737363737373636373737373637363636373736373737373737373637373737373737363737363737363736373637373636373636373737363636363737363636373637373636373637373636373736373736363737363637373736363736373737363637363737363736373737363637373637373636363736363737363737373737363636373637373636373637363737363637363637373637373636373737363636373736363736363637373736363736373736373736363737363637373737363636363736373737363637373736363736373737363636373637373636363737373736363636373637373636363636373736373636363737363736373637373736363737373737373637&#39;.split(&#39;3&#39;)</span><br><span class="line">print(text)</span><br><span class="line">firstType &#x3D; &#39;6&#39;</span><br><span class="line">secondType &#x3D; &#39;7&#39;</span><br><span class="line">binaryString &#x3D; &#39;&#39;</span><br><span class="line"></span><br><span class="line">for char in text: #Foreach char</span><br><span class="line">    if char &#x3D;&#x3D; firstType: #Check if it is the first type</span><br><span class="line">        binaryString +&#x3D; &#39;0&#39; #Mark it as 0</span><br><span class="line">        # print(char)</span><br><span class="line">    else:</span><br><span class="line">        binaryString +&#x3D; &#39;1&#39; #Mark it as 1</span><br><span class="line">        # print(char)</span><br><span class="line"></span><br><span class="line">print(binaryString) #Print result</span><br><span class="line">print((len(binaryString)-1)&#x2F;7)</span><br><span class="line"></span><br><span class="line">binary&#x3D;&#39;&#39;</span><br><span class="line">for i in range(41):</span><br><span class="line">    binary +&#x3D; binaryString[7*i:7*i+7] + &#39; &#39;</span><br><span class="line">print(binary)</span><br><span class="line">#1100011 1110100 1100110 1110011 1101000 1101111 1110111 1111011 0110101 0110010 0111000 0110001 0110010 1100110 1100110 0111001 0111001 0110101 1100110 1100010 0110111 1100010 1100101 0110010 0110110 0111000 1100100 0111001 0110110 0110011 1100001 0111001 1100101 1100010 1100011 1100001 0110000 0110100 0110101 0111001 1111101 </span><br></pre></td></tr></table></figure>
 <h2><span id="16lsb改变通道改变排序方式">16：LSB改变通道，改变排序方式</span></h2>
 <h2><span id="17base">17：base</span></h2>
+<h2><span id="18取idatihdr部分重新排列">18：取IDAT,IHDR部分重新排列</span></h2>
+<p>1）IHDR领先</p>
+<p>2）IDAT尝试重新排列</p>
+<p>3）前后补全</p>
+<p>&lt;F5杯《Just Another 拼图》&gt;</p>
 <h1><span id="脑洞部分">脑洞部分</span></h1>
 <h2><span id="1010按位取">1：010按位取</span></h2>
 <p><img src="1-1.png" alt="1-1"></p>
