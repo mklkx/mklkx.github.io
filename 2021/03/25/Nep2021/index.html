@@ -6,13 +6,14 @@
 <script src="/js/jquery-3.1.1.min.js"></script>
 
 <script src="/js/fancybox/jquery.fancybox.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-03-25T07:43:21.000Z">2021 - 03 - 25 15:43:21</time><h1 class="post__title"><a href="/2021/03/25/Nep2021/">Nep2021</a></h1><div class="post__main echo"><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><h4 id="涅普冬令营-MISC签到"><a href="#涅普冬令营-MISC签到" class="headerlink" title="[涅普冬令营]MISC签到"></a><a target="_blank" rel="noopener" href="https://camp.hackingfor.fun/#/match/join/6e52f3d8-3d97-4faa-95ef-ae01d7075c8f">[涅普冬令营]MISC签到</a></h4><blockquote>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-03-25T07:43:21.000Z">2021 - 03 - 25 15:43:21</time><h1 class="post__title"><a href="/2021/03/25/Nep2021/">Nep2021</a></h1><div class="post__main echo"><h3><span id="1">1</span></h3>
+<h4><span id="涅普冬令营misc签到"></span></h4>
+<blockquote>
 <p>sharun：这题有很多解啊</p>
 </blockquote>
 <p>本次涅普MISC的感受是，考点不难，只要找到点和合适的工具就能出。恍然大悟</p>
 <p>签到题是这样的</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag &#x3D;[0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffffffffffffff,0xffffffffffffffffffffff</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
 <p>第一次尝试可能是异或，想了想后发现如上所示，大部分是0xf，是相同的字符，奇怪</p>
 <p>第二次尝试直接转十六进制，全是不可见字符，失败</p>
 <p>第三次觉得可能是纯几何的图案题：</p>
@@ -30,9 +31,10 @@
 <p>看到希望了！</p>
 <p><img src="65hjd1.png" alt="65hjd1"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Nep&#123;Y0u_ar3_50_cl3ver!&#125;</span><br></pre></td></tr></table></figure>
-
 <p>解出来之后想起一道相似的入门题。</p>
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><h4 id="涅普冬令营-出题人日记"><a href="#涅普冬令营-出题人日记" class="headerlink" title="[涅普冬令营]出题人日记"></a><a target="_blank" rel="noopener" href="https://camp.hackingfor.fun/#/match/join/6e52f3d8-3d97-4faa-95ef-ae01d7075c8f">[涅普冬令营]出题人日记</a></h4><blockquote>
+<h3><span id="2">2</span></h3>
+<h4><span id="涅普冬令营出题人日记"></span></h4>
+<blockquote>
 <p>我把茶包的出题日记找到了，里面居然有！！！</p>
 </blockquote>
 <p>得到出题人日记.zip</p>
@@ -40,7 +42,6 @@
 <p>根据经验更改后缀为.zip</p>
 <p>winrar打开看到</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">隐写.wf pna fbyir guvf ceboyrz</span><br></pre></td></tr></table></figure>
-
 <p>怀疑栅栏</p>
 <p><img src="65Tv80.png" alt="65Tv80"></p>
 <p>打开/xl</p>
@@ -48,11 +49,9 @@
 <p>在shareStrings.xml里看到日记内容</p>
 <p>重点在于：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-&lt;si&gt;</span><br><span class="line"></span><br><span class="line">&lt;t&gt;菜鸡的第十八天日记&lt;&#x2F;t&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;si&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&lt;si&gt;</span><br><span class="line"></span><br><span class="line">&lt;t&gt;前言：好像是这个女人，但是又好像不是这个女人诶，我好像找到她了！&lt;&#x2F;t&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;si&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&lt;si&gt;</span><br><span class="line"></span><br><span class="line">&lt;t&gt;rot13是个好东西不是吗？&lt;&#x2F;t&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;si&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&lt;si&gt;</span><br><span class="line"></span><br><span class="line">&lt;t&gt;flag在里面啦！！！大佬们再找找？？？&lt;&#x2F;t&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;si&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&lt;si&gt;</span><br><span class="line"></span><br><span class="line">&lt;t&gt;出题第十八天&lt;&#x2F;t&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;si&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&lt;si&gt;</span><br><span class="line"></span><br><span class="line">&lt;t&gt;高兴&lt;&#x2F;t&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;si&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&lt;si&gt;</span><br><span class="line"></span><br><span class="line">&lt;t&gt;我好像找到了这个女人了，终于问到师傅们菜鸡可以出什么题了，她跟我说她叫fufu，然后让我把flag藏到她身上，好像很有道理的样子诶，这就把flag交给她！&lt;&#x2F;t&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;si&gt;</span><br></pre></td></tr></table></figure>
-
 <p>依次处理</p>
 <p>上述文本rot13后：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">隐写.js can solve this problem</span><br></pre></td></tr></table></figure>
-
 <p>在/media里得到几张图片</p>
 <p><img src="65TO5n.png" alt="65TO5n"></p>
 <p>fufufufufufufufufuufufufufufufufufufufufufufufufufu.flag查看二进制后，更改后缀为.png</p>
@@ -65,38 +64,33 @@
 <p>秒出</p>
 <p><img src="65TjCq.png" alt="65TjCq"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Nep &#123;D4La0_s0lve_th1s_probl3m_to_hit_c4ij1&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><h4 id="make-hsy-great-again"><a href="#make-hsy-great-again" class="headerlink" title="make_hsy_great_again"></a>make_hsy_great_again</h4><blockquote>
+<h3><span id="3">3</span></h3>
+<h4><span id="make_hsy_great_again">make_hsy_great_again</span></h4>
+<blockquote>
 <p>Q师傅是韩商言的粉丝，前段日子他刚组装了台新电脑，并且要求我帮他装系统，我在他电脑里发现了这个。</p>
 </blockquote>
 <p>得到加密的make hsy great again_.rar</p>
 <p>rar5用hashcat</p>
 <p>第一步：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#rar2john hsy.rar</span><br><span class="line">&gt;hsy.rar:$rar5$16$fe5656ec27f0754cb92ca0a79120e099$15$974a98d46f1d4da877c271091ea930e9$8$48f568d6888772c2</span><br></pre></td></tr></table></figure>
-
 <p>第二步：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hashcat --force -m 13000 -a 3 &#39;$rar5$16$fe5656ec27f0754cb92ca0a79120e099$15$974a98d46f1d4da877c271091ea930e9$8$48f568d6888772c2&#39; ?d?d?d?d?d?d</span><br></pre></td></tr></table></figure>
-
 <p>开始爆破</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$rar5$16$fe5656ec27f0754cb92ca0a79120e099$15$974a98d46f1d4da877c271091ea930e9$8$48f568d6888772c2:520233</span><br><span class="line">                                                 </span><br><span class="line">Session..........: hashcat</span><br><span class="line">Status...........: Cracked</span><br><span class="line">Hash.Type........: RAR5</span><br><span class="line">Hash.Target......: $rar5$16$fe5656ec27f0754cb92ca0a79120e099$15$974a98...8772c2</span><br><span class="line">Time.Started.....: Thu Mar 25 14:36:44 2021 (14 mins, 55 secs)</span><br><span class="line">Time.Estimated...: Thu Mar 25 14:51:39 2021 (0 secs)</span><br><span class="line">Guess.Mask.......: ?d?d?d?d?d?d [6]</span><br><span class="line">Guess.Queue......: 1&#x2F;1 (100.00%)</span><br><span class="line">Speed.#1.........:      262 H&#x2F;s (6.99ms) @ Accel:512 Loops:128 Thr:1 Vec:8</span><br><span class="line">Recovered........: 1&#x2F;1 (100.00%) Digests, 1&#x2F;1 (100.00%) Salts</span><br><span class="line">Progress.........: 233984&#x2F;1000000 (23.40%)</span><br><span class="line">Rejected.........: 0&#x2F;233984 (0.00%)</span><br><span class="line">Restore.Point....: 23040&#x2F;100000 (23.04%)</span><br><span class="line">Restore.Sub.#1...: Salt:0 Amplifier:6-7 Iteration:32768-32799</span><br><span class="line">Candidates.#1....: 525587 -&gt; 516587</span><br></pre></td></tr></table></figure>
-
 <p>密码【520233】，得到【hhhhhhsy.png】</p>
 <p>通过010editor看到格式</p>
 <p><img src="hsy.jpg" alt="hsy"></p>
 <p>结合png格式，编写倒置函数：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;Untitled1&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line"></span><br><span class="line">   	<span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;flag&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> g:</span><br><span class="line"></span><br><span class="line">        g.write(f.read()[::-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-
 <p>得到另一张图片【flag.png】，表面看跟已知图片一样，丢进Beyond Compare 4</p>
 <p>对比两张图片，得到</p>
 <p><img src="hsy2.jpg" alt="hsy2"></p>
 <p>根据提示【flag{too_young_too_simple hint Crypto}】</p>
 <p>找到hint Crypto脚本：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line">flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;flag.png&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">72</span>):</span><br><span class="line">    a = im.getpixel((<span class="number">2069</span>,j))[<span class="number">3</span>]</span><br><span class="line">    flag += <span class="built_in">str</span>(a)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(flag))</span><br></pre></td></tr></table></figure>
-
 <p>得到</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Nep&#123;Qfrost_l0v3_hsy_v3r7_m0ch&#125;</span><br></pre></td></tr></table></figure>
-
-</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/challenge/">challenge</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/challenge/">challenge</a></li><li class="post__tag__item"><a class="post__tag__link" href="/tags/MISC/">MISC</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="/js/Valine.min.js"></script>
 <script>new Valine({
   av: AV,
