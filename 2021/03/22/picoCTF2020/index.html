@@ -6,8 +6,10 @@
 <script src="/js/jquery-3.1.1.min.js"></script>
 
 <script src="/js/fancybox/jquery.fancybox.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-03-22T12:43:25.000Z">2021 - 03 - 22 20:43:25</time><h1 class="post__title"><a href="/2021/03/22/picoCTF2020/">picoCTF2020</a></h1><div class="post__main echo"><h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><hr>
-<h3 id="Glory-of-the-Garden"><a href="#Glory-of-the-Garden" class="headerlink" title="Glory of the Garden"></a><em>Glory of the Garden</em></h3><blockquote>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2021-03-22T12:43:25.000Z">2021 - 03 - 22 20:43:25</time><h1 class="post__title"><a href="/2021/03/22/picoCTF2020/">picoCTF2020</a></h1><div class="post__main echo"><h2><span id="forensics">Forensics</span></h2>
+<hr>
+<h3><span id="glory-of-the-garden"><em>Glory of the Garden</em></span></h3>
+<blockquote>
 <p><img src="DL3wl9.jpg" alt="DL3wl9"></p>
 <blockquote>
 <p>What is a hex editor?</p>
@@ -16,130 +18,136 @@
 <p>根据hint，拖进winhex，最后可得flag.</p>
 <p><em>shark on wire 1</em></p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/30?category=4&page=1">shark on wire 1</a></p>
+<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/30?category=4&amp;page=1">shark on wire 1</a></p>
 <blockquote>
 <p>Try using a tool like Wireshark;What are streams?</p>
 </blockquote>
 </blockquote>
 <p>追踪UDP流，得flag。（MISC-AboutWireshark.md里编写了类似的思路）</p>
-<h3 id="extensions"><a href="#extensions" class="headerlink" title="extensions"></a><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/52?category=4&page=1">extensions</a></h3><blockquote>
+<h3><span id="extensions"></span></h3>
+<blockquote>
 <p>How do operating systems know what kind of file it is? (It’s not just the ending!Make sure to submit the flag as picoCTF{XXXXX}</p>
 </blockquote>
 <p>直接打开是一txt文件，观察可指为png的文件格式，更改后缀名可得flag.</p>
-<h3 id="So-Meta"><a href="#So-Meta" class="headerlink" title="So Meta"></a><em>So Meta</em></h3><blockquote>
+<h3><span id="so-meta"><em>So Meta</em></span></h3>
+<blockquote>
 <p><img src="DL3UW4.png" alt="So Meta"></p>
 <blockquote>
 <p>What does meta mean in the context of files?Ever heard of metadata?</p>
 </blockquote>
 </blockquote>
 <p>同第一题，Winhex打开搜索关键词得flag.</p>
-<h3 id="What-Lies-Within"><a href="#What-Lies-Within" class="headerlink" title="What Lies Within"></a><em>What Lies Within</em></h3><blockquote>
+<h3><span id="what-lies-within"><em>What Lies Within</em></span></h3>
+<blockquote>
 <p><img src="DL3dSJ.png" alt="buildings"></p>
 <blockquote>
 <p>There is data encoded somewhere… there might be an online decoder.</p>
 </blockquote>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://stylesuxx.github.io/steganography/">图片隐写</a>在线网站可得，工具get</p>
-<h3 id="WhitePages"><a href="#WhitePages" class="headerlink" title="WhitePages"></a><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/51?category=4&page=1">WhitePages</a></h3><blockquote>
+<h3><span id="whitepages"></span></h3>
+<blockquote>
 <p>I stopped using YellowPages and moved onto WhitePages… but the page they gave me is all blank!</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#coding&#x3D;utf-8</span><br><span class="line">text&#x3D;&#39;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &#39;</span><br><span class="line">firstType &#x3D; &#39; &#39;</span><br><span class="line">secondType &#x3D;  &#39; &#39;</span><br><span class="line">binaryString &#x3D; &#39;&#39;</span><br><span class="line"></span><br><span class="line">for char in text: #Foreach char</span><br><span class="line">    if char &#x3D;&#x3D; firstType: #Check if it is the first type</span><br><span class="line">        binaryString +&#x3D; &#39;0&#39; #Mark it as 0</span><br><span class="line">    else:</span><br><span class="line">        binaryString +&#x3D; &#39;1&#39; #Mark it as 1</span><br><span class="line"></span><br><span class="line">print(binaryString) #Print result</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="m00nwalk2"><a href="#m00nwalk2" class="headerlink" title="m00nwalk2"></a><em>m00nwalk2</em></h3><blockquote>
-<p>MISC-audio.md 中有提及。</p>
+<h3><span id="m00nwalk2"><em>m00nwalk2</em></span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://MISC-audio.md">MISC-audio.md</a> 中有提及。</p>
 </blockquote>
-<h3 id="like1000"><a href="#like1000" class="headerlink" title="like1000"></a><em>like1000</em></h3><blockquote>
+<h3><span id="like1000"><em>like1000</em></span></h3>
+<blockquote>
 <p>[like1000](This .tar file got tarred a lot.)</p>
 <blockquote>
 <p>Try and script this, it’ll save you a lot of time</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import tarfile</span><br><span class="line">for i in range(1000,1,-1):</span><br><span class="line">    filename&#x3D;str(i)+&#39;.tar&#39;</span><br><span class="line">    tar&#x3D;tarfile.open(filename)</span><br><span class="line">    tar.extractall()</span><br><span class="line">    tar.close</span><br></pre></td></tr></table></figure>
-
-<h3 id="WebNet0"><a href="#WebNet0" class="headerlink" title="WebNet0"></a><em>WebNet0</em></h3><p>学到一招，更新在（MISC-AboutWireshark.md 中）</p>
-<h2 id="Web-Exploitation"><a href="#Web-Exploitation" class="headerlink" title="Web Exploitation"></a>Web Exploitation</h2><hr>
-<h3 id="Insp3ct0r"><a href="#Insp3ct0r" class="headerlink" title="Insp3ct0r"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/51418/">Insp3ct0r</a></h3><blockquote>
+<h3><span id="webnet0"><em>WebNet0</em></span></h3>
+<p>学到一招，更新在（<a target="_blank" rel="noopener" href="http://MISC-AboutWireshark.md">MISC-AboutWireshark.md</a> 中）</p>
+<h2><span id="web-exploitation">Web Exploitation</span></h2>
+<hr>
+<h3><span id="insp3ct0r"></span></h3>
+<blockquote>
 <p>How do you inspect web code on a browser?There’s 3 parts</p>
 </blockquote>
-<p>ctrl+u看源码-&gt;1/3 of the flag: picoCTF{tru3_d3 </p>
+<p>ctrl+u看源码-&gt;1/3 of the flag: picoCTF{tru3_d3</p>
 <p>mycss.css看源码-&gt; 2/3 of the flag: t3ct1ve_0r_ju5t</p>
 <p>myjs.js看源码-&gt;3/3 of the flag: _lucky?2e7b23e3}</p>
-<h3 id="where-are-the-robots"><a href="#where-are-the-robots" class="headerlink" title="where are the robots"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/39894/">where are the robots</a></h3><blockquote>
+<h3><span id="where-are-the-robots"></span></h3>
+<blockquote>
 <p>What part of the website could tell you where the creator doesn’t want you to look?</p>
 </blockquote>
 <p>提到robots,输入/robots.txt</p>
 <p>得👇</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: &#x2F;1bb4c.html</span><br></pre></td></tr></table></figure>
-
-<p>输入/1bb4c.html<br>得flag.</p>
-<h3 id="dont-use-client-side"><a href="#dont-use-client-side" class="headerlink" title="dont-use-client-side"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/61882/">dont-use-client-side</a></h3><blockquote>
+<p>输入/1bb4c.html
+得flag.</p>
+<h3><span id="dont-use-client-side"></span></h3>
+<blockquote>
 <p>Never trust the client</p>
 </blockquote>
 <p>看源码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function verify() &#123;</span><br><span class="line">    checkpass &#x3D; document.getElementById(&quot;pass&quot;).value;</span><br><span class="line">    split &#x3D; 4;</span><br><span class="line">    if (checkpass.substring(0, split) &#x3D;&#x3D; &#39;pico&#39;) &#123;</span><br><span class="line">      if (checkpass.substring(split*6, split*7) &#x3D;&#x3D; &#39;706c&#39;) &#123;</span><br><span class="line">        if (checkpass.substring(split, split*2) &#x3D;&#x3D; &#39;CTF&#123;&#39;) &#123;</span><br><span class="line">         if (checkpass.substring(split*4, split*5) &#x3D;&#x3D; &#39;ts_p&#39;) &#123;</span><br><span class="line">          if (checkpass.substring(split*3, split*4) &#x3D;&#x3D; &#39;lien&#39;) &#123;</span><br><span class="line">            if (checkpass.substring(split*5, split*6) &#x3D;&#x3D; &#39;lz_b&#39;) &#123;</span><br><span class="line">              if (checkpass.substring(split*2, split*3) &#x3D;&#x3D; &#39;no_c&#39;) &#123;</span><br><span class="line">                if (checkpass.substring(split*7, split*8) &#x3D;&#x3D; &#39;5&#125;&#39;) &#123;</span><br><span class="line">                  alert(&quot;Password Verified&quot;)</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">      </span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">      alert(&quot;Incorrect password&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
 <p>读代码，根据下标拼接flag。</p>
-<h3 id="logon"><a href="#logon" class="headerlink" title="logon"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/39681/">logon</a></h3><blockquote>
+<h3><span id="logon"></span></h3>
+<blockquote>
 <p>Hmm it doesn’t seem to check anyone’s password, except for logon’s?</p>
 </blockquote>
 <p>根据提示，用logon登录后，什么都没有。但EditThisCookie中观察，多了admin的选项，将admin由False改为True后，加锁，加路径后，刷新即可得flag。👇</p>
 <p><img src="DL3NYF.jpg" alt="logon"></p>
-<h3 id="Client-side-again"><a href="#Client-side-again" class="headerlink" title="Client-side-again"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/17684/">Client-side-again</a></h3><blockquote>
+<h3><span id="client-side-again"></span></h3>
+<blockquote>
 <p>What is obfuscation?</p>
 </blockquote>
-<h3 id="Open-to-admins"><a href="#Open-to-admins" class="headerlink" title="Open-to-admins"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/51400/">Open-to-admins</a></h3><blockquote>
+<h3><span id="open-to-admins"></span></h3>
+<blockquote>
 <p>Can cookies help you to get the flag?</p>
 </blockquote>
 <p>了解了传COOKIES的另一种方式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl &quot;https:&#x2F;&#x2F;jupiter.challenges.picoctf.org&#x2F;problem&#x2F;51400&#x2F;&quot; -H &quot;Cookie:admin&#x3D;True;time&#x3D;1400;&quot; -s</span><br></pre></td></tr></table></figure>
-
 <p>以及</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep picoCTF</span><br></pre></td></tr></table></figure>
-
 <p>来搜索关键词。</p>
-<h3 id="picobrowser"><a href="#picobrowser" class="headerlink" title="picobrowser"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/13759/">picobrowser</a></h3><blockquote>
+<h3><span id="picobrowser"></span></h3>
+<blockquote>
 <p>You don’t need to download a new web browser</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl --user-agent &quot;picobrowser&quot; &quot;https:&#x2F;&#x2F;jupiter.challenges.picoctf.org&#x2F;problem&#x2F;13759&#x2F;flag&quot; | grep picoCTF</span><br></pre></td></tr></table></figure>
-
 <p>得flag所在的那一行。</p>
-<h3 id="Irish-Name-Repo-1"><a href="#Irish-Name-Repo-1" class="headerlink" title="Irish-Name-Repo 1"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/3726/">Irish-Name-Repo 1</a></h3><blockquote>
+<h3><span id="irish-name-repo-1"></span></h3>
+<blockquote>
 <p>There doesn’t seem to be many ways to interact with this. I wonder if the users are kept in a database?Try to think about how the website verifies your login.</p>
 </blockquote>
 <p>由这道题了解到了网络后台的万能密码，</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;or &quot;a&quot;&#x3D;&quot;a</span><br><span class="line"></span><br><span class="line">&#39;)or(&#39;a&#39;&#x3D;&#39;a</span><br><span class="line"></span><br><span class="line">or 1&#x3D;1--</span><br><span class="line"></span><br><span class="line">&#39;or 1&#x3D;1--</span><br><span class="line"></span><br><span class="line">a&#39;or&#39; 1&#x3D;1--</span><br><span class="line"></span><br><span class="line">&quot;or 1&#x3D;1--</span><br><span class="line"></span><br><span class="line">&#39;or&#39;a&#39;&#x3D;&#39;a</span><br><span class="line"></span><br><span class="line">&quot;or&quot;&#x3D;&quot;a&#39;&#x3D;&#39;a</span><br><span class="line"></span><br><span class="line">&#39;or&#39;&#39;&#x3D;&#39;</span><br><span class="line"></span><br><span class="line">&#39;or&#39;&#x3D;&#39;or&#39;</span><br><span class="line"></span><br><span class="line">1 or &#39;1&#39;&#x3D;&#39;1&#39;&#x3D;1</span><br><span class="line"></span><br><span class="line">1 or &#39;1&#39;&#x3D;&#39;1&#39; or 1&#x3D;1</span><br><span class="line"></span><br><span class="line">&#39;OR 1&#x3D;1</span><br><span class="line"></span><br><span class="line">&quot;or 1&#x3D;1</span><br><span class="line"></span><br><span class="line">&#39;xor</span><br></pre></td></tr></table></figure>
-
-<p>简单来说就是在自己需要传输的命令后添加一个恒为真的值来保证执行。学到了。<br>由此可知该题可输入的命令为</p>
+<p>简单来说就是在自己需要传输的命令后添加一个恒为真的值来保证执行。学到了。
+由此可知该题可输入的命令为</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">debug&#x3D;1&amp;password&#x3D;&amp;username&#x3D;admin&#39; or &#39;1&#39;&#x3D;&#x3D;&#39;1</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">username: admin&#39; or &#39;1&#39;&#x3D;&#x3D;&#39;1</span><br><span class="line">password: </span><br><span class="line">SQL query: SELECT * FROM users WHERE name&#x3D;&#39;admin&#39; or &#39;1&#39;&#x3D;&#x3D;&#39;1&#39; AND password&#x3D;&#39;&#39;</span><br></pre></td></tr></table></figure>
-
 <p>得到flag.</p>
-<h3 id="Irish-Name-Repo-2"><a href="#Irish-Name-Repo-2" class="headerlink" title="Irish-Name-Repo 2"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/29962/">Irish-Name-Repo 2</a></h3><blockquote>
+<h3><span id="irish-name-repo-2"></span></h3>
+<blockquote>
 <p>The password is being filtered.</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">debug&#x3D;1&amp;password&#x3D;1&amp;username&#x3D;admin&#39;--</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">username: admin&#39;--</span><br><span class="line">password: 1</span><br><span class="line">SQL query: SELECT * FROM users WHERE name&#x3D;&#39;admin&#39;--&#39; AND password&#x3D;&#39;1&#39;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Irish-Name-Repo-3"><a href="#Irish-Name-Repo-3" class="headerlink" title="Irish-Name-Repo 3"></a><a target="_blank" rel="noopener" href="https://jupiter.challenges.picoctf.org/problem/50530/">Irish-Name-Repo 3</a></h3><blockquote>
+<h3><span id="irish-name-repo-3"></span></h3>
+<blockquote>
 <p>Seems like the password is encrypted.</p>
 </blockquote>
 <p>尝试</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">debug&#x3D;1&amp;password&#x3D;adsf</span><br></pre></td></tr></table></figure>
-
 <p>发现回显</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password: adsf</span><br><span class="line">SQL query: SELECT * FROM admin where password &#x3D; &#39;nqfs&#39;</span><br></pre></td></tr></table></figure>
-
 <p>与输入不同，可知该程序对输入值进行了某种加密。观察可得为ROT13解码，故我们可以通过ROT13加密的方式传入我们的命令。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">debug&#x3D;1&amp;password&#x3D;&#39; BE &#39;1&#39;&#x3D;&#39;1</span><br></pre></td></tr></table></figure>
-
 <p>得</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">password: &#39; BE &#39;1&#39;&#x3D;&#39;1</span><br><span class="line">SQL query: SELECT * FROM admin where password &#x3D; &#39;&#39; OR &#39;1&#39;&#x3D;&#39;1&#39;</span><br></pre></td></tr></table></figure>
-
 <p>得flag.</p>
-<h2 id="Reverse-Engineering"><a href="#Reverse-Engineering" class="headerlink" title="Reverse Engineering"></a>Reverse Engineering</h2><hr>
-<h3 id="vault-door-training"><a href="#vault-door-training" class="headerlink" title="vault-door-training"></a><em>vault-door-training</em></h3><blockquote>
+<h2><span id="reverse-engineering">Reverse Engineering</span></h2>
+<hr>
+<h3><span id="vault-door-training"><em>vault-door-training</em></span></h3>
+<blockquote>
 <p>[vault-door-training](Your mission is to enter Dr. Evil’s laboratory and retrieve the blueprints for his Doomsday Project. The laboratory is protected by a series of locked vault doors. Each door is controlled by a computer and requires a password to open. Unfortunately, our undercover agents have not been able to obtain the secret passwords for the vault doors, but one of our junior agents obtained the source code for each vault’s computer! You will need to read the source code for each level to figure out what the password is for that vault door. As a warmup, we have created a replica vault in our training facility. The source code for the training vault is here: VaultDoorTraining.java)</p>
 <blockquote>
 <p>The password is revealed in the program’s source code.</p>
@@ -147,45 +155,47 @@
 </blockquote>
 <p>读脚本即可解。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String input &#x3D; userInput.substring(&quot;picoCTF&#123;&quot;.length(),userInput.length()-1);</span><br><span class="line"></span><br><span class="line">public boolean checkPassword(String password) &#123;</span><br><span class="line">        return password.equals(&quot;w4rm1ng_Up_w1tH_jAv4_3808d338b46&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="vault-door-1"><a href="#vault-door-1" class="headerlink" title="vault-door-1"></a><em>vault-door-1</em></h3><blockquote>
+<h3><span id="vault-door-1"><em>vault-door-1</em></span></h3>
+<blockquote>
 <p>[vault-door-1](This vault uses some complicated arrays! I hope you can make sense of it, special agent. The source code for this vault is here: VaultDoor1.java)</p>
 <blockquote>
 <p>Look up the charAt() method online.</p>
 </blockquote>
 </blockquote>
 <p>根据数组下标依次串联可得flag。</p>
-<h3 id="vault-door-3"><a href="#vault-door-3" class="headerlink" title="vault-door-3"></a><em>vault-door-3</em></h3><blockquote>
+<h3><span id="vault-door-3"><em>vault-door-3</em></span></h3>
+<blockquote>
 <p>[vault-door-3](This vault uses for-loops and byte arrays. The source code for this vault is here: VaultDoor3.java)</p>
 <blockquote>
 <p>Make a table that contains each value of the loop variables and the corresponding buffer index that it writes to.</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public boolean checkPassword(String password) &#123;</span><br><span class="line">        if (password.length() !&#x3D; 32) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        char[] buffer &#x3D; new char[32];</span><br><span class="line">        int i;</span><br><span class="line">        for (i&#x3D;0; i&lt;8; i++) &#123;</span><br><span class="line">            buffer[i] &#x3D; password.charAt(i);</span><br><span class="line">        &#125;</span><br><span class="line">        for (; i&lt;16; i++) &#123;</span><br><span class="line">            buffer[i] &#x3D; password.charAt(23-i);</span><br><span class="line">        &#125;</span><br><span class="line">        for (; i&lt;32; i+&#x3D;2) &#123;</span><br><span class="line">            buffer[i] &#x3D; password.charAt(46-i);</span><br><span class="line">        &#125;</span><br><span class="line">        for (i&#x3D;31; i&gt;&#x3D;17; i-&#x3D;2) &#123;</span><br><span class="line">            buffer[i] &#x3D; password.charAt(i);</span><br><span class="line">        &#125;</span><br><span class="line">        String s &#x3D; new String(buffer);</span><br><span class="line">        return s.equals(&quot;jU5t_a_sna_3lpm12g94c_u_4_m7ra41&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
 <p>理解脚本逻辑，明确</p>
 <p>-密文长度为32位</p>
 <p>-依次取s中的对应位数</p>
 <p>-串联得flag</p>
-<h3 id="vault-door-4"><a href="#vault-door-4" class="headerlink" title="vault-door-4"></a><em>vault-door-4</em></h3><blockquote>
+<h3><span id="vault-door-4"><em>vault-door-4</em></span></h3>
+<blockquote>
 <p>[vault-door-4](This vault uses ASCII encoding for the password. The source code for this vault is here: VaultDoor4.java)</p>
 <blockquote>
-<p>Use a search engine to find an “ASCII table”.<br>You will also need to know the difference between octal, decimal, and hexadecimal numbers.</p>
+<p>Use a search engine to find an “ASCII table”.
+You will also need to know the difference between octal, decimal, and hexadecimal numbers.</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public boolean checkPassword(String password) &#123;</span><br><span class="line">        byte[] passBytes &#x3D; password.getBytes();</span><br><span class="line">        byte[] myBytes &#x3D; &#123;</span><br><span class="line">            106 , 85  , 53  , 116 , 95  , 52  , 95  , 98  ,</span><br><span class="line">            0x55, 0x6e, 0x43, 0x68, 0x5f, 0x30, 0x66, 0x5f,</span><br><span class="line">            0142, 0131, 0164, 063 , 0163, 0137, 0146, 064 ,</span><br><span class="line">            &#39;a&#39; , &#39;8&#39; , &#39;c&#39; , &#39;d&#39; , &#39;8&#39; , &#39;f&#39; , &#39;7&#39; , &#39;e&#39; ,</span><br><span class="line">        &#125;;</span><br><span class="line">        for (int i&#x3D;0; i&lt;32; i++) &#123;</span><br><span class="line">            if (passBytes[i] !&#x3D; myBytes[i]) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
 <p>依次对数组中的数据进行处理，分别为ASCII,十六进制，八进制与原字母，串联得flag.</p>
-<h3 id="vault-door-5"><a href="#vault-door-5" class="headerlink" title="vault-door-5"></a><em>vault-door-5</em></h3><blockquote>
+<h3><span id="vault-door-5"><em>vault-door-5</em></span></h3>
+<blockquote>
 <p>[vault-door-5](In the last challenge, you mastered octal (base 8), decimal (base 10), and hexadecimal (base 16) numbers, but this vault door uses a different change of base as well as URL encoding! The source code for this vault is here: VaultDoor5.java)</p>
 <blockquote>
 <p>You may find an encoder/decoder tool helpful, such as <a target="_blank" rel="noopener" href="https://encoding.tools/;Read">https://encoding.tools/;Read</a> the wikipedia articles on URL encoding and base 64 encoding to understand how they work and what the results look like.</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public String urlEncode(byte[] input) &#123;</span><br><span class="line">        StringBuffer buf &#x3D; new StringBuffer();</span><br><span class="line">        for (int i&#x3D;0; i&lt;input.length; i++) &#123;</span><br><span class="line">            buf.append(String.format(&quot;%%%2x&quot;, input[i]));</span><br><span class="line">        &#125;</span><br><span class="line">        return buf.toString();</span><br><span class="line">    &#125;</span><br><span class="line">public boolean checkPassword(String password) &#123;</span><br><span class="line">        String urlEncoded &#x3D; urlEncode(password.getBytes());</span><br><span class="line">        String base64Encoded &#x3D; base64Encode(urlEncoded.getBytes());</span><br><span class="line">        String expected &#x3D; &quot;JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVm&quot;</span><br><span class="line">                        + &quot;JTY2JTcyJTMwJTZkJTVmJTYyJTYxJTM1JTY1JTVmJTM2&quot;</span><br><span class="line">                        + &quot;JTM0JTVmJTM4JTM0JTY2JTY0JTM1JTMwJTM5JTM1&quot;;</span><br><span class="line">        return base64Encoded.equals(expected);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
 <p>将expected中得字符串联后，base64解密后，URL解密得flag。</p>
-<h3 id="vault-door-6"><a href="#vault-door-6" class="headerlink" title="vault-door-6"></a><em>vault-door-6</em></h3><blockquote>
+<h3><span id="vault-door-6"><em>vault-door-6</em></span></h3>
+<blockquote>
 <p>[vault-door-6](This vault uses an XOR encryption scheme. The source code for this vault is here: VaultDoor6.java)</p>
 <blockquote>
 <p>If X ^ Y = Z, then Z ^ Y = X. Write a program that decrypts the flag based on this fact.</p>
@@ -193,9 +203,9 @@
 </blockquote>
 <p>根据HINT，可知该题与异或有关，转二进制后编写脚本（以下为笔者的辣鸡脚本）</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">modetext&#x3D;&#39;01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010&#39;</span><br><span class="line">plaintext&#x3D;&#39;0011101101100101001000011010000000111000000000000011011000011101101000000011110101100001001001110001000101100110001001111010000000100001000111010110000100111011101000000010110101100101001001111010000001100110001101100011000001100111011011000110010001101100&#39;</span><br><span class="line">plain&#x3D;plaintext.replace(&#39; &#39;, &#39;&#39;)</span><br><span class="line">mode&#x3D;modetext.replace(&#39; &#39;,&#39;&#39;)</span><br><span class="line">print(mode)</span><br><span class="line">new&#x3D;&#39;&#39;</span><br><span class="line">for i in range(0,len(plain)):</span><br><span class="line">    if(plain[i]&#x3D;&#x3D;&#39;0&#39;):</span><br><span class="line">        new +&#x3D; mode[i]</span><br><span class="line">    elif(plain[i]&#x3D;&#x3D;&#39;1&#39;):</span><br><span class="line">        new +&#x3D; str(1-int(mode[i]))</span><br><span class="line">print(new)</span><br><span class="line">print(plain)</span><br></pre></td></tr></table></figure>
-
 <p>二进制转字符后得flag.</p>
-<h3 id="vault-door-7"><a href="#vault-door-7" class="headerlink" title="vault-door-7"></a><em>vault-door-7</em></h3><blockquote>
+<h3><span id="vault-door-7"><em>vault-door-7</em></span></h3>
+<blockquote>
 <p>[vault-door-7](This vault uses bit shifts to convert a password string into an array of integers. Hurry, agent, we are running out of time to stop Dr. Evil’s nefarious plans! The source code for this vault is here: VaultDoor7.java)</p>
 <blockquote>
 <p>Use a decimal/hexadecimal converter such as this one: <a target="_blank" rel="noopener" href="https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html;You">https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html;You</a> will also need to consult an ASCII table such as this one: <a target="_blank" rel="noopener" href="https://www.asciitable.com/">https://www.asciitable.com/</a></p>
@@ -203,35 +213,39 @@
 </blockquote>
 <p>笔者的脚本</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">x&#x3D;0</span><br><span class="line">x[0] &#x3D;1096770097</span><br><span class="line">x[1] &#x3D;1952395366</span><br><span class="line">x[2] &#x3D;1600270708</span><br><span class="line">x[3] &#x3D;1601398833</span><br><span class="line">x[4] &#x3D;1716808014</span><br><span class="line">x[5] &#x3D;1734293296</span><br><span class="line">x[6] &#x3D;842413104</span><br><span class="line">x[7] &#x3D;1684157793</span><br><span class="line">before&#x3D;&#39;&#39;</span><br><span class="line">for i in range(0,8):</span><br><span class="line">    before[i]&#x3D;x[i*4]&gt;&gt;24|x[i*4+1]&gt;&gt;16|x[i*4+2]&gt;&gt;8|x[i*4+3]</span><br><span class="line">    print(before)</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <blockquote>
 <p>做了一连串RE题之后对编写脚本和逆向增加了一定的了解。挺好。</p>
 </blockquote>
 </blockquote>
-<h2 id="General-Skills"><a href="#General-Skills" class="headerlink" title="General Skills"></a>General Skills</h2><hr>
-<h3 id="2Warm"><a href="#2Warm" class="headerlink" title="2Warm"></a><em>2Warm</em></h3><blockquote>
+<h2><span id="general-skills">General Skills</span></h2>
+<hr>
+<h3><span id="2warm"><em>2Warm</em></span></h3>
+<blockquote>
 <p>[2Warm]</p>
 <blockquote>
 <p>Can you convert the number 42 (base 10) to binary (base 2)?</p>
 </blockquote>
 </blockquote>
 <p>十进制42转二进制，在线网站即可。</p>
-<h3 id="Warmed-Up"><a href="#Warmed-Up" class="headerlink" title="Warmed Up"></a><em>Warmed Up</em></h3><blockquote>
+<h3><span id="warmed-up"><em>Warmed Up</em></span></h3>
+<blockquote>
 <p>[Warmed Up]</p>
 <blockquote>
 <p>What is 0x3D (base 16) in decimal (base 10)?</p>
 </blockquote>
 </blockquote>
 <p>十六进制转十进制，同上</p>
-<h3 id="Lets-Warm-Up"><a href="#Lets-Warm-Up" class="headerlink" title="Lets Warm Up"></a><em>Lets Warm Up</em></h3><blockquote>
+<h3><span id="lets-warm-up"><em>Lets Warm Up</em></span></h3>
+<blockquote>
 <p>[Lets Warm Up]</p>
 <blockquote>
 <p>If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?</p>
 </blockquote>
 </blockquote>
 <p>十六进制转ASCII，同上</p>
-<h3 id="strings-it"><a href="#strings-it" class="headerlink" title="*strings it *"></a>*strings it *</h3><blockquote>
+<h3><span id="strings-it">*strings it *</span></h3>
+<blockquote>
 <p>[strings it ]</p>
 <blockquote>
 <p>Can you find the flag in file without running it?</p>
@@ -239,61 +253,62 @@
 </blockquote>
 <p>执行命令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">strings XXX | grep picoCTF</span><br></pre></td></tr></table></figure>
-
 <p>得关键词。</p>
-<h3 id="Bases"><a href="#Bases" class="headerlink" title="Bases"></a><em>Bases</em></h3><blockquote>
+<h3><span id="bases"><em>Bases</em></span></h3>
+<blockquote>
 <p>[Bases]</p>
 <blockquote>
 <p>What does this bDNhcm5fdGgzX3IwcDM1 mean? I think it has something to do with bases.</p>
 </blockquote>
 </blockquote>
 <p>Base一把梭寻找可能字符串。</p>
-<h3 id="First-Grep"><a href="#First-Grep" class="headerlink" title="First Grep"></a><em>First Grep</em></h3><blockquote>
+<h3><span id="first-grep"><em>First Grep</em></span></h3>
+<blockquote>
 <p>[First Grep]</p>
 <blockquote>
 <p>Can you find the flag in file? This would be really tedious to look through manually, something tells me there is a better way.</p>
 </blockquote>
 </blockquote>
 <p>直接打开可得flag.</p>
-<h3 id="what’s-a-net-cat"><a href="#what’s-a-net-cat" class="headerlink" title="what’s a net cat?"></a><em>what’s a net cat?</em></h3><blockquote>
+<h3><span id="whats-a-net-cat"><em>what’s a net cat?</em></span></h3>
+<blockquote>
 <p>[what’s a net cat?]</p>
 <blockquote>
-<p>Using netcat (nc) is going to be pretty important. Can you connect to jupiter.challenges.picoctf.org at port 29138 to get the flag?</p>
+<p>Using netcat (nc) is going to be pretty important. Can you connect to <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> at port 29138 to get the flag?</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nc jupiter.challenges.picoctf.org 29138</span><br></pre></td></tr></table></figure>
-
-<h3 id="plumbing"><a href="#plumbing" class="headerlink" title="plumbing"></a><em>plumbing</em></h3><blockquote>
+<h3><span id="plumbing"><em>plumbing</em></span></h3>
+<blockquote>
 <p>[plumbing]</p>
 <blockquote>
-<p>Sometimes you need to handle process data outside of a file. Can you find a way to keep the output from this program and search for the flag? Connect to jupiter.challenges.picoctf.org 22058.</p>
+<p>Sometimes you need to handle process data outside of a file. Can you find a way to keep the output from this program and search for the flag? Connect to <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> 22058.</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nc jupiter.challenges.picoctf.org 22058 |grep picoCTF</span><br></pre></td></tr></table></figure>
-
 <p>同前题</p>
-<h3 id="Based"><a href="#Based" class="headerlink" title="Based"></a><em>Based</em></h3><blockquote>
+<h3><span id="based"><em>Based</em></span></h3>
+<blockquote>
 <p>[Based]</p>
 <blockquote>
-<p>To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc jupiter.challenges.picoctf.org 9670.</p>
+<p>To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> 9670.</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># nc jupiter.challenges.picoctf.org 9670</span><br><span class="line">Let us see how data is stored</span><br><span class="line">pie</span><br><span class="line">Please give the 01110000 01101001 01100101 as a word.</span><br><span class="line">...</span><br><span class="line">you have 45 seconds.....</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">pie</span><br><span class="line">Please give me the  163 157 143 153 145 164 as a word.</span><br><span class="line">Input:</span><br><span class="line">socket</span><br><span class="line">Please give me the 636f6c6f7261646f as a word.</span><br><span class="line">Input:</span><br><span class="line">colorado</span><br><span class="line">You&#39;ve beaten the challenge</span><br><span class="line">Flag: picoCTF&#123;learning_about_converting_values_b375bb16&#125;</span><br></pre></td></tr></table></figure>
-
 <p>二进制八进制十六进制转换。</p>
-<h3 id="mus1c"><a href="#mus1c" class="headerlink" title="mus1c"></a><em>mus1c</em></h3><blockquote>
+<h3><span id="mus1c"><em>mus1c</em></span></h3>
+<blockquote>
 <p>[mus1c](I wrote you a song. Put it in the picoCTF{} flag format.)</p>
 <blockquote>
 <p>Do you think you can master rockstar?</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Pico&#39;s a CTFFFFFFF</span><br><span class="line">my mind is waitin</span><br><span class="line">It&#39;s waitin</span><br><span class="line"></span><br><span class="line">Put my mind of Pico into This</span><br><span class="line">my flag is not found</span><br><span class="line">put This into my flag</span><br><span class="line">put my flag into Pico</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">shout Pico</span><br><span class="line">shout Pico</span><br><span class="line">shout Pico</span><br><span class="line"></span><br><span class="line">My song&#39;s something</span><br><span class="line">put Pico into This</span><br><span class="line"></span><br><span class="line">Knock This down, down, down</span><br><span class="line">put This into CTF</span><br><span class="line"></span><br><span class="line">shout CTF</span><br><span class="line">my lyric is nothing</span><br><span class="line">Put This without my song into my lyric</span><br><span class="line">Knock my lyric down, down, down</span><br><span class="line"></span><br><span class="line">shout my lyric</span><br><span class="line"></span><br><span class="line">Put my lyric into This</span><br><span class="line">Put my song with This into my lyric</span><br><span class="line">Knock my lyric down</span><br><span class="line"></span><br><span class="line">shout my lyric</span><br><span class="line"></span><br><span class="line">Build my lyric up, up ,up</span><br><span class="line"></span><br><span class="line">shout my lyric</span><br><span class="line">shout Pico</span><br><span class="line">shout It</span><br><span class="line"></span><br><span class="line">Pico CTF is fun</span><br><span class="line">security is important</span><br><span class="line">Fun is fun</span><br><span class="line">Put security with fun into Pico CTF</span><br><span class="line">Build Fun up</span><br><span class="line">shout fun times Pico CTF</span><br><span class="line">put fun times Pico CTF into my song</span><br><span class="line"></span><br><span class="line">build it up</span><br><span class="line"></span><br><span class="line">shout it</span><br><span class="line">shout it</span><br><span class="line"></span><br><span class="line">build it up, up</span><br><span class="line">shout it</span><br><span class="line">shout Pico</span><br></pre></td></tr></table></figure>
-
 <p>根据hint搜索rockstar,得一<a target="_blank" rel="noopener" href="https://codewithrockstar.com/online">在线网站</a>，解密得</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">114</span><br><span class="line">114</span><br><span class="line">114</span><br><span class="line">111</span><br><span class="line">99</span><br><span class="line">107</span><br><span class="line">110</span><br><span class="line">114</span><br><span class="line">110</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">49</span><br><span class="line">51</span><br><span class="line">114</span><br><span class="line">Program completed in 361 ms</span><br></pre></td></tr></table></figure>
-
 <p>转ASCII得flag.</p>
-<h3 id="1-wanna-b3-a-r0ck5tar"><a href="#1-wanna-b3-a-r0ck5tar" class="headerlink" title="1_wanna_b3_a_r0ck5tar"></a><em>1_wanna_b3_a_r0ck5tar</em></h3><blockquote>
+<h3><span id="1_wanna_b3_a_r0ck5tar"><em>1_wanna_b3_a_r0ck5tar</em></span></h3>
+<blockquote>
 <p>[1_wanna_b3_a_r0ck5tar]</p>
 <blockquote>
 <p>I wrote you another song. Put the flag in the picoCTF{} flag format</p>
@@ -301,31 +316,32 @@
 </blockquote>
 <p>上题的方法失败读脚本通过</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Rocknroll is right              </span><br><span class="line">Silence is wrong                </span><br><span class="line">A guitar is a six-string </span><br></pre></td></tr></table></figure>
-
 <p>等，猜测为类似伪代码，更改运行可得flag.</p>
-<h2 id="Cryptography"><a href="#Cryptography" class="headerlink" title="Cryptography"></a>Cryptography</h2><hr>
-<h3 id="The-Numbers"><a href="#The-Numbers" class="headerlink" title="The Numbers"></a><em>The Numbers</em></h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/68?category=2&page=1">The Numbers</a></p>
+<h2><span id="cryptography">Cryptography</span></h2>
+<hr>
+<h3><span id="the-numbers"><em>The Numbers</em></span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/68?category=2&amp;page=1">The Numbers</a></p>
 <blockquote>
 <p>The flag is in the format PICOCTF{}</p>
 </blockquote>
 </blockquote>
 <p>得到一串数字</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">16 9 3 15 3 20 6 &#123; 20 8 5 14 21 13 2 5 18 19 13 1 19 15 14 &#125;</span><br></pre></td></tr></table></figure>
-
 <p>根据hint，对照ASCII，已知部门为</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">80 73 67 79 67 84 70 &#123; &#125;</span><br></pre></td></tr></table></figure>
-
 <p>编写脚本，思路为after=before+64，或者手动加工也可得到flag.</p>
-<h3 id="caesar"><a href="#caesar" class="headerlink" title="caesar"></a><em>caesar</em></h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/64?category=2&page=1">caesar</a></p>
+<h3><span id="caesar"><em>caesar</em></span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/64?category=2&amp;page=1">caesar</a></p>
 <blockquote>
 <p>caesar cipher tutorial</p>
 </blockquote>
 </blockquote>
 <p>在线网站或者脚本都可解密，遍历后选取相对有意思的字符即是flag.</p>
-<h3 id="Easy1"><a href="#Easy1" class="headerlink" title="Easy1"></a><em>Easy1</em></h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/43?category=2&page=1">Easy1</a></p>
+<h3><span id="easy1"><em>Easy1</em></span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/43?category=2&amp;page=1">Easy1</a></p>
 <blockquote>
 <p>The one time pad can be cryptographically secure, but not when you know the key. Can you solve this? We’ve given you the encrypted flag, key, and a table to help UFJKXQZQUNB with the key of SOLVECRYPTO. Can you use this table to solve it?.</p>
 </blockquote>
@@ -336,78 +352,84 @@
 </blockquote>
 </blockquote>
 <p>据题意，已知该加密方式拥有明文和密钥，结合给出的字典，确定为维吉尼亚编码，在线网站或脚本都可解密得flag。</p>
-<h3 id="13"><a href="#13" class="headerlink" title="13"></a><em>13</em></h3><blockquote>
+<h3><span id="13"><em>13</em></span></h3>
+<blockquote>
 <p>[13](Cryptography can be easy, do you know what ROT13 is? cvpbPGS{abg_gbb_onq_bs_n_ceboyrz})</p>
 <blockquote>
 <p>This can be solved online if you don’t want to do it by hand!</p>
 </blockquote>
 </blockquote>
 <p>题目描述可知加密方式为ROT13,在线网站或脚本即可解密。</p>
-<h3 id="la-cifra-de"><a href="#la-cifra-de" class="headerlink" title="la cifra de"></a><em>la cifra de</em></h3><blockquote>
-<p>[la cifra de](I found this cipher in an old book. Can you figure out what it says? Connect with nc jupiter.challenges.picoctf.org 50523)</p>
+<h3><span id="la-cifra-de"><em>la cifra de</em></span></h3>
+<blockquote>
+<p>[la cifra de](I found this cipher in an old book. Can you figure out what it says? Connect with nc <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> 50523)</p>
 <blockquote>
 <p>There are tools that make this easy.Perhaps looking at history will help</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Encrypted message:</span><br><span class="line">Ne iy nytkwpsznyg nth it mtsztcy vjzprj zfzjy rkhpibj nrkitt ltc tnnygy ysee itd tte cxjltk</span><br><span class="line"></span><br><span class="line">Ifrosr tnj noawde uk siyyzre, yse Bnretèwp Cousex mls hjpn xjtnbjytki xatd eisjd</span><br><span class="line"></span><br><span class="line">Iz bls lfwskqj azycihzeej yz Brftsk ip Volpnèxj ls oy hay tcimnyarqj dkxnrogpd os 1553 my Mnzvgs Mazytszf Merqlsu ny hox moup Wa inqrg ipl. Ynr. Gotgat Gltzndtg Gplrfdo </span><br><span class="line"></span><br><span class="line">Ltc tnj tmvqpmkseaznzn uk ehox nivmpr g ylbrj ts ltcmki my yqtdosr tnj wocjc hgqq ol fy oxitngwj arusahje fuw ln guaaxjytrd catizm tzxbkw zf vqlckx hizm ceyupcz yz tnj fpvjc hgqqpohzCZK&#123;m311a50_0x_a1rn3x3_h1ah3x6kp60egf&#125;</span><br><span class="line"></span><br><span class="line">Ehk ktryy herq-ooizxetypd jjdcxnatoty ol f aordllvmlbkytc inahkw socjgex, bls sfoe gwzuti 1467 my Rjzn Hfetoxea Gqmexyt.</span><br><span class="line"></span><br><span class="line">Tnj Gimjyèrk Htpnjc iy ysexjqoxj dosjeisjd cgqwej yse Gqmexyt Doxn ox Fwbkwei Inahkw.</span><br><span class="line"></span><br><span class="line">Tn 1508, Ptsatsps Zwttnjxiax tnbjytki ehk xz-cgqwej ylbaql rkhea (g rltxni ol xsilypd gqahggpty) ysaz bzuri wazjc bk f nroytcgq nosuznkse ol yse Bnretèwp Cousex.</span><br><span class="line"></span><br><span class="line">Gplrfdo’y xpcuso butvlky lpvjlrki tn 1555 gx l cuseitzltoty ol yse lncsz. Yse rthex mllbjd ol yse gqahggpty fce tth snnqtki cemzwaxqj, bay ehk fwpnfmezx lnj yse osoed qptzjcs gwp mocpd hd xegsd ol f xnkrznoh vee usrgxp, wnnnh ify bk itfljcety hizm paim noxwpsvtydkse.</span><br></pre></td></tr></table></figure>
-
 <p><a target="_blank" rel="noopener" href="https://www.guballa.de/vigenere-solver">在线网站</a>维吉尼亚解密可得flag.</p>
 <blockquote>
 <p>词频分析搞了半天，555</p>
 </blockquote>
-<h3 id="rsa-pop-quiz"><a href="#rsa-pop-quiz" class="headerlink" title="rsa-pop-quiz"></a><em>rsa-pop-quiz</em></h3><blockquote>
-<p>[rsa-pop-quiz](Class, take your seats! It’s PRIME-time for a quiz… nc jupiter.challenges.picoctf.org 41130)</p>
+<h3><span id="rsa-pop-quiz"><em>rsa-pop-quiz</em></span></h3>
+<blockquote>
+<p>[rsa-pop-quiz](Class, take your seats! It’s PRIME-time for a quiz… nc <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> 41130)</p>
 <blockquote>
 <p>RSA info</p>
 </blockquote>
 </blockquote>
 <p>RSA层层解密：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># nc jupiter.challenges.picoctf.org 41130</span><br><span class="line">Good morning class! It&#39;s me Ms. Adleman-Shamir-Rivest</span><br><span class="line">Today we will be taking a pop quiz, so I hope you studied. Cramming just will not do!</span><br><span class="line">You will need to tell me if each example is possible, given your extensive crypto knowledge.</span><br><span class="line">Inputs and outputs are in decimal. No hex here!</span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">q : 60413</span><br><span class="line">p : 76753</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">n</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">n: 4636878989</span><br><span class="line">Outstanding move!!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">p : 54269</span><br><span class="line">n : 5051846941</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">q</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">q: 93089</span><br><span class="line">Outstanding move!!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">e : 3</span><br><span class="line">n : 12738162802910546503821920886905393316386362759567480839428456525224226445173031635306683726182522494910808518920409019414034814409330094245825749680913204566832337704700165993198897029795786969124232138869784626202501366135975223827287812326250577148625360887698930625504334325804587329905617936581116392784684334664204309771430814449606147221349888320403451637882447709796221706470239625292297988766493746209684880843111138170600039888112404411310974758532603998608057008811836384597579147244737606088756299939654265086899096359070667266167754944587948695842171915048619846282873769413489072243477764350071787327913</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">q</span><br><span class="line">p</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):n</span><br><span class="line">Outstanding move!!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">q : 66347</span><br><span class="line">p : 12611</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">totient(n)</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">totient(n): 836623060</span><br><span class="line">Outstanding move!!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">plaintext : 6357294171489311547190987615544575133581967886499484091352661406414044440475205342882841236357665973431462491355089413710392273380203038793241564304774271529108729717</span><br><span class="line">e : 3</span><br><span class="line">n : 29129463609326322559521123136222078780585451208149138547799121083622333250646678767769126248182207478527881025116332742616201890576280859777513414460842754045651093593251726785499360828237897586278068419875517543013545369871704159718105354690802726645710699029936754265654381929650494383622583174075805797766685192325859982797796060391271817578087472948205626257717479858369754502615173773514087437504532994142632207906501079835037052797306690891600559321673928943158514646572885986881016569647357891598545880304236145548059520898133142087545369179876065657214225826997676844000054327141666320553082128424707948750331</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">ciphertext</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">ciphertext: 256931246631782714357241556582441991993437399854161372646318659020994329843524306570818293602492485385337029697819837182169818816821461486018802894936801257629375428544752970630870631166355711254848465862207765051226282541748174535990314552471546936536330397892907207943448897073772015986097770443616540466471245438117157152783246654401668267323136450122287983612851171545784168132230208726238881861407976917850248110805724300421712827401063963117423718797887144760360749619552577176382615108244813</span><br><span class="line">Outstanding move!!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">ciphertext : 107524013451079348539944510756143604203925717262185033799328445011792760545528944993719783392542163428637172323512252624567111110666168664743115203791510985709942366609626436995887781674651272233566303814979677507101168587739375699009734588985482369702634499544891509228440194615376339573685285125730286623323</span><br><span class="line">e : 3</span><br><span class="line">n : 27566996291508213932419371385141522859343226560050921196294761870500846140132385080994630946107675330189606021165260590147068785820203600882092467797813519434652632126061353583124063944373336654246386074125394368479677295167494332556053947231141336142392086767742035970752738056297057898704112912616565299451359791548536846025854378347423520104947907334451056339439706623069503088916316369813499705073573777577169392401411708920615574908593784282546154486446779246790294398198854547069593987224578333683144886242572837465834139561122101527973799583927411936200068176539747586449939559180772690007261562703222558103359</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">plaintext</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):n</span><br><span class="line">Outstanding move!!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">q : 92092076805892533739724722602668675840671093008520241548191914215399824020372076186460768206814914423802230398410980218741906960527104568970225804374404612617736579286959865287226538692911376507934256844456333236362669879347073756238894784951597211105734179388300051579994253565459304743059533646753003894559</span><br><span class="line">p : 97846775312392801037224396977012615848433199640105786119757047098757998273009741128821931277074555731813289423891389911801250326299324018557072727051765547115514791337578758859803890173153277252326496062476389498019821358465433398338364421624871010292162533041884897182597065662521825095949253625730631876637</span><br><span class="line">e : 65537</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">d</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">d: 1405046269503207469140791548403639533127416416214210694972085079171787580463776820425965898174272870486015739516125786182821637006600742140682552321645503743280670839819078749092730110549881891271317396450158021688253989767145578723458252769465545504142139663476747479225923933192421405464414574786272963741656223941750084051228611576708609346787101088759062724389874160693008783334605903142528824559223515203978707969795087506678894006628296743079886244349469131831225757926844843554897638786146036869572653204735650843186722732736888918789379054050122205253165705085538743651258400390580971043144644984654914856729</span><br><span class="line">Outstanding move!!!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### NEW PROBLEM ####</span><br><span class="line">p : 153143042272527868798412612417204434156935146874282990942386694020462861918068684561281763577034706600608387699148071015194725533394126069826857182428660427818277378724977554365910231524827258160904493774748749088477328204812171935987088715261127321911849092207070653272176072509933245978935455542420691737433</span><br><span class="line">ciphertext : 18031488536864379496089550017272599246134435121343229164236671388038630752847645738968455413067773166115234039247540029174331743781203512108626594601293283737392240326020888417252388602914051828980913478927759934805755030493894728974208520271926698905550119698686762813722190657005740866343113838228101687566611695952746931293926696289378849403873881699852860519784750763227733530168282209363348322874740823803639617797763626570478847423136936562441423318948695084910283653593619962163665200322516949205854709192890808315604698217238383629613355109164122397545332736734824591444665706810731112586202816816647839648399</span><br><span class="line">e : 65537</span><br><span class="line">n : 23952937352643527451379227516428377705004894508566304313177880191662177061878993798938496818120987817049538365206671401938265663712351239785237507341311858383628932183083145614696585411921662992078376103990806989257289472590902167457302888198293135333083734504191910953238278860923153746261500759411620299864395158783509535039259714359526738924736952759753503357614939203434092075676169179112452620687731670534906069845965633455748606649062394293289967059348143206600765820021392608270528856238306849191113241355842396325210132358046616312901337987464473799040762271876389031455051640937681745409057246190498795697239</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">plaintext</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y&#x2F;N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">plaintext: picoCTF&#123;wA8_th4t$_ill3aGal..ode01e4bb&#125;</span><br><span class="line">That&#39;s not an int! Exiting</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Tapping"><a href="#Tapping" class="headerlink" title="Tapping"></a><em>Tapping</em></h3><blockquote>
-<p>[Tapping](Theres tapping coming in from the wires. What’s it saying nc jupiter.challenges.picoctf.org 28927.)</p>
+<h3><span id="tapping"><em>Tapping</em></span></h3>
+<blockquote>
+<p>[Tapping](Theres tapping coming in from the wires. What’s it saying nc <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> 28927.)</p>
 <blockquote>
 <p>What kind of encoding uses dashes and dots?The flag is in the format PICOCTF{}</p>
 </blockquote>
 </blockquote>
 <p>摩斯电码解密。</p>
-<h3 id="Mr-Worldwide"><a href="#Mr-Worldwide" class="headerlink" title="Mr-Worldwide"></a><em>Mr-Worldwide</em></h3><blockquote>
+<h3><span id="mr-worldwide"><em>Mr-Worldwide</em></span></h3>
+<blockquote>
 <p>[Mr-Worldwide](A musician left us a message. What’s it mean?)</p>
 </blockquote>
 <p>坐标，百度可查找经纬度，提取城市首字母得flag.</p>
-<h3 id="Flags"><a href="#Flags" class="headerlink" title="Flags"></a><em>Flags</em></h3><blockquote>
+<h3><span id="flags"><em>Flags</em></span></h3>
+<blockquote>
 <p>[Flags](What do the flags mean?)</p>
 <blockquote>
 <p>The flag is in the format PICOCTF{}</p>
 </blockquote>
 </blockquote>
 <p>简单的替换密码，百度找到对应网站和图片即可。<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/International_maritime_signal_flags">https://en.wikipedia.org/wiki/International_maritime_signal_flags</a></p>
-<h3 id="waves-over-lambda"><a href="#waves-over-lambda" class="headerlink" title="waves over lambda"></a><em>waves over lambda</em></h3><blockquote>
-<p>[waves over lambda](We made a lot of substitutions to encrypt this. Can you decrypt it? Connect with nc jupiter.challenges.picoctf.org 1981.)</p>
+<h3><span id="waves-over-lambda"><em>waves over lambda</em></span></h3>
+<blockquote>
+<p>[waves over lambda](We made a lot of substitutions to encrypt this. Can you decrypt it? Connect with nc <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> 1981.)</p>
 <blockquote>
 <p>Flag is not in the usual flag format</p>
 </blockquote>
 </blockquote>
 <p>同为词频分析，观察后猜测jgsk=flag，丢进<a target="_blank" rel="noopener" href="https://quipqiup.com/">在线网站</a>求解得flag.</p>
-<h3 id="miniRSA"><a href="#miniRSA" class="headerlink" title="miniRSA"></a><em>miniRSA</em></h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/73?category=2&page=1">miniRSA</a></p>
+<h3><span id="minirsa"><em>miniRSA</em></span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/73?category=2&amp;page=1">miniRSA</a></p>
 <blockquote>
 <p>RSA tutorial;How could having too small an e affect the security of this 2048 bit key?Make sure you don’t lose precision, the numbers are pretty big (besides the e value)</p>
 </blockquote>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">import gmpy2</span><br><span class="line"></span><br><span class="line">N&#x3D;29331922499794985782735976045591164936683059380558950386560160105740343201513369939006307531165922708949619162698623675349030430859547825708994708321803705309459438099340427770580064400911431856656901982789948285309956111848686906152664473350940486507451771223435835260168971210087470894448460745593956840586530527915802541450092946574694809584880896601317519794442862977471129319781313161842056501715040555964011899589002863730868679527184420789010551475067862907739054966183120621407246398518098981106431219207697870293412176440482900183550467375190239898455201170831410460483829448603477361305838743852756938687673</span><br><span class="line">e&#x3D;3</span><br><span class="line">c&#x3D;2205316413931134031074603746928247799030155221252519872650080519263755075355825243327515211479747536697517688468095325517209911688684309894900992899707504087647575997847717180766377832435022794675332132906451858990782325436498952049751141 </span><br><span class="line">m &#x3D; int(gmpy2.iroot(c, e)[0])</span><br><span class="line">print(long_to_bytes(m))</span><br><span class="line">print(m)</span><br><span class="line">#b&#39;picoCTF&#123;n33d_a_lArg3r_e_d0cd6eae&#125;&#39;</span><br><span class="line">#13016382529449106065894479374027604750406953699090365388203722801043052339225981</span><br></pre></td></tr></table></figure>
-
-<h3 id="b00tl3gRSA2"><a href="#b00tl3gRSA2" class="headerlink" title="b00tl3gRSA2"></a><em>b00tl3gRSA2</em></h3><blockquote>
-<p>[b00tl3gRSA2](In RSA d is a lot bigger than e, why don’t we use d to encrypt instead of e? Connect with nc jupiter.challenges.picoctf.org 42900.)</p>
+<h3><span id="b00tl3grsa2"><em>b00tl3gRSA2</em></span></h3>
+<blockquote>
+<p>[b00tl3gRSA2](In RSA d is a lot bigger than e, why don’t we use d to encrypt instead of e? Connect with nc <a target="_blank" rel="noopener" href="http://jupiter.challenges.picoctf.org">jupiter.challenges.picoctf.org</a> 42900.)</p>
 <blockquote>
 <p>What is e generally?</p>
 </blockquote>
 </blockquote>
 <p>nc后发现e很大，维纳攻击脚本：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import  RSAwienerHacker</span><br><span class="line">c&#x3D;67725484828660171155495211630497256983804750771405173604915475315285337259554745019946599487641055680169265457644340938264529723371169972500050850583888499676593738216542714158045211992126456724042909731789545505279795504523037528761238149430515678580782074452909931229053012113137701929175885390372056497999</span><br><span class="line">n&#x3D;92908556262738254094065441172814586106067369443369499189214986491976931561738844273516700957530563178532708425726354645373760924007923816005398578319882528611540185427918571906094044173194388663365364134997826444445816336765012006409280712402476371185929572990909183399977560298360727962550970347800300222711</span><br><span class="line">e&#x3D;69520159460585947518483836148643582831918423640590763549444035011978832519891224565191960240113848478143117452571748866357688968863765140502139873387990270685914837356707507222866135679527601234329281217279226396840073020368275802208410100769859080342284164663788369069928003055037897805163984210272130270657</span><br><span class="line">d &#x3D;  RSAwienerHacker.hack_RSA(e,n)</span><br><span class="line">if d:</span><br><span class="line">    print(d)</span><br><span class="line">#import hashlib</span><br><span class="line">import binascii</span><br><span class="line">#flag &#x3D;hashlib.md5(hex(d)).hexdigest()</span><br><span class="line">#print flag</span><br><span class="line">m&#x3D;pow(c,d,n)</span><br><span class="line">print(hex(m))</span><br></pre></td></tr></table></figure>
-
 <p>十六进制转字符串后得明文。</p>
-<h3 id="john-pollard"><a href="#john-pollard" class="headerlink" title="john_pollard"></a><em>john_pollard</em></h3><blockquote>
+<h3><span id="john_pollard"><em>john_pollard</em></span></h3>
+<blockquote>
 <p>[john_pollard](Sometimes RSA certificates are breakable)</p>
 <blockquote>
 <p>The flag is in the format picoCTF{p,q};Try swapping p and q if it does not work</p>

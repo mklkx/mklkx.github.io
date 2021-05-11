@@ -6,13 +6,16 @@
 <script src="/js/jquery-3.1.1.min.js"></script>
 
 <script src="/js/fancybox/jquery.fancybox.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2020-12-25T14:13:47.000Z">2020 - 12 - 25 22:13:47</time><h1 class="post__title"><a href="/2020/12/25/MISC-data-1/">MISC-data-1</a></h1><div class="post__main echo"><h3 id="Data-1"><a href="#Data-1" class="headerlink" title="Data[1]"></a>Data[1]</h3><hr>
+<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2020-12-25T14:13:47.000Z">2020 - 12 - 25 22:13:47</time><h1 class="post__title"><a href="/2020/12/25/MISC-data-1/">MISC-data-1</a></h1><div class="post__main echo"><h3><span id="data1">Data[1]</span></h3>
+<hr>
 <p><strong>写在前面</strong></p>
 <blockquote>
 <p>浅薄笔者目前还无法完全消化理解wireshark相关流量分析的工具的内涵，先就针对遇到的题目类型做简单整理记录。</p>
 </blockquote>
-<h3 id="1"><a href="#1" class="headerlink" title="1"></a><em>1</em></h3><p><strong>追踪流TCP+关键词搜索</strong></p>
-<h4 id="被嗅探的流量"><a href="#被嗅探的流量" class="headerlink" title="被嗅探的流量"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F">被嗅探的流量</a></h4><blockquote>
+<h3><span id="1"><em>1</em></span></h3>
+<p><strong>追踪流TCP+关键词搜索</strong></p>
+<h4><span id="被嗅探的流量"></span></h4>
+<blockquote>
 <p>某黑客潜入到某公司内网通过嗅探抓取了一段文件传输的数据，该数据也被该公司截获，你能帮该公司分析他抓取的到底是什么文件的数据吗？ 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>下载附件可知其中是一个.pcapng文件，用wireshark打开。</p>
@@ -21,16 +24,20 @@
 <p><img src="DLCURe.jpg" alt="被嗅探的流量2"></p>
 <p>通过查找关键词flag可得👇</p>
 <p><img src="DLCwMd.png" alt="被嗅探的流量3"></p>
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a><em>2</em></h3><p><strong>追踪流TCP+熟悉jpg的base64表示</strong></p>
-<h4 id="数据包中的线索"><a href="#数据包中的线索" class="headerlink" title="数据包中的线索"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2">数据包中的线索</a></h4><blockquote>
+<h3><span id="2"><em>2</em></span></h3>
+<p><strong>追踪流TCP+熟悉jpg的base64表示</strong></p>
+<h4><span id="数据包中的线索"></span></h4>
+<blockquote>
 <p>公安机关近期截获到某网络犯罪团伙在线交流的数据包，但无法分析出具体的交流内容，聪明的你能帮公安机关找到线索吗？ 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>下载附件得一pcapng文件，用wireshark打开。如题1所示打开TCP追踪👇</p>
 <p><img src="DLC0sA.png" alt="数据包中的线索1"></p>
 <p>根据其中标记的“/9j/”部分，可得知该文件为base64形式下的jpg文件。补上文件头“data:image/jpeg;base64,”后在浏览器的地址栏中输入可得到图片</p>
 <p><img src="DLCBqI.png" alt="数据包中的线索2"></p>
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a><em>3</em></h3><p><strong>追踪流+foremost分离+爆破</strong></p>
-<h4 id="被偷走的文件"><a href="#被偷走的文件" class="headerlink" title="被偷走的文件"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E8%A2%AB%E5%81%B7%E8%B5%B0%E7%9A%84%E6%96%87%E4%BB%B6">被偷走的文件</a></h4><blockquote>
+<h3><span id="3"><em>3</em></span></h3>
+<p><strong>追踪流+foremost分离+爆破</strong></p>
+<h4><span id="被偷走的文件"></span></h4>
+<blockquote>
 <p>一黑客入侵了某公司盗取了重要的机密文件，还好管理员记录了文件被盗走时的流量，请分析该流量，分析出该黑客盗走了什么文件。 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>wireshark追踪流可发现其中隐藏了一个rar文件👇</p>
@@ -38,8 +45,10 @@
 <p>foremost分离后，可发现压缩包带锁，暴力破解可得👇</p>
 <p><img src="DLCNGD.png" alt="被偷走的文件2"></p>
 <p>解得flag。</p>
-<h3 id="4"><a href="#4" class="headerlink" title="4"></a><em>4</em></h3><p><strong>追踪流+bool注入</strong></p>
-<h4 id="sqltest"><a href="#sqltest" class="headerlink" title="sqltest"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#sqltest">sqltest</a></h4><blockquote>
+<h3><span id="4"><em>4</em></span></h3>
+<p><strong>追踪流+bool注入</strong></p>
+<h4><span id="sqltest"></span></h4>
+<blockquote>
 <p>网站遭受到攻击了，还好我们获取到了全部网络流量。 链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1AdQXVGKb6rkzqMLkSnGGBQ">https://pan.baidu.com/s/1AdQXVGKb6rkzqMLkSnGGBQ</a> 提取码: 34uu 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>追踪http流后，观察到大量类似文件（后得知此为bool注入，查资料得<strong>在对一个字符进行bool判断时，被重复判断的ASCII值就是正确的字符</strong>）👇</p>
@@ -47,18 +56,25 @@
 <p>拼接可得，改flag的ascii为</p>
 <p>102 108 97 103 123 52 55 101 100 98 56 51 48 48 101 100 53 102 57 98 50 56 102 99 53 52 98 48 100 48 57 101 99 100 101 102 55 125</p>
 <p>得f l a g { 4 7 e d b 8 3 0 0 e d 5 f 9 b 2 8 f c 5 4 b 0 d 0 9 e c d e f 7 }</p>
-<h3 id="5"><a href="#5" class="headerlink" title="5"></a><em>5</em></h3><p><strong>WireShark插入RSA密钥</strong></p>
-<h4 id="WebNet0"><a href="#WebNet0" class="headerlink" title="WebNet0"></a><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/32?category=4&page=2">WebNet0</a></h4><blockquote>
+<h3><span id="5"><em>5</em></span></h3>
+<p><strong>WireShark插入RSA密钥</strong></p>
+<h4><span id="webnet0"></span></h4>
+<blockquote>
 <p>Try using a tool like Wireshark.How can you decrypt the TLS stream?</p>
 </blockquote>
 <p>给定一个pcapng文件和一密钥，依次点击编辑-&gt;首选项-&gt;RSA密钥-&gt;Add new keyfile后追踪HTTP流即可得到flag。</p>
-<h3 id="6"><a href="#6" class="headerlink" title="6"></a><em>6</em></h3><h4 id="WebNet1"><a href="#WebNet1" class="headerlink" title="WebNet1"></a><a target="_blank" rel="noopener" href="https://play.picoctf.org/practice/challenge/42?category=4&page=2">WebNet1</a></h4><blockquote>
+<h3><span id="6"><em>6</em></span></h3>
+<h4><span id="webnet1"></span></h4>
+<blockquote>
 <p>Try using a tool like Wireshark.How can you decrypt the TLS stream?</p>
 </blockquote>
-<p>同第五题的解法能得假flag:picoCTF{this.is.not.your.flag.anymore}<br>搜索可得真flag:picoCTF{honey.roasted.peanuts}</p>
+<p>同第五题的解法能得假flag:picoCTF{this.is.not.your.flag.anymore}
+搜索可得真flag:picoCTF{honey.roasted.peanuts}</p>
 <hr>
-<h3 id="7"><a href="#7" class="headerlink" title="7"></a><em>7</em></h3><p><strong>流量分析入门</strong></p>
-<h4 id="菜刀666"><a href="#菜刀666" class="headerlink" title="菜刀666"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E8%8F%9C%E5%88%80666">菜刀666</a></h4><blockquote>
+<h3><span id="7"><em>7</em></span></h3>
+<p><strong>流量分析入门</strong></p>
+<h4><span id="菜刀666"></span></h4>
+<blockquote>
 <p>流量分析，你能找到flag吗 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>到手为一名为666666.pcapng的文件，丢进wireshark,其中大部分为TCP流，单个流追踪时没有结果，尝试导出。</p>
@@ -68,53 +84,55 @@
 <p>通过简单分析，能看出该Php文件中</p>
 <p>1)post传入了action变量，对其进行base64解密</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@ini_set(&quot;display_errors&quot;,&quot;0&quot;);@set_time_limit(0);@set_magic_quotes_runtime(0);echo(&quot;-&gt;|&quot;);;$f&#x3D;base64_decode($_POST[&quot;z1&quot;]);$c&#x3D;$_POST[&quot;z2&quot;];$c&#x3D;str_replace(&quot;\r&quot;,&quot;&quot;,$c);$c&#x3D;str_replace(&quot;\n&quot;,&quot;&quot;,$c);$buf&#x3D;&quot;&quot;;for($i&#x3D;0;$i&lt;strlen($c);$i+&#x3D;2)$buf.&#x3D;urldecode(&quot;%&quot;.substr($c,$i,2));echo(@fwrite(fopen($f,&quot;w&quot;),$buf)?&quot;1&quot;:&quot;0&quot;);;echo(&quot;|&lt;-&quot;);die();</span><br></pre></td></tr></table></figure>
-
 <p>2)z1</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">D:\wamp64\www\upload\6666.jpg</span><br></pre></td></tr></table></figure>
-
 <p>3)z2</p>
 <p>文件头FFD8FF，可看出此为jpg文件后缀，另存为jpg文件后得到：</p>
 <p><img src="rMbtaR.jpg" alt="rMbtaR.jpg"></p>
 <p>第二条路为对大文件进行分解。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">binwalk 666666.pcapng</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">binwalk -e 666666.pcapng</span><br></pre></td></tr></table></figure>
-
 <p>得到诸多.xz及一个空白的flag.txt,说明路走对了。</p>
 <p>发现一个加密的.zip文件，密码为此前的Th1s_1s_p4sswd_!!!</p>
 <p>打开得flag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;3OpWdJ-JP6FzK-koCMAK-VkfWBq-75Un2z&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="8"><a href="#8" class="headerlink" title="8"></a><em>8</em></h3><h4 id="john-in-the-middle"><a href="#john-in-the-middle" class="headerlink" title="john-in-the-middle"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#john-in-the-middle">john-in-the-middle</a></h4><blockquote>
+<h3><span id="8"><em>8</em></span></h3>
+<h4><span id="john-in-the-middle"></span></h4>
+<blockquote>
 <p>注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>大量TCP和HTTP流量包，导出对象HTTP，得到大量文件👇</p>
 <p><img src="r1Wwd0.jpg" alt="r1Wwd0.jpg"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar C:\Users\16231\Desktop\Stegsolve.jar</span><br></pre></td></tr></table></figure>
-
 <p>logo.png和scanlines.png通过Image Combiner进行色道分离后得到flag</p>
 <p><img src="r3dcod.jpg" alt="r3dcod.jpg"></p>
 <blockquote>
 <p>挖个坑，不明白这个操作是为啥以及怎么看出来的😂</p>
 </blockquote>
-<h3 id="9"><a href="#9" class="headerlink" title="9"></a><em>9</em></h3><h4 id="ACTF新生赛2020-NTFS数据流"><a href="#ACTF新生赛2020-NTFS数据流" class="headerlink" title="[ACTF新生赛2020]NTFS数据流"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020]NTFS%E6%95%B0%E6%8D%AE%E6%B5%81">[ACTF新生赛2020]NTFS数据流</a></h4><blockquote>
+<h3><span id="9"><em>9</em></span></h3>
+<h4><span id="actf新生赛2020ntfs数据流"></span></h4>
+<blockquote>
 <p>注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>由于这道题比较简单，题干直接给出了考点，用NtfsStreamsEditor打开对应的压缩包，导出后查看得到flag</p>
 <p><img src="rf9J78.jpg" alt="rf9J78.jpg"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ACTF&#123;AAAds_nntfs_ffunn?&#125; </span><br></pre></td></tr></table></figure>
-
-<h3 id="10"><a href="#10" class="headerlink" title="10"></a><em>10</em></h3><h4 id="间谍启示录"><a href="#间谍启示录" class="headerlink" title="间谍启示录"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E9%97%B4%E8%B0%8D%E5%90%AF%E7%A4%BA%E5%BD%95">间谍启示录</a></h4><blockquote>
+<h3><span id="10"><em>10</em></span></h3>
+<h4><span id="间谍启示录"></span></h4>
+<blockquote>
 <p>在城际公路的小道上，罪犯G正在被警方追赶。警官X眼看他正要逃脱，于是不得已开枪击中了罪犯G。罪犯G情急之下将一个物体抛到了前方湍急的河流中，便头一歪突然倒地。警官X接近一看，目标服毒身亡。数分钟后，警方找到了罪犯遗失物体，是一个U盘，可惜警方只来得及复制镜像，U盘便报废了。警方现在拜托你在这个镜像中找到罪犯似乎想隐藏的秘密。 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>得到一iso文件，本想着挂载啥的。</p>
 <p>首先尝试foremost分离，得到</p>
-<p>ole:= 2<br>rar:= 1<br>exe:= 1</p>
+<p>ole:= 2
+rar:= 1
+exe:= 1</p>
 <p>看看压缩包，存在flag.exe,运行一下</p>
 <p>得到 机密文件.txt</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Flag&#123;379:7b758:g7dfe7f19:9464f:4g9231&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="11"><a href="#11" class="headerlink" title="11"></a><em>11</em></h3><h4 id="V-amp-N2020-公开赛-拉胯的三条命令"><a href="#V-amp-N2020-公开赛-拉胯的三条命令" class="headerlink" title="[V&amp;N2020 公开赛]拉胯的三条命令"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[V&N2020%20%E5%85%AC%E5%BC%80%E8%B5%9B]%E6%8B%89%E8%83%AF%E7%9A%84%E4%B8%89%E6%9D%A1%E5%91%BD%E4%BB%A4">[V&amp;N2020 公开赛]拉胯的三条命令</a></h4><p>先看了一波网上的WP，但是还是不太懂。多亏了pdsdt师傅耐心讲解，终于懂了哈哈哈哈哈</p>
+<h3><span id="11"><em>11</em></span></h3>
+<h4><span id="vampn2020-公开赛拉胯的三条命令"></span></h4>
+<p>先看了一波网上的WP，但是还是不太懂。多亏了pdsdt师傅耐心讲解，终于懂了哈哈哈哈哈</p>
 <p>zip加后缀还原后，得到题目描述和nmapall.pcapng。</p>
 <p>编辑-》首选项-》外观-》列</p>
 <p>显示“目的端口”并按从小到大排序后，观察。</p>
@@ -128,66 +146,65 @@
 <blockquote>
 <p>当时还纠结了很久，为什么后面的端口一样满足要求，但是都不算。后明白因为这个流量是自己打自己，所以同一条流量会显示两遍。故5939后的都可以不看啦</p>
 </blockquote>
-<h3 id="12"><a href="#12" class="headerlink" title="12"></a><em>12</em></h3><h4 id="ACTF新生赛2020-swp"><a href="#ACTF新生赛2020-swp" class="headerlink" title="[ACTF新生赛2020]swp"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020]swp">[ACTF新生赛2020]swp</a></h4><blockquote>
+<h3><span id="12"><em>12</em></span></h3>
+<h4><span id="actf新生赛2020swp"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
-<p> 得到wget.pcapng</p>
-<p> 流量分析！！</p>
-<p> 导出http流，得到一堆有的没的</p>
-<p> 观察，发现其中有hint.html</p>
-<p> <img src="s8UNNV.jpg" alt="s8UNNV.jpg"></p>
-<p> 很好，不知道他在说什么</p>
-<p> 继续观察，发现一个名为secret.zip的压缩包，有东西！</p>
-<p> 存在名为flag的文件，丢进010</p>
-<p> 找到flag</p>
+<p>得到wget.pcapng</p>
+<p>流量分析！！</p>
+<p>导出http流，得到一堆有的没的</p>
+<p>观察，发现其中有hint.html</p>
+<p><img src="s8UNNV.jpg" alt="s8UNNV.jpg"></p>
+<p>很好，不知道他在说什么</p>
+<p>继续观察，发现一个名为secret.zip的压缩包，有东西！</p>
+<p>存在名为flag的文件，丢进010</p>
+<p>找到flag</p>
  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">actf&#123;c5558bcf-26da-4f8b-b181-b61f3850b9e5&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="13"><a href="#13" class="headerlink" title="13"></a><em>13</em></h3><h4 id="安洵杯-2019-Attack"><a href="#安洵杯-2019-Attack" class="headerlink" title="[安洵杯 2019]Attack"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[%E5%AE%89%E6%B4%B5%E6%9D%AF%202019]Attack">[安洵杯 2019]Attack</a></h4><blockquote>
+<h3><span id="13"><em>13</em></span></h3>
+<h4><span id="安洵杯-2019attack"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
-<p> 学到了流量分析新姿势</p>
-<p> 常规操作：</p>
-<p> 1）分析，导出HTTP流，得到lsass.dmp</p>
+<p>学到了流量分析新姿势</p>
+<p>常规操作：</p>
+<p>1）分析，导出HTTP流，得到lsass.dmp</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsass是Windows系统的一个进程，用于本地安全和登陆策略</span><br></pre></td></tr></table></figure>
-
-<p> 2)foremost分离得到加密压缩包</p>
-<p> 通过大神WP学到新姿势，<a target="_blank" rel="noopener" href="https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20200917">mimikatz</a>一个名叫猕猴桃的软件(内网渗透工具，可在lsass.exe进程中获取windows的账号明文密码)</p>
+<p>2)foremost分离得到加密压缩包</p>
+<p>通过大神WP学到新姿势，<a target="_blank" rel="noopener" href="https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20200917">mimikatz</a>一个名叫猕猴桃的软件(内网渗透工具，可在lsass.exe进程中获取windows的账号明文密码)</p>
 <p>以管理员权限打开后：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;提升权限</span><br><span class="line">privilege::debug</span><br><span class="line">&#x2F;&#x2F;载入dmp文件</span><br><span class="line">sekurlsa::minidump lsass.dmp</span><br><span class="line">&#x2F;&#x2F;读取登陆密码</span><br><span class="line">sekurlsa::logonpasswords full</span><br><span class="line"></span><br><span class="line">得到密码</span><br><span class="line">W3lc0meToD0g3</span><br></pre></td></tr></table></figure>
-
 <p>解压缩包得D0g3{3466b11de8894198af3636c5bd1efce2}</p>
-<h3 id="14"><a href="#14" class="headerlink" title="14"></a><em>14</em></h3><h4 id="USB"><a href="#USB" class="headerlink" title="USB"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#USB">USB</a></h4><blockquote>
+<h3><span id="14"><em>14</em></span></h3>
+<h4><span id="usb"></span></h4>
+<blockquote>
 <p>Do your konw usb?? 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>得到233.rar及key.ftm，暂时放着，不知道有啥用</p>
 <blockquote>
 <p>做压缩包题最好用winrar。360会自动过滤掉一些东西。</p>
 </blockquote>
-<p>提示文件头损坏，对比大佬笔记<a target="_blank" rel="noopener" href="https://www.freebuf.com/column/199854.html">https://www.freebuf.com/column/199854.html</a></p>
+<p>提示文件头损坏，对比大佬笔记https://www.freebuf.com/column/199854.html</p>
 <p>常规文件头没问题，考虑【HEAD_TYPE应该是0x74而不是0x7A。】</p>
 <p>得到233.png</p>
 <p>分析一波，当Blue通道被置为0的时候出现了二维码！</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ci&#123;v3erf_0tygidv2_fc0&#125;</span><br></pre></td></tr></table></figure>
-
 <p>图片的信息已经被榨干了，来处理key.ftm</p>
 <p>查看二进制，能看到504b0304等字样，foremost可提取到压缩包</p>
 <p>得到key.pcap一个流量</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tshark -r key.pcap -T fields -e usb.capdata &gt; usbdata.txt</span><br></pre></td></tr></table></figure>
-
 <p>通过脚本处理USB流量</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mappings &#x3D; &#123; 0x04:&quot;A&quot;, 0x05:&quot;B&quot;, 0x06:&quot;C&quot;, 0x07:&quot;D&quot;, 0x08:&quot;E&quot;,0x09:&quot;F&quot;, 0x0A:&quot;G&quot;, 0x0B:&quot;H&quot;, 0x0C:&quot;I&quot;, 0x0D:&quot;J&quot;, 0x0E:&quot;K&quot;,0x0F:&quot;L&quot;, 0x10:&quot;M&quot;, 0x11:&quot;N&quot;,0x12:&quot;O&quot;, 0x13:&quot;P&quot;, 0x14:&quot;Q&quot;,0x15:&quot;R&quot;, 0x16:&quot;S&quot;, 0x17:&quot;T&quot;, 0x18:&quot;U&quot;,0x19:&quot;V&quot;, 0x1A:&quot;W&quot;,0x1B:&quot;X&quot;, 0x1C:&quot;Y&quot;, 0x1D:&quot;Z&quot;, 0x1E:&quot;1&quot;, 0x1F:&quot;2&quot;, 0x20:&quot;3&quot;,0x21:&quot;4&quot;, 0x22:&quot;5&quot;, 0x23:&quot;6&quot;, 0x24:&quot;7&quot;, 0x25:&quot;8&quot;, 0x26:&quot;9&quot;,0x27:&quot;0&quot;, 0x28:&quot;\n&quot;, 0x2a:&quot;[DEL]&quot;, 0X2B:&quot; &quot;, 0x2C:&quot; &quot;, 0x2D:&quot;-&quot;, 0x2E:&quot;&#x3D;&quot;, 0x2F:&quot;[&quot;, 0x30:&quot;]&quot;, 0x31:&quot;\\&quot;, 0x32:&quot;~&quot;, 0x33:&quot;;&quot;,0x34:&quot;&#39;&quot;, 0x36:&quot;,&quot;, 0x37:&quot;.&quot; &#125;</span><br><span class="line">nums &#x3D; []</span><br><span class="line">keys &#x3D; open(&#39;usbdata.txt&#39;)</span><br><span class="line">for line in keys:</span><br><span class="line">    if line[0]!&#x3D;&#39;0&#39; or line[1]!&#x3D;&#39;0&#39; or line[3]!&#x3D;&#39;0&#39; or line[4]!&#x3D;&#39;0&#39;or line[9]!&#x3D;&#39;0&#39; or line[10]!&#x3D;&#39;0&#39; or line[12]!&#x3D;&#39;0&#39; or line[13]!&#x3D;&#39;0&#39;or line[15]!&#x3D;&#39;0&#39; or line[16]!&#x3D;&#39;0&#39; or line[18]!&#x3D;&#39;0&#39; or line[19]!&#x3D;&#39;0&#39;or line[21]!&#x3D;&#39;0&#39; or line[22]!&#x3D;&#39;0&#39;:</span><br><span class="line">        continue</span><br><span class="line">    nums.append(int(line[6:8],16))</span><br><span class="line">keys.close()</span><br><span class="line">output &#x3D; &quot;&quot;</span><br><span class="line">for n in nums:</span><br><span class="line">    if n &#x3D;&#x3D; 0 :</span><br><span class="line">        continue</span><br><span class="line">    if n in mappings:</span><br><span class="line">        output +&#x3D; mappings[n]</span><br><span class="line">    else:</span><br><span class="line">        output +&#x3D; &#39;[unknown]&#39;</span><br><span class="line">print &#39;output :\n&#39; + output</span><br></pre></td></tr></table></figure>
-
 <p>得到</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">output :</span><br><span class="line">KEYXINAN</span><br></pre></td></tr></table></figure>
-
 <p>至此，我们已经得到了一个密文ci{v3erf_0tygidv2_fc0}和密钥XINAN</p>
 <p>需要密钥的文本加密，考虑维吉尼亚编码：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fa&#123;i3eei_0llgvgn2_sc0&#125;</span><br></pre></td></tr></table></figure>
-
 <p>由于没有看到flag头，一把梭得到</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;vig3ne2e_is_c00l&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="15"><a href="#15" class="headerlink" title="15"></a><em>15</em></h3><h4 id="SUCTF2018-followme"><a href="#SUCTF2018-followme" class="headerlink" title="[SUCTF2018]followme"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[SUCTF2018]followme">[SUCTF2018]followme</a></h4><blockquote>
+<h3><span id="15"><em>15</em></span></h3>
+<h4><span id="suctf2018followme"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。来源：<a target="_blank" rel="noopener" href="https://github.com/hebtuerror404/CTF_competition_warehouse_2018">https://github.com/hebtuerror404/CTF_competition_warehouse_2018</a></p>
 </blockquote>
 <p>得到一个数据包，发现存在一堆HTTP流，文件名基本都为【login?_=】</p>
@@ -195,32 +212,31 @@
 <p>得到flag</p>
 <p><img src="sNvl24.jpg" alt="sNvl24"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SUCTF&#123;password_is_not_weak&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="16"><a href="#16" class="headerlink" title="16"></a><em>16</em></h3><h4 id="voip"><a href="#voip" class="headerlink" title="voip"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#voip">voip</a></h4><blockquote>
+<h3><span id="16"><em>16</em></span></h3>
+<h4><span id="voip"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>得到一个流量包，全是RTP流量</p>
 <p>学到了【电话-&gt;RTP-&gt;RTP流】或者根据题目名称【电话-&gt;VoIP通话】</p>
 <p>接下来就是英语听力部分</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;9001IVR&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="17"><a href="#17" class="headerlink" title="17"></a><em>17</em></h3><h4 id="HDCTF2019-你能发现什么蛛丝马迹吗"><a href="#HDCTF2019-你能发现什么蛛丝马迹吗" class="headerlink" title="[HDCTF2019]你能发现什么蛛丝马迹吗"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[HDCTF2019]%E4%BD%A0%E8%83%BD%E5%8F%91%E7%8E%B0%E4%BB%80%E4%B9%88%E8%9B%9B%E4%B8%9D%E9%A9%AC%E8%BF%B9%E5%90%97">[HDCTF2019]你能发现什么蛛丝马迹吗</a></h4><blockquote>
+<h3><span id="17"><em>17</em></span></h3>
+<h4><span id="hdctf2019你能发现什么蛛丝马迹吗"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交。</p>
 </blockquote>
 <p>漂亮的内存取证</p>
 <p>利用volatility</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f memory.img imageinfo</span><br></pre></td></tr></table></figure>
-
 <p>查看可能版本</p>
 <p><img src="s4IdJg.jpg" alt="s4IdJg"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f memory.img --profile&#x3D;Win2003SP1x86 pslist</span><br></pre></td></tr></table></figure>
-
 <p>查看进程</p>
 <p><img src="s4TKvd.jpg" alt="s4TKvd"></p>
 <p>发现DumpIt.exe</p>
 <p>查看cmd命令使用记录</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f memory.img --profile&#x3D;Win2003SP1x86 cmdscan</span><br></pre></td></tr></table></figure>
-
 <p><img src="s4Tn8e.jpg" alt="s4Tn8e"></p>
 <p>发现flag的痕迹</p>
 <p>dump下来</p>
@@ -231,31 +247,33 @@
 <p>得到一张二维码</p>
 <p>扫描后</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jfXvUoypb8p3zvmPks8kJ5Kt0vmEw0xUZyRGOicraY4&#x3D;</span><br></pre></td></tr></table></figure>
-
 <p>和</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">key:Th1s_1s_K3y00000</span><br><span class="line">viL1234567890123456</span><br></pre></td></tr></table></figure>
-
-<p>AES带密码带偏移量解密<a target="_blank" rel="noopener" href="http://tool.chacuo.net/cryptaes">http://tool.chacuo.net/cryptaes</a></p>
+<p>AES带密码带偏移量解密http://tool.chacuo.net/cryptaes</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;F0uNd_s0m3th1ng_1n_M3mory&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="18"><a href="#18" class="headerlink" title="18"></a><em>18</em></h3><h4 id="百里挑一"><a href="#百里挑一" class="headerlink" title="百里挑一"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E7%99%BE%E9%87%8C%E6%8C%91%E4%B8%80">百里挑一</a></h4><blockquote>
+<h3><span id="18"><em>18</em></span></h3>
+<h4><span id="百里挑一"></span></h4>
+<blockquote>
 <p>好多漂亮的壁纸，赶快挑一张吧！ 注意：得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>得到很多TCP数据包，导出HTTP数据能发现题目提到的大量壁纸。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">strings *|grep flag</span><br></pre></td></tr></table></figure>
-
 <p>未果</p>
 <p>花了点时间安装大佬们提到的exiftool</p>
-<p>安装ExifTool<br>Windows：<a target="_blank" rel="noopener" href="https://exiftool.org/">下载ExifTool可执行文件</a>（名为：exiftool-x.x.zip），解压得到exiftool(-k).exe，重命名为exiftool.exe，通过CMD命令行运行。<br>Linux：<a target="_blank" rel="noopener" href="https://exiftool.org/">下载ExifTool发行包</a>（名为：Image-ExifTool-x.x.tar.gz），解压后运行./exiftool即可。或通过perl Makefile.PL &amp;&amp; make install编译安装。<br>MacOS：<a target="_blank" rel="noopener" href="https://exiftool.org/">下载ExifTool安装包</a>（名为ExifTool-x.x.dmg），安装后在终端执行exiftool使用。<br>详细的安装文档，参考ExifTool主页安装文档</p>
+<p>安装ExifTool
+Windows：<a target="_blank" rel="noopener" href="https://exiftool.org/">下载ExifTool可执行文件</a>（名为：exiftool-x.x.zip），解压得到exiftool(-k).exe，重命名为exiftool.exe，通过CMD命令行运行。
+Linux：<a target="_blank" rel="noopener" href="https://exiftool.org/">下载ExifTool发行包</a>（名为：Image-ExifTool-x.x.tar.gz），解压后运行./exiftool即可。或通过perl <a target="_blank" rel="noopener" href="http://Makefile.PL">Makefile.PL</a> &amp;&amp; make install编译安装。
+MacOS：<a target="_blank" rel="noopener" href="https://exiftool.org/">下载ExifTool安装包</a>（名为ExifTool-x.x.dmg），安装后在终端执行exiftool使用。
+详细的安装文档，参考ExifTool主页安装文档</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cb4bbe1c-bffe-4101-a9de-4de40bca4558 (1)# </span><br><span class="line">exiftool *|grep flag</span><br><span class="line">XP Comment                      : 恭喜你！找到一半了，还有另一半哦！flag&#123;ae58d0408e26e8f</span><br></pre></td></tr></table></figure>
-
 <p>得到了一半的flag</p>
 <p>后半部分目前不明白是咋推出来的</p>
 <p><img src="so2tln.png" alt="so2tln"></p>
 <p>2.6.a.3.c.0.5.8.9.d.2.3.e.d.e.e.c.}</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag&#123;ae58d0408e26e8f26a3c0589d23edeec&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="19"><a href="#19" class="headerlink" title="19"></a><em>19</em></h3><h4 id="BSidesSF2019-zippy"><a href="#BSidesSF2019-zippy" class="headerlink" title="[BSidesSF2019]zippy"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[BSidesSF2019]zippy">[BSidesSF2019]zippy</a></h4><blockquote>
+<h3><span id="19"><em>19</em></span></h3>
+<h4><span id="bsidessf2019zippy"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>得到一个TCP流量的数据包，追踪几个流量，分别得到了</p>
@@ -265,13 +283,13 @@
 <p>第二章图能得到加密压缩包的密码</p>
 <p>打开压缩包得到</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CTF&#123;this_flag_is_your_flag&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="20"><a href="#20" class="headerlink" title="20"></a><em>20</em></h3><h4 id="BSidesSF2019-table-tennis"><a href="#BSidesSF2019-table-tennis" class="headerlink" title="[BSidesSF2019]table-tennis"></a><a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[BSidesSF2019]table-tennis">[BSidesSF2019]table-tennis</a></h4><blockquote>
+<h3><span id="20"><em>20</em></span></h3>
+<h4><span id="bsidessf2019table-tennis"></span></h4>
+<blockquote>
 <p>得到的 flag 请包上 flag{} 提交</p>
 </blockquote>
 <p>注意到ICMP流中出现了</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;&lt;head&gt;&lt;title&gt;</span><br></pre></td></tr></table></figure>
-
 <p>等字样，挨个誊写</p>
 <p><img src="6p32X8.png" alt="6p32X8"></p>
 <p><img src="6p3g6f.png" alt="6p3g6f"></p>
@@ -281,10 +299,8 @@
 <p><img src="6p3f0g.png" alt="6p3f0g"></p>
 <p><img src="6p3h7Q.png" alt="6p3h7Q"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">writeat(ob(&quot;Q1RGe0p1c3RBUzBuZ0FiMHV0UDFuZ1Awbmd9&quot;));</span><br></pre></td></tr></table></figure>
-
 <p>base64解码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CTF&#123;JustAS0ngAb0utP1ngP0ng&#125;</span><br></pre></td></tr></table></figure>
-
 </div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/MISC/">MISC</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="/js/Valine.min.js"></script>
 <script>new Valine({
