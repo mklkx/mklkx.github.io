@@ -1,152 +1,65 @@
-$(function () {
+/* global KEEP */
 
-	$('.post__main img').on('click', function () {
-		var $img = $(this);
+window.addEventListener('DOMContentLoaded', () => {
 
-		$.fancybox.open([{
-			src: $img.attr('src'),
-			type: 'image'
-		}]);
-	});
+  KEEP.themeInfo = {
+    theme: `Keep v${KEEP.theme_config.version}`,
+    author: 'XPoet',
+    repository: 'https://github.com/XPoet/hexo-theme-keep'
+  }
 
-	$('[data-fancybox]').fancybox({
-		// closeClickOutside: false,
-		image: {
-			protect: true
-		}
-	});
+  KEEP.localStorageKey = 'KEEP-THEME-STATUS';
 
-	// key bind
+  KEEP.styleStatus = {
+    isExpandPageWidth: false,
+    isDark: false,
+    fontSizeLevel: 0,
+    isOpenPageAside: true
+  }
 
-	// j  down
-	// k  top
-	// t  page top
-	// b  page bottom
+  // print theme base info
+  KEEP.printThemeInfo = () => {
+    console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
+  }
 
-	// i  go index
-	var $body = $('html');
-	var unTriggerEles = [
-		'.veditor',
-		'.vnick',
-		'.vmail',
-		'.vlink',
-	];
+  // set styleStatus to localStorage
+  KEEP.setStyleStatus = () => {
+    localStorage.setItem(KEEP.localStorageKey, JSON.stringify(KEEP.styleStatus));
+  }
 
-	var isKeydown = false;
-	$body.on('keydown', function (e) {
-		// console.log(e.which, 'key down', e.target);
+  // get styleStatus from localStorage
+  KEEP.getStyleStatus = () => {
+    let temp = localStorage.getItem(KEEP.localStorageKey);
+    if (temp) {
+      temp = JSON.parse(temp);
+      for (let key in KEEP.styleStatus) {
+        KEEP.styleStatus[key] = temp[key];
+      }
+      return temp;
+    } else {
+      return null;
+    }
+  }
 
-		// 有些 input 或者 textarea 不应该触发这些快捷键
-		var $tar = $(e.target);
-		var needTrigger = true;
-		for (var i = 0; i < unTriggerEles.length; i++) {
-			if ($tar.is(unTriggerEles[i])) {
-				needTrigger = false;
-				break;
-			}
-		}
+  KEEP.refresh = () => {
+    KEEP.initUtils();
+    KEEP.initHeaderShrink();
+    KEEP.initModeToggle();
+    KEEP.initBack2Top();
 
-		if (!needTrigger) {
-			return;
-		}
+    if (KEEP.theme_config.local_search.enable === true) {
+      KEEP.initLocalSearch();
+    }
 
-		switch (e.which) {
-			case 74: // j down
-				if (!isKeydown) {
-					isKeydown = true;
-					requestAnimationFrame(function animate() {
-						var curTop = window.scrollY;
-						window.scrollTo(0, curTop + 15);
+    if (KEEP.theme_config.code_copy.enable === true) {
+      KEEP.initCodeCopy();
+    }
 
-						if (isKeydown) {
-							requestAnimationFrame(animate);
-						}
-					});
-				}
+    if (KEEP.theme_config.lazyload.enable === true) {
+      KEEP.initLazyLoad();
+    }
+  }
 
-				break;
-
-			case 75: // k up
-				if (!isKeydown) {
-					isKeydown = true;
-					requestAnimationFrame(function animate() {
-						var curTop = window.scrollY;
-						window.scrollTo(0, curTop - 15);
-
-						if (isKeydown) {
-							requestAnimationFrame(animate);
-						}
-					});
-				}
-
-				break;
-
-			case 191: // shift + / = ? show help modal
-				break;
-
-				// 16 shift
-			case 84: // t
-				window.scrollToTop(1);
-				break;
-
-			case 66: // b
-				window.scrollToBottom();
-				break;
-
-			case 78: // n half
-				window.scrollPageDown(1);
-				break;
-
-			case 77: // m
-				window.scrollPageUp(1);
-				break;
-		}
-
-	});
-
-	$body.on('keyup', function (e) {
-		isKeydown = false;
-	});
-
-	// print hint
-
-	var comments = [
-		'',
-		'                    .::::.            快捷键：',
-		'                  .::::::::.            j：下移',
-		'                 :::::::::::            k：上移',
-		"             ..:::::::::::'             t：移到最顶",
-		"           '::::::::::::'               b：移到最底",
-		'             .::::::::::                n：下移很多',
-		"        '::::::::::::::..               m：上移很多",
-		'             ..::::::::::::.',
-		'           ``::::::::::::::::',
-		"            ::::``:::::::::'        .:::.",
-		"           ::::'   ':::::'       .::::::::.",
-		"         .::::'      ::::     .:::::::'::::.",
-		"        .:::'       :::::  .::::::::'  ':::::.",
-		"       .::'        :::::::::::::::'      ':::::.",
-		"      .::'        :::::::::::::::'          ':::.",
-		"  ...:::          :::::::::::::'              ``::.",
-		" ```` ':.         '::::::::::'                  ::::..",
-		"                    ':::::'                    ':'````..",
-		''
-	];
-
-	comments.forEach(function (item) {
-		console.log('%c' + item, 'color: #399c9c');
-	});
-
-	$('.btn-reward').on('click', function (e) {
-		e.preventDefault();
-
-		var $reward = $('.reward-wrapper');
-		$reward.slideToggle();
-	});
-
-	$('body').addClass('queue-in');
-	setTimeout(function() {
-		$('body').css({ opacity: 1}).removeClass('queue-in');
-	}, 500);
-
+  KEEP.printThemeInfo();
+  KEEP.refresh();
 });

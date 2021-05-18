@@ -1,18 +1,239 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="煤矿路口西"><link rel="alternative" href="/atom.xml" title="The blog of mklkx" type="application/atom+xml"><link rel="icon" href="/favicon.svg"><title>mini_GKCTF - The blog of mklkx</title>
-<link rel="stylesheet" href="/css/main.css">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="煤矿路口西">
+    
+    <title>
+        
+            mini_GKCTF |
+        
+        The blog of mklkx
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
-<script src="/js/jquery-3.1.1.min.js"></script>
+    <link rel="shortcut icon" href="/images/favicon.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-<script src="/js/fancybox/jquery.fancybox.min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">The blog of mklkx</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li><li class="head-nav__item"><a class="head-nav__link" href="/friends">友链</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2020-09-15T13:58:02.000Z">2020 - 09 - 15 21:58:02</time><h1 class="post__title"><a href="/2020/09/15/mini-GKCTF/">mini_GKCTF</a></h1><div class="post__main echo"><h3><span id="写在前面"><strong>写在前面</strong></span></h3>
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"mklkx.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/logo.jpg","favicon":"/images/favicon.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":"enable","background_img":"/images/bg.svg","description":"(⌐■_■)"},"scroll":{"progress_bar":{"enable":"enable"},"percent":{"enable":"enable"}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="The blog of mklkx" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                The blog of mklkx
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">mini_GKCTF</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">煤矿路口西</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-09-15 21:58:02
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/challenge/">challenge</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>4.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>17 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3><span id="写在前面"><strong>写在前面</strong></span></h3>
 <blockquote>
 <p>浅薄笔者经过几个月的学习，misc和crypto的部分算是有所收获，web和re还不能算是入门，以此篇记录此前一次小比赛。并在10月19日，比赛正式开始后进行一次加更。</p>
 </blockquote>
 <h3><span id="签到">签到</span></h3>
 <blockquote>
-<p><img src="DLPSdx.png" alt="签到"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLPSdx.png" alt="签到"></p>
 </blockquote>
 <h3><span id="web"><em>web</em></span></h3>
 <h4><span id="毕业设计"></span></h4>
@@ -20,20 +241,20 @@
 <p>才刚进校园就想做毕设了，你这也太深谋远虑了嗷，先看看憨憨学长的毕设算了：毕设首页</p>
 </blockquote>
 <p>curl + u查看源码</p>
-<p><img src="DLCbJU.png" alt="web1"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLCbJU.png" alt="web1"></p>
 <h4><span id="毕业设计v20"></span></h4>
 <blockquote>
 <p>后来，憨憨学长恼羞成怒再次修改了自己的毕设首页：毕设首页</p>
 </blockquote>
 <p>同上题，查看源码后进入http://172.17.135.14:8002/images/highlight.flag.js，得到flag.</p>
-<p><img src="DLCHiT.jpg" alt="web2"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLCHiT.jpg" alt="web2"></p>
 <h4><span id="第一个php"></span></h4>
 <blockquote>
 <p>PHP一定是世界上最好的语言！</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">highlight_file(__File__);</span><br><span class="line">$Ginkgo&#x3D;$_GET[&quot;Ginkgo&quot;];</span><br><span class="line">$Vigorous&#x3D;$_GET[&quot;Vigorous&quot;];</span><br><span class="line">if ($Ginkgo &#x3D;&#x3D; &quot;Mini_Ginkgo_Wonderful&quot;)</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;好！冲冲冲~！&quot;);</span><br><span class="line">        if($Vigorous &#x3D;&#x3D; &quot;N1D1W4Dul&quot;)</span><br><span class="line">            &#123;</span><br><span class="line">                system(&quot;cat &#x2F;flag.txt&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">else</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;别把别把别把&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p>get传参得flag。
-<img src="DLCjy9.png" alt="web3"></p>
+<img lazyload src="/images/loading.svg" data-src="DLCjy9.png" alt="web3"></p>
 <h4><span id="一个朴实无华的小游戏"></span></h4>
 <blockquote>
 <p>在那个晚上，有一个男人，叫w4nder，他看带🔥们都打累了，给大家整点有趣的游戏，通关就得flag~ 题目链接</p>
@@ -78,7 +299,7 @@
 <blockquote>
 <p>💧得得是一个爱老婆的男人，有一天他的爱人被😈抓走了， 💧得得为了拯救老婆，决定穿上铠甲，踏上拯救老婆的道路， 💧得得遇到了第一个怪物就是史莱姆，💧得得觉得🔪太慢了，想另辟蹊径 你能帮他想想办法吗？题目链接</p>
 </blockquote>
-<p><img src="DLCze1.jpg" alt="web8"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLCze1.jpg" alt="web8"></p>
 <p>已知经验值应该达到10000，而每次只能打1-9只史莱姆，通过更改源码中maxlength=1为maxlength=100000等，回车后直接练级，挑战，得flag。</p>
 <h4><span id="文件查询系统"></span></h4>
 <p>页面提示备份文件，dirsearch扫描后发现存在www.zip，下载后得到网页源码</p>
@@ -91,7 +312,7 @@
 <p>关键点就在于这几个“；”，使得整个命令只留下了我们想要的&quot;cat /flag;&quot;</p>
 <h4><span id="的爱情故事">[😀👊的爱情故事]</span></h4>
 <blockquote>
-<p>一段惊心动魄的爱情天🐕故事。<a target="_blank" rel="noopener" href="http://172.17.135.14:8010/">题目链接</a></p>
+<p>一段惊心动魄的爱情天🐕故事。<a class="link" target="_blank" rel="noopener" href="http://172.17.135.14:8010/">题目链接<i class="fas fa-external-link-alt"></i></a></p>
 </blockquote>
 <p>机器人协议，搜索/robots.txt文件，得</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Disallow:&#x2F;i_love_robot.php</span><br></pre></td></tr></table></figure>
@@ -149,34 +370,34 @@
 <h4><span id="真实的压缩包"><strong>真实的压缩包</strong></span></h4>
 <blockquote>
 <p>[真实的压缩包]</p>
-<p><img src="DLERzT.png" alt="真实的压缩包1"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLERzT.png" alt="真实的压缩包1"></p>
 </blockquote>
 <h4><span id="虚假的压缩包"><strong>虚假的压缩包</strong></span></h4>
 <p>[虚假的压缩包]</p>
-<p><img src="DLCvLR.png" alt="虚假的压缩包1"></p>
-<p><img src="DLPCFK.png" alt="虚假的压缩包2"></p>
-<p><img src="DLEfQU.png" alt="虚假的压缩包3"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLCvLR.png" alt="虚假的压缩包1"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLPCFK.png" alt="虚假的压缩包2"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLEfQU.png" alt="虚假的压缩包3"></p>
 <h4><span id="有眼就行"><strong>有眼就行</strong></span></h4>
 <blockquote>
 <p>[有眼就行]</p>
-<p><img src="DLm491.png" alt="有眼就行"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLm491.png" alt="有眼就行"></p>
 </blockquote>
 <h4><span id="追踪他的密码"><strong>追踪他的密码</strong></span></h4>
 <blockquote>
 <p>[追踪他的密码]</p>
-<p><img src="DLE2WV.png" alt="追踪他的密码"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLE2WV.png" alt="追踪他的密码"></p>
 </blockquote>
 <h4><span id="hello-hex"><strong>hello hex</strong></span></h4>
 <blockquote>
 <p>[hello hex1]</p>
-<p><img src="DLCXQJ.png" alt="hello hex1"></p>
-<p><img src="DLCqWF.png" alt="hello hex2"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLCXQJ.png" alt="hello hex1"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLCqWF.png" alt="hello hex2"></p>
 </blockquote>
 <h4><span id="baby流量分析"><strong>baby流量分析</strong></span></h4>
 <blockquote>
 <p>[baby流量分析]</p>
 </blockquote>
-<p><img src="DLCLz4.png" alt="baby流量分析"></p>
+<p><img lazyload src="/images/loading.svg" data-src="DLCLz4.png" alt="baby流量分析"></p>
 <h4><span id="郭哥的mimi"><strong>郭哥的mimi</strong></span></h4>
 <blockquote>
 <p>[郭哥的mimi]</p>
@@ -194,7 +415,7 @@
 <p>你需要一双善于发现的眼睛，和一个善于发现的脑子，更需要一对善于发现的手，这是你与生俱来的优势，发现图片里隐藏的信息吧！</p>
 </blockquote>
 </blockquote>
-<p>搜索文字题目，得<a target="_blank" rel="noopener" href="https://sekao.net/pixeljihad/">在线网站</a></p>
+<p>搜索文字题目，得<a class="link" target="_blank" rel="noopener" href="https://sekao.net/pixeljihad/">在线网站<i class="fas fa-external-link-alt"></i></a></p>
 <p>需要密码。既然是图片，拖进winhex里找找叭，文件尾有发现：Y3RmaXNmdW4=</p>
 <p>base64解密后得ctfisfun。</p>
 <p>两者结合，得flag.</p>
@@ -301,26 +522,286 @@ z x c v b n m p -
 </blockquote>
 <p>新佛曰解密+佛曰解密，得flag。</p>
 <p>个人觉得这道题与前面考点部分重复，送分题。</p>
-</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/challenge/">challenge</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/js/Valine.min.js"></script>
-<script>new Valine({
-  av: AV,
-  el: '#v-container',
-  app_id: '2VYdBl7nzsDwGBpC7KummVUd-gzGzoHsz',
-  app_key: 'L0QfImQHhdbw4LhAjSrOLbWG',
-  avatar: 'retro',
-  avatarForce: false,
-  notify: false,
-  verify: false,
-  lang: 'zh-cn',
-  placeholder: 'balabala~',
-  pageSize: 10,
-  visitor: true,
-  highlight: true,
-  emoticon_url: '/img/alu',
-  emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
-});</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2019 - 2021 煤矿路口西</div></footer>
-<script src="/js/scroller.js"></script>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：mini_GKCTF</li>
+        <li>本文作者：煤矿路口西</li>
+        <li>创建时间：2020-09-15 21:58:02</li>
+        <li>
+            本文链接：http://www.mklkx.xyz/2020/09/15/mini-GKCTF/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/10/17/GeekChallenge2020/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">GeekChallenge2020</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">煤矿路口西</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">冀ICP备2021010275号</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">签到</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">web</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.4.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.6.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.7.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.8.</span> <span class="nav-text">[💧JSBUG💧]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.9.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.10.</span> <span class="nav-text">[😀👊的爱情故事]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">re</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">[GKdoor]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">[CheckPlus]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.3.</span> <span class="nav-text">[2048]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.4.</span> <span class="nav-text">[assembly]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">pwn</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.1.</span> <span class="nav-text">[easy_nc]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.2.</span> <span class="nav-text">[hard_pwn]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.3.</span> <span class="nav-text">[🍑姐姐的PWN学习之路]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">misc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.1.</span> <span class="nav-text">有手就行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.2.</span> <span class="nav-text">真实的压缩包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.3.</span> <span class="nav-text">虚假的压缩包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.4.</span> <span class="nav-text">有眼就行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.5.</span> <span class="nav-text">追踪他的密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.6.</span> <span class="nav-text">hello hex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.7.</span> <span class="nav-text">baby流量分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.8.</span> <span class="nav-text">郭哥的mimi</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.9.</span> <span class="nav-text">PixelJihad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.10.</span> <span class="nav-text">阿巴阿巴</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">crypto</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.1.</span> <span class="nav-text">crypto1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.2.</span> <span class="nav-text">[注入哥的爱情回执]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.3.</span> <span class="nav-text">[莱×🌂兄弟]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.4.</span> <span class="nav-text">[中华文化]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.5.</span> <span class="nav-text">[文化人]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.6.</span> <span class="nav-text">[天干地支]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.7.</span> <span class="nav-text">[Biometric list]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.8.</span> <span class="nav-text">[魏✌呐和阿①爱丝]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.9.</span> <span class="nav-text">[啪嗒啪嗒啪嗒]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.10.</span> <span class="nav-text">[王可可大讲堂]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.11.</span> <span class="nav-text">[我真的不知道他是哪方面的题目了]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.12.</span> <span class="nav-text">[同音之旅]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.13.</span> <span class="nav-text">[去冒险吧！]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">7.14.</span> <span class="nav-text">[先祖的教诲]</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
 
 <script src="/js/main.js"></script>
-</body></html>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
