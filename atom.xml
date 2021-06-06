@@ -6,7 +6,7 @@
   <link href="http://mklkx.github.io/atom.xml" rel="self"/>
   
   <link href="http://mklkx.github.io/"/>
-  <updated>2021-06-06T13:00:19.836Z</updated>
+  <updated>2021-06-06T13:01:51.084Z</updated>
   <id>http://mklkx.github.io/</id>
   
   <author>
@@ -21,18 +21,19 @@
     <link href="http://mklkx.github.io/2021/06/06/%E7%BE%8E%E5%9B%A2CTF%E5%88%9D-%E5%86%B3/"/>
     <id>http://mklkx.github.io/2021/06/06/%E7%BE%8E%E5%9B%A2CTF%E5%88%9D-%E5%86%B3/</id>
     <published>2021-06-06T12:48:00.000Z</published>
-    <updated>2021-06-06T13:00:19.836Z</updated>
+    <updated>2021-06-06T13:01:51.084Z</updated>
     
-    <content type="html"><![CDATA[<h3><span id="美团ctf初决">美团CTF初+决</span></h3><hr><h4><span id="different_puzzle">Different_Puzzle</span></h4><p>得到null.vhd</p><p>用360压缩打开</p><p>直接拖出来</p><p>得到69张图片，1个flag.exe</p><p>后缀名vhd，用取证大师打开</p><p>根据</p><p><img lazyload src="/images/loading.svg" data-src="1.png" alt="1"></p><p><a class="link" href="https://github.com/jschicht/UsnJrnl2Csv">https://github.com/jschicht/UsnJrnl2Csv<i class="fas fa-external-link-alt"></i></a></p><p>找到日志，</p><p><img lazyload src="/images/loading.svg" data-src="2.png" alt="2"></p><p>得到对应的png</p><p>通过PS拼接得到</p><p><img lazyload src="/images/loading.svg" data-src="3.png" alt="3"></p><p>扫描条形码得到【EuO9&amp;cDH】</p><p><img lazyload src="/images/loading.svg" data-src="4.png" alt="4"></p><p>注：此处有个大坑，若用一向以精确度闻名的支付宝扫码的话，会出现只能识别一半的情况，反倒是QQ能得到准确的内容【EuO9&amp;cDH】</p><p>运行flag.exe得到flag</p><p><img lazyload src="/images/loading.svg" data-src="5.png" alt="5"></p><p><strong>flag{af26d693-2de2-4b16-be49-d95e83a43f76}</strong></p><h4><span id="misc_cp">MISC_CP</span></h4><p>预览图看到蓝色部分的二维码</p><p>foremost后</p><p><img lazyload src="/images/loading.svg" data-src="6.png" alt="6"></p><p>扫描得到</p><p><img lazyload src="/images/loading.svg" data-src="7.png" alt="7"></p><p>11-8437-f2c73bf76c16}</p><p>另一半flag为lsb隐写</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar Stegsolove.jar</span><br></pre></td></tr></table></figure><p>在Blue plane 6时得到汉信码</p><p><img lazyload src="/images/loading.svg" data-src="8.png" alt="8"></p><p>中国编码APP</p><p><img lazyload src="/images/loading.svg" data-src="9.jpg" alt="9"></p><p>flag{d4dce746-7f13-47</p><p><strong>flag值：flag{d4dce746-7f13-4711-8437-f2c73bf76c16}</strong></p>]]></content>
+    <content type="html"><![CDATA[<h3><span id="美团ctf初决">美团CTF初+决</span></h3><p>团队第九</p><hr><h4><span id="different_puzzle">Different_Puzzle</span></h4><p>得到null.vhd</p><p>用360压缩打开</p><p>直接拖出来</p><p>得到69张图片，1个flag.exe</p><p>后缀名vhd，用取证大师打开</p><p>根据</p><p><img lazyload src="/images/loading.svg" data-src="1.png" alt="1"></p><p><a class="link" href="https://github.com/jschicht/UsnJrnl2Csv">https://github.com/jschicht/UsnJrnl2Csv<i class="fas fa-external-link-alt"></i></a></p><p>找到日志，</p><p><img lazyload src="/images/loading.svg" data-src="2.png" alt="2"></p><p>得到对应的png</p><p>通过PS拼接得到</p><p><img lazyload src="/images/loading.svg" data-src="3.png" alt="3"></p><p>扫描条形码得到【EuO9&amp;cDH】</p><p><img lazyload src="/images/loading.svg" data-src="4.png" alt="4"></p><p>注：此处有个大坑，若用一向以精确度闻名的支付宝扫码的话，会出现只能识别一半的情况，反倒是QQ能得到准确的内容【EuO9&amp;cDH】</p><p>运行flag.exe得到flag</p><p><img lazyload src="/images/loading.svg" data-src="5.png" alt="5"></p><p><strong>flag{af26d693-2de2-4b16-be49-d95e83a43f76}</strong></p><h4><span id="misc_cp">MISC_CP</span></h4><p>预览图看到蓝色部分的二维码</p><p>foremost后</p><p><img lazyload src="/images/loading.svg" data-src="6.png" alt="6"></p><p>扫描得到</p><p><img lazyload src="/images/loading.svg" data-src="7.png" alt="7"></p><p>11-8437-f2c73bf76c16}</p><p>另一半flag为lsb隐写</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar Stegsolove.jar</span><br></pre></td></tr></table></figure><p>在Blue plane 6时得到汉信码</p><p><img lazyload src="/images/loading.svg" data-src="8.png" alt="8"></p><p>中国编码APP</p><p><img lazyload src="/images/loading.svg" data-src="9.jpg" alt="9"></p><p>flag{d4dce746-7f13-47</p><p><strong>flag值：flag{d4dce746-7f13-4711-8437-f2c73bf76c16}</strong></p>]]></content>
     
     
       
       
     <summary type="html">&lt;h3&gt;&lt;span id=&quot;美团ctf初决&quot;&gt;美团CTF初+决&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;团队第九&lt;/p&gt;
 &lt;hr&gt;
 &lt;h4&gt;&lt;span id=&quot;different_puzzle&quot;&gt;Different_Puzzle&lt;/span&gt;&lt;/h4&gt;
 &lt;p&gt;得到null.vhd&lt;/p&gt;
-&lt;p&gt;用360压缩打开&lt;</summary>
+</summary>
       
     
     
