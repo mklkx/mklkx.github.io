@@ -9,7 +9,7 @@
     
     <title>
         
-            2021年第六届全国网络空间安全技术大赛Misc |
+            2021DozerCTF |
         
         The blog of mklkx
     </title>
@@ -169,7 +169,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">2021年第六届全国网络空间安全技术大赛Misc</span>
+            <span class="title-hover-animation">2021DozerCTF</span>
         </div>
 
         
@@ -187,7 +187,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-05-11 14:15:21
+        <i class="fas fa-edit"></i>&nbsp;2021-06-06 21:25:34
     </span>
     
     
@@ -210,12 +210,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>357 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>606 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -231,52 +231,62 @@
         
 
         <div class="article-content markdown-body">
-            <h3><span id="2021年第六届全国网络空间安全技术大赛misc">2021年第六届全国网络空间安全技术大赛Misc</span></h3>
+            <h3><span id="2021dozerctf">2021DozerCTF</span></h3>
 <hr>
-<h4><span id="rgb">RGB</span></h4>
-<p>一共得到28864行RGB数据，</p>
-<p>通过不断尝试分解64 x 11 x 41</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">x &#x3D; 176</span><br><span class="line">y &#x3D; 164</span><br><span class="line">img &#x3D; Image.new(&#39;RGB&#39;,(x,y))</span><br><span class="line">file &#x3D; open(&#39;R#G#B.txt&#39;, &#39;r&#39;)</span><br><span class="line">for width in range(0,x):</span><br><span class="line">    for height in range(0,y):</span><br><span class="line">        line &#x3D; file.readline()</span><br><span class="line">        print line</span><br><span class="line">        rgb &#x3D; line.split(&#39;#&#39;)</span><br><span class="line">        print rgb</span><br><span class="line">        img.putpixel((width,height),(int(rgb[0]),int(rgb[1]),int(rgb[2])))</span><br><span class="line">img.save(&#39;rgb1.jpg&#39;)</span><br></pre></td></tr></table></figure>
+<h4><span id="不会有人以为re那道才是签到吧">不会有人以为re那道才是签到吧</span></h4>
+<p>bilibili视频0.5倍速截图</p>
 <p><img lazyload src="/images/loading.svg" data-src="1.png" alt="1"></p>
-<p>水平翻转得到flag{c1d836d1db9d42dd}</p>
-<h4><span id="zip">zip</span></h4>
-<p>压缩包ARCHPR爆破得到密码【ff123】</p>
-<p>得到【readme.txt】</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">培根密码</span><br><span class="line">BABBBBBAAAABAAB</span><br><span class="line"># XYJ</span><br><span class="line"># xyj</span><br></pre></td></tr></table></figure>
-<p>【文章.docx】解密后</p>
+<h4><span id="detective_novel">detective_novel</span></h4>
+<p>output后得到zip</p>
+<p>zip里有flag.jpg和hint.png</p>
+<p>hint.png丢进010editor</p>
+<p>手动分离</p>
 <p><img lazyload src="/images/loading.svg" data-src="2.png" alt="2"></p>
-<p>全选上色</p>
-<p>得到flag{cbfacb9df0c7caf9a2b8a8ffbd72d1a0}</p>
-<h4><span id="memory_1">Memory_1</span></h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 查看可能版本 </span><br><span class="line">volatility -f mal.vmem imageinfo </span><br><span class="line"># 查看进程 </span><br><span class="line">volatility -f mal.vmem --profile&#x3D;Win7SP1x64 pslist</span><br></pre></td></tr></table></figure>
-<p>观察时间规律，发现曾经打开cmd</p>
+<p>用winrar打开</p>
+<p>得到hint.txt【希尔顿给福尔摩斯的一封信！！！】</p>
+<p>和letter.png</p>
+<p>跳舞的小人易得到【DOZER】</p>
+<p>结合hint.png中关键词【guess】</p>
+<p>猜测为outguess加密</p>
 <p><img lazyload src="/images/loading.svg" data-src="3.png" alt="3"></p>
-<p>然而</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mal.vmem --profile&#x3D;Win7SP1x64 cmdscan</span><br></pre></td></tr></table></figure>
-<p>只能看到ipconfig</p>
-<p>发现文章https://wiki.wgpsec.org/knowledge/ctf/Volatility.html</p>
-<p>尝试查看cmd的详细历史命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mal.vmem --profile&#x3D;Win7SP1x64 cmdline</span><br></pre></td></tr></table></figure>
-<p>经过多次尝试，确定病毒名为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DozerCTF&#123;Y0u_arE_h0lME4&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="一点也不杂">一点也不杂</span></h4>
+<p>第一部分</p>
 <p><img lazyload src="/images/loading.svg" data-src="4.png" alt="4"></p>
-<p>flag{24060da3d327991115a96e7099da25c3}</p>
-<h4><span id="memory_2">Memory_2</span></h4>
-<p>看一下用户信息</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">volatility -f mal.vmem --profile&#x3D;Win7SP1x64 printkey -K &quot;SAM\Domains\Account\Users\Names&quot;</span><br></pre></td></tr></table></figure>
 <p><img lazyload src="/images/loading.svg" data-src="5.png" alt="5"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DOYOUKNOW_CRT</span><br></pre></td></tr></table></figure>
+<p>第二部分</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env python</span><br><span class="line">from functools import reduce</span><br><span class="line">def egcd(a, b):</span><br><span class="line">    &quot;&quot;&quot;扩展欧几里得&quot;&quot;&quot;</span><br><span class="line">    if 0 &#x3D;&#x3D; b:</span><br><span class="line">        return 1, 0, a</span><br><span class="line">    x, y, q &#x3D; egcd(b, a % b)</span><br><span class="line">    x, y &#x3D; y, (x - a &#x2F;&#x2F; b * y)</span><br><span class="line">    return x, y, q</span><br><span class="line">def chinese_remainder(pairs):</span><br><span class="line">    &quot;&quot;&quot;中国剩余定理&quot;&quot;&quot;</span><br><span class="line">    mod_list, remainder_list &#x3D; [p[0] for p in pairs], [p[1] for p in pairs]</span><br><span class="line">    mod_product &#x3D; reduce(lambda x, y: x * y, mod_list)</span><br><span class="line">    mi_list &#x3D; [mod_product&#x2F;&#x2F;x for x in mod_list]</span><br><span class="line">    mi_inverse &#x3D; [egcd(mi_list[i], mod_list[i])[0] for i in range(len(mi_list))]</span><br><span class="line">    x &#x3D; 0</span><br><span class="line">    for i in range(len(remainder_list)):</span><br><span class="line">        x +&#x3D; mi_list[i] * mi_inverse[i] * remainder_list[i]</span><br><span class="line">        x %&#x3D; mod_product</span><br><span class="line">    return x</span><br><span class="line">if __name__&#x3D;&#x3D;&#39;__main__&#39;:</span><br><span class="line">    print(chinese_remainder([(5,2) ,(7,2)  ,(17,9) ,(23,16)]))</span><br><span class="line"></span><br><span class="line">#5007</span><br></pre></td></tr></table></figure>
+<p>第三部分</p>
+<p>base85解密</p>
 <p><img lazyload src="/images/loading.svg" data-src="6.png" alt="6"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_good_over&#125;</span><br></pre></td></tr></table></figure>
+<p>拼接得flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DozerCTF&#123;DOYOUKNOW_CRT5007_good_over&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="funny_pixel">funny_pixel</span></h4>
+<p>图片放大发现中心部分存在01字样</p>
 <p><img lazyload src="/images/loading.svg" data-src="7.png" alt="7"></p>
-<p>在最后发现可疑net1.exe，</p>
-<p>flag{45321c07f425d915c55424957353dd07}</p>
-<h4><span id="slowloris">Slowloris</span></h4>
-<p>1)小白做法为，</p>
-<p>统计-》流量图-》遍历所有ip</p>
 <p><img lazyload src="/images/loading.svg" data-src="8.png" alt="8"></p>
-<p>md5加密</p>
-<p>slowloris/195.8.178.227</p>
-<p>得到flag</p>
-<p>flag{3fc9d4a929cb690728d2b76c76483abe}</p>
-<p>2)一般做法为：Slowloris攻击为大流量攻击，通过流量包查看哪两个ip之间有频繁交互即可锁定</p>
+<p>利用PS提取RGB</p>
+<p><img lazyload src="/images/loading.svg" data-src="9.png" alt="9"></p>
+<p>根据国赛的脚本修改</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">from PIL import Image</span><br><span class="line">text&#x3D;[]</span><br><span class="line">for num in range(1,219):</span><br><span class="line">    for k in range(num,num+1):#张数一共218(1,2)(2,3)(218,219)</span><br><span class="line">        print(k)</span><br><span class="line">        im &#x3D; Image.open(&#39;%d.png&#39;%k)</span><br><span class="line">        # print(im.size[0])#310</span><br><span class="line">        # print(im.size[1])#280</span><br><span class="line">        for i in range(im.size[0]):</span><br><span class="line">            for j in range(im.size[1]):</span><br><span class="line">                if(im.getpixel((i, j))&#x3D;&#x3D;(239,239,39)):</span><br><span class="line">                    string&#x3D;str(i)+&quot;#&quot;+str(j)</span><br><span class="line">                    text.append(string)</span><br><span class="line">                    #print(im.getpixel((i,j)))</span><br><span class="line">        # img&#x3D;Image.new(&#39;RGB&#39;,(310,280))</span><br><span class="line">        # text &#x3D; file.readline()</span><br><span class="line">        #print(text)</span><br><span class="line">        ch &#x3D; []</span><br><span class="line">        x &#x3D; []</span><br><span class="line">        y &#x3D; []</span><br><span class="line">        for i in range(len(text)):</span><br><span class="line">            ch.append(str(text[i]).split(&quot;#&quot;))</span><br><span class="line">            #print(ch)</span><br><span class="line">            x &#x3D; []</span><br><span class="line">            y &#x3D; []</span><br><span class="line">            for i in ch:</span><br><span class="line">                x.append(i[0])</span><br><span class="line">                y.append(i[1])</span><br><span class="line">        print(x)</span><br><span class="line">        print(y)</span><br><span class="line">        # print(x)</span><br><span class="line">        # print(y)</span><br><span class="line">        # img &#x3D; Image.new(&#39;RGB&#39;, (310, 280))</span><br><span class="line">        # for j in range(len(x)):</span><br><span class="line">        #     print(int(x[j]),int(y[j]))</span><br><span class="line">        #     img.putpixel((int(x[j]), int(y[j])), (239, 239, 39))</span><br><span class="line">        #     img.save(&quot;test%d.png&quot; % k)</span><br></pre></td></tr></table></figure>
+<p>考虑到如果输出图片，仍然需要肉眼识别01，</p>
+<p>不如寻找其中的规律</p>
+<p>观察发现</p>
+<p><img lazyload src="/images/loading.svg" data-src="10.png" alt="10"></p>
+<p>针对0和1，识别的内容如上图</p>
+<p>利用notepad++进行进一步的数据操作</p>
+<p><img lazyload src="/images/loading.svg" data-src="11.png" alt="11"></p>
+<p><img lazyload src="/images/loading.svg" data-src="12.png" alt="12"></p>
+<p>同时对逗号进行进一步微调后，得到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">01000100011011110111101001100101011100100100001101010100010001100111101101000100001100000101111101111001010011110101010101011111010011000100100101101011011001010101111101010000011010010111100001000101011011000111110111</span><br></pre></td></tr></table></figure>
+<p>在线进制转换</p>
+<p><a class="link" target="_blank" rel="noopener" href="http://www.ab126.com/goju/1711.html">http://www.ab126.com/goju/1711.html<i class="fas fa-external-link-alt"></i></a></p>
+<p><img lazyload src="/images/loading.svg" data-src="13.png" alt="13"></p>
+<p><strong>DozerCTF{D0_yOU_LIke_PixEl}</strong></p>
+<h4><span id="做个问卷吧">做个问卷吧</span></h4>
+<p><strong>DozerCTF{Thank_you_for_participating_in_DozerCTF2021}</strong></p>
 
         </div>
 
@@ -284,11 +294,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：2021年第六届全国网络空间安全技术大赛Misc</li>
+        <li>本文标题：2021DozerCTF</li>
         <li>本文作者：煤矿路口西</li>
-        <li>创建时间：2021-05-11 14:15:21</li>
+        <li>创建时间：2021-06-06 21:25:34</li>
         <li>
-            本文链接：http://www.mklkx.xyz/2021/05/11/2021年第六届全国网络空间安全技术大赛Misc/
+            本文链接：http://www.mklkx.xyz/2021/06/06/2021DozerCTF/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -302,29 +312,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/05/11/2021%E6%B4%A5%E9%97%A8%E6%9D%AF/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">2021津门杯</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/05/04/ISCC2021/"
+                           href="/2021/06/06/%E7%BE%8E%E5%9B%A2CTF%E5%88%9D-%E5%86%B3/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">ISCC2021</span>
+                                <span class="post-nav-title-item">美团CTF初+决</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -449,7 +444,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">2021年第六届全国网络空间安全技术大赛Misc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">RGB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">zip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">Memory_1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">Memory_2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">Slowloris</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">2021DozerCTF</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">不会有人以为re那道才是签到吧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">detective_novel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">一点也不杂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">funny_pixel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">做个问卷吧</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
