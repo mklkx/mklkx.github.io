@@ -9,7 +9,7 @@
     
     <title>
         
-            2021工业信息安全技能大赛-1 |
+            破解Android镜像锁屏密码 |
         
         The blog of mklkx
     </title>
@@ -169,7 +169,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">2021工业信息安全技能大赛-1</span>
+            <span class="title-hover-animation">破解Android镜像锁屏密码</span>
         </div>
 
         
@@ -187,7 +187,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-08-20 16:24:35
+        <i class="fas fa-edit"></i>&nbsp;2021-09-21 11:06:50
     </span>
     
     
@@ -196,11 +196,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/challenge/">challenge</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/MISC/">MISC</a>&nbsp;
+                        <a href="/tags/%E5%8F%96%E8%AF%81/">取证</a>&nbsp;
                     </li>
                 
             </ul>
@@ -210,12 +206,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>181 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>652 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -231,24 +227,31 @@
         
 
         <div class="article-content markdown-body">
-            <h3><span id="2021工业信息安全技能大赛-1">2021工业信息安全技能大赛-1</span></h3>
+            <h3><span id="破解android镜像锁屏密码">破解Android镜像锁屏密码</span></h3>
 <hr>
-<h4><span id="隐藏的工程">隐藏的工程</span></h4>
-<blockquote>
-<p>老代凭借多年工业企业运维经验，发现ICS工程师的工作电脑中有一张可疑的工艺图。在对图片进行分析时，发现其中存在异常信息，您能从中找到flag吗？flag格式为:flag{}</p>
-</blockquote>
-<p>对图片进行F5操作，</p>
-<p>根据提示，猜测密码为ICS</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java Extract gcwj.jpg  -e 1.txt -p ICS</span><br></pre></td></tr></table></figure>
-<p><img lazyload src="/images/loading.svg" data-src="1.png" alt="1"></p>
-<p>得到1.txt</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;wwr.lanzoui.com&#x2F;iIMaiqcpaxg</span><br></pre></td></tr></table></figure>
-<p>一个蓝奏云链接</p>
-<p>通过提取得到工程文件</p>
-<p>发现名为【汽机系统】的工程文件中存在kingview6.55的关键词</p>
-<p><img lazyload src="/images/loading.svg" data-src="3.png" alt="3"></p>
-<p>通过查阅，能看到这是组态王6.55的相关文件</p>
-<p><img lazyload src="/images/loading.svg" data-src="2.png" alt="2"></p>
+<h4><span id="制作准备">制作准备</span></h4>
+<p>首先我们需要手动制作一个Android镜像。</p>
+<p>此处我们采用方便的“夜神模拟器”直接创建一个安卓镜像，并设置锁屏密码</p>
+<p><img lazyload src="/images/loading.svg" data-src="make_1.jpg" alt="make_1"></p>
+<h4><span id="破解过程">破解过程</span></h4>
+<p>取证大师打开vmdk文件</p>
+<p>nox_2-disk2.vmdk/分区3/system/<strong>device_policies.xml</strong></p>
+<p>nox_2-disk2.vmdk/分区3/system/<strong>gatekeeper.password.key</strong></p>
+<p>nox_2-disk2.vmdk/分区3/system/<strong>gatekeeper.pattern.key</strong></p>
+<p><img lazyload src="/images/loading.svg" data-src="make_2.jpg" alt="make_2"></p>
+<p>根据device_policies.xml文件中，我们得到该解锁图案的长度为9</p>
+<p><img lazyload src="/images/loading.svg" data-src="make_3.jpg" alt="make_3"></p>
+<p>同时我们可以看到密码由纯数字构成。</p>
+<p>在此基础上，个人认为除了图案密码，其他的密码也有了爆破的可行性。</p>
+<p>结合scrypt-hash算法<a class="link" target="_blank" rel="noopener" href="https://github.com/dannycoates/scrypt-hash">GitHub - dannycoates/scrypt-hash: node bindings for crypto_scrypt<i class="fas fa-external-link-alt"></i></a>，对文中给出的m-pass-hash.py进行改进后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python</span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">import struct</span><br><span class="line">import binascii</span><br><span class="line">import pyscrypt</span><br><span class="line"></span><br><span class="line">N &#x3D; 16384</span><br><span class="line">r &#x3D; 8</span><br><span class="line">p &#x3D; 1</span><br><span class="line"></span><br><span class="line">f &#x3D; open(&#39;gatekeeper.pattern.key&#39;, &#39;rb&#39;)  # 读取gatekeeper.pattern.key文件</span><br><span class="line">blob &#x3D; f.read()</span><br><span class="line">s &#x3D; struct.Struct(&#39;&lt;&#39; + &#39;17s 8s 32s&#39;)</span><br><span class="line">(meta, salt, signature) &#x3D; s.unpack_from(blob)  # 提取其中关键的信息</span><br><span class="line"></span><br><span class="line">f1 &#x3D; open(&#39;password.txt&#39;, &#39;r&#39;)  # 读取字典</span><br><span class="line">lines &#x3D; f1.readlines()</span><br><span class="line">for data in lines:</span><br><span class="line">    password &#x3D; data.strip()</span><br><span class="line">    # print meta</span><br><span class="line">    to_hash &#x3D; meta</span><br><span class="line">    # print to_hash</span><br><span class="line">    print password</span><br><span class="line">    # print signature</span><br><span class="line">    to_hash +&#x3D; password # 将字典中读取的密码和meta信息组合成to_hash</span><br><span class="line">    hash &#x3D; pyscrypt.hash(to_hash, salt, N, r, p, dkLen&#x3D;32)</span><br><span class="line">    print &#39;signature  %s&#39; % signature.encode(&#39;hex&#39;)</span><br><span class="line"></span><br><span class="line">    print &#39;Hash:      %s&#39; % hash[0:32].encode(&#39;hex&#39;)  # 取hash值的前32位</span><br><span class="line"></span><br><span class="line">    print &#39;Equal:     %s&#39; % (hash[0:32] &#x3D;&#x3D; signature)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    if hash[0:32] &#x3D;&#x3D; signature:  # 如果相同，程序结束</span><br><span class="line">        print(&quot;OK&quot;)</span><br><span class="line">        exit()</span><br></pre></td></tr></table></figure>
+<p>其中的password.txt实际是不重复的1-9的全排列：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">file1&#x3D;open(&#39;password.txt&#39;,&#39;a&#39;)</span><br><span class="line">for a in &quot;123456789&quot;:</span><br><span class="line">    for b in &quot;123456789&quot;:</span><br><span class="line">        for c in &quot;123456789&quot;:</span><br><span class="line">            for d in &quot;123456789&quot;:</span><br><span class="line">                for e in &quot;123456789&quot;:</span><br><span class="line">                    for f in &quot;123456789&quot;:</span><br><span class="line">                        for g in &quot;123456789&quot;:</span><br><span class="line">                            for h in &quot;123456789&quot;:</span><br><span class="line">                                for i in &quot;123456789&quot;:</span><br><span class="line">                                    if a !&#x3D; b and a !&#x3D; c and a !&#x3D; d and a !&#x3D; e and a !&#x3D; f and a!&#x3D; g  and a !&#x3D; h  and a !&#x3D;i\</span><br><span class="line">                                            and b !&#x3D; c and b!&#x3D; d and  b !&#x3D; e and b !&#x3D; f and b!&#x3D; g  and b !&#x3D; h  and b !&#x3D;i\</span><br><span class="line">                                            and c!&#x3D; d and c !&#x3D; e and c !&#x3D; f and c!&#x3D; g  and c !&#x3D; h and c !&#x3D;i\</span><br><span class="line">                                            and d !&#x3D; e and d !&#x3D; f and d!&#x3D; g and d !&#x3D; h and d !&#x3D;i\</span><br><span class="line">                                            and e !&#x3D; f and e!&#x3D; g  and e !&#x3D; h and e !&#x3D;i\</span><br><span class="line">                                            and f!&#x3D; g  and f !&#x3D; h and f !&#x3D;i\</span><br><span class="line">                                            and g !&#x3D; h and g !&#x3D;i:</span><br><span class="line">                                        password &#x3D; a + b + c + d + e + f + g + h + i</span><br><span class="line">                                        file1.write(password+&#39;\n&#39;)</span><br><span class="line">file1.close()</span><br></pre></td></tr></table></figure>
+<p>运行结果如下(python2)</p>
+<p><img lazyload src="/images/loading.svg" data-src="make_4.jpg" alt="make_4"></p>
+<p>从而知道锁屏密码为124578963</p>
+<p>对应到图案为</p>
+<p><img lazyload src="/images/loading.svg" data-src="make_5.jpg" alt="make_5"></p>
 
         </div>
 
@@ -256,11 +259,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：2021工业信息安全技能大赛-1</li>
+        <li>本文标题：破解Android镜像锁屏密码</li>
         <li>本文作者：煤矿路口西</li>
-        <li>创建时间：2021-08-20 16:24:35</li>
+        <li>创建时间：2021-09-21 11:06:50</li>
         <li>
-            本文链接：http://www.mklkx.xyz/2021/08/20/2021工业信息安全技能大赛-1/
+            本文链接：http://www.mklkx.xyz/2021/09/21/破解Android镜像锁屏密码/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -274,29 +277,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/21/%E7%A0%B4%E8%A7%A3Android%E9%95%9C%E5%83%8F%E9%94%81%E5%B1%8F%E5%AF%86%E7%A0%81/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">破解Android镜像锁屏密码</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/06/25/hashcat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"
+                           href="/2021/08/20/2021%E5%B7%A5%E4%B8%9A%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%8A%80%E8%83%BD%E5%A4%A7%E8%B5%9B-1/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">hashcat使用手册</span>
+                                <span class="post-nav-title-item">2021工业信息安全技能大赛-1</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -421,7 +409,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">2021工业信息安全技能大赛-1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">隐藏的工程</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">破解Android镜像锁屏密码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">制作准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">破解过程</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
