@@ -9,7 +9,7 @@
     
     <title>
         
-            ByteCTF2021 |
+            深育杯 |
         
         The blog of mklkx
     </title>
@@ -169,7 +169,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">ByteCTF2021</span>
+            <span class="title-hover-animation">深育杯</span>
         </div>
 
         
@@ -187,7 +187,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-17 17:11:27
+        <i class="fas fa-edit"></i>&nbsp;2021-11-13 20:11:21
     </span>
     
     
@@ -210,7 +210,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>287 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>126 字</span>
         </span>
     
     
@@ -231,34 +231,25 @@
         
 
         <div class="article-content markdown-body">
-            <h3><span id="2021字节跳动安全范儿高校挑战赛">2021字节跳动安全范儿高校挑战赛</span></h3>
+            <h3><span id="深育杯">深育杯</span></h3>
 <hr>
-<h3><span id="frequently">frequently</span></h3>
-<p>发现dns里存在文本【o.bytedanec.top】和【i.bytedanec.top】</p>
-<p>猜测o和i转0和1</p>
-<p>通过wireshark导出.csv，</p>
-<p>notepad++进行数据处理后</p>
-<p><img lazyload src="/images/loading.svg" data-src="1.png" alt="1"></p>
-<p>编写脚本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str&#x3D;&#39;&#39;</span><br><span class="line">final&#x3D;&#39;&#39;</span><br><span class="line">list&#x3D;[]</span><br><span class="line">with open(&#39;bytedanec_io.txt&#39;) as f:</span><br><span class="line">    list.append(f.readlines())</span><br><span class="line">    print(list[0])</span><br><span class="line">    for k in list[0]:</span><br><span class="line">        #print(k)</span><br><span class="line">        if &#39;o.bytedanec.top&#39; in k:</span><br><span class="line">            str +&#x3D; &#39;0&#39;</span><br><span class="line">        if &#39;i.bytedanec.top&#39; in k:</span><br><span class="line">            str +&#x3D; &#39;1&#39;</span><br><span class="line">    print(str)</span><br><span class="line">print(len(str))</span><br><span class="line">for m in range(0,len(str)):</span><br><span class="line">    if m &#x3D;&#x3D; 0:</span><br><span class="line">        final +&#x3D; str[m]</span><br><span class="line">    elif m % 8 &#x3D;&#x3D; 0:</span><br><span class="line">        final +&#x3D; &#39; &#39;</span><br><span class="line">        final +&#x3D; str[m]</span><br><span class="line">    else:</span><br><span class="line">        final +&#x3D; str[m]</span><br><span class="line">print(final)</span><br><span class="line">#01010100 01101000 01100101 00100000 01100110 01101001 01110010 01110011 01110100 00100000 01110000 01100001 01110010 01110100 00100000 01101111 01100110 00100000 01100110 01101100 01100001 01100111 00111010 00100000 01000010 01111001 01110100 01100101 01000011 01010100 01000110 01111011 01011110 01011111 01011110 01100101 01101110 01001010 00110000 01111001 00100110 01111001 00110000 01110101 01110010</span><br><span class="line">#Thefirstpartofflag:ByteCTF&#123;^_^enJ0y&amp;y0ur</span><br></pre></td></tr></table></figure>
-<p>后半段追踪UDP流</p>
-<p><img lazyload src="/images/loading.svg" data-src="2.png" alt="2"></p>
-<p>发现可疑字样</p>
-<p>得到后半段flag</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sse1f_wIth_m1sc^_^&#125;</span><br></pre></td></tr></table></figure>
-<p>拼接得到</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ByteCTF&#123;^_^enJ0y&amp;y0urse1f_wIth_m1sc^_^&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="hearingnotbelieving">HearingNotBelieving</span></h4>
-<p>二血</p>
-<p>根据签到盲猜前半段为ByteCTF{</p>
-<p><img lazyload src="/images/loading.svg" data-src="3.png" alt="3"></p>
-<p>au看到中间段flag</p>
-<p>汉信码，扫不出来，尝试手动还原</p>
-<p><img lazyload src="/images/loading.svg" data-src="4.png" alt="4"></p>
-<p>RX-SSTV还原了后半段flag</p>
-<p>手动还原</p>
-<p><img lazyload src="/images/loading.svg" data-src="5.png" alt="5"></p>
-<p>ByteCTF{m4yB3_U_kn0W_S57V}</p>
+<h4><span id="login">Login</span></h4>
+<p>压缩包伪加密得到&quot;实例-副本.txt&quot;，也就得到了一个明文。</p>
+<p>从而进行明文攻击，得到example.zip的密码qwe@123</p>
+<p>password.zip中三个txt大小都为6，想到crc32爆破</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/u011377996/article/details/79360820">https://blog.csdn.net/u011377996/article/details/79360820<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python2 crc32.py reverse 0x2E5EF0DE</span><br></pre></td></tr></table></figure>
+<p>从而绕过压缩包密码这回事直接得到txt的内容</p>
+<p><img lazyload src="/images/loading.svg" data-src="image1.png" alt="1"></p>
+<p><img lazyload src="/images/loading.svg" data-src="image2.png" alt="2"></p>
+<p><img lazyload src="/images/loading.svg" data-src="image3.png" alt="3"></p>
+<p>得到【welc0m】【e_sang】【forctf】</p>
+<p>解密压缩包，得到.password.swp</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim -r .password.swp</span><br></pre></td></tr></table></figure>
+<p>还原得到</p>
+<p><img lazyload src="/images/loading.svg" data-src="image4.png" alt="4"></p>
+<p>登陆平台得到flag</p>
+<p>Sangfor{ef3d229c-0d10-4d99-a768-ff41a4d624e7}</p>
 
         </div>
 
@@ -266,11 +257,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：ByteCTF2021</li>
+        <li>本文标题：深育杯</li>
         <li>本文作者：煤矿路口西</li>
-        <li>创建时间：2021-10-17 17:11:27</li>
+        <li>创建时间：2021-11-13 20:11:21</li>
         <li>
-            本文链接：http://www.mklkx.xyz/2021/10/17/ByteCTF2021/
+            本文链接：http://www.mklkx.xyz/2021/11/13/深育杯/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -284,29 +275,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/11/13/%E6%B7%B1%E8%82%B2%E6%9D%AF/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">深育杯</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/15/%E8%8E%B2%E5%9F%8E%E6%9D%AF/"
+                           href="/2021/10/17/ByteCTF2021/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">莲城杯</span>
+                                <span class="post-nav-title-item">ByteCTF2021</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -431,7 +407,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">2021字节跳动安全范儿高校挑战赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">frequently</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">HearingNotBelieving</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">深育杯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">Login</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

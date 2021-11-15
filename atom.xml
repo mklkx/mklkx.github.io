@@ -6,7 +6,7 @@
   <link href="http://mklkx.github.io/atom.xml" rel="self"/>
   
   <link href="http://mklkx.github.io/"/>
-  <updated>2021-10-19T09:16:48.580Z</updated>
+  <updated>2021-11-15T12:15:22.820Z</updated>
   <id>http://mklkx.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深育杯</title>
+    <link href="http://mklkx.github.io/2021/11/13/%E6%B7%B1%E8%82%B2%E6%9D%AF/"/>
+    <id>http://mklkx.github.io/2021/11/13/%E6%B7%B1%E8%82%B2%E6%9D%AF/</id>
+    <published>2021-11-13T12:11:21.000Z</published>
+    <updated>2021-11-15T12:15:22.820Z</updated>
+    
+    <content type="html"><![CDATA[<h3><span id="深育杯">深育杯</span></h3><hr><h4><span id="login">Login</span></h4><p>压缩包伪加密得到&quot;实例-副本.txt&quot;，也就得到了一个明文。</p><p>从而进行明文攻击，得到example.zip的密码qwe@123</p><p>password.zip中三个txt大小都为6，想到crc32爆破</p><p><a class="link" href="https://blog.csdn.net/u011377996/article/details/79360820">https://blog.csdn.net/u011377996/article/details/79360820<i class="fas fa-external-link-alt"></i></a></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python2 crc32.py reverse 0x2E5EF0DE</span><br></pre></td></tr></table></figure><p>从而绕过压缩包密码这回事直接得到txt的内容</p><p><img lazyload src="/images/loading.svg" data-src="image1.png" alt="1"></p><p><img lazyload src="/images/loading.svg" data-src="image2.png" alt="2"></p><p><img lazyload src="/images/loading.svg" data-src="image3.png" alt="3"></p><p>得到【welc0m】【e_sang】【forctf】</p><p>解密压缩包，得到.password.swp</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim -r .password.swp</span><br></pre></td></tr></table></figure><p>还原得到</p><p><img lazyload src="/images/loading.svg" data-src="image4.png" alt="4"></p><p>登陆平台得到flag</p><p>Sangfor{ef3d229c-0d10-4d99-a768-ff41a4d624e7}</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3&gt;&lt;span id=&quot;深育杯&quot;&gt;深育杯&lt;/span&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h4&gt;&lt;span id=&quot;login&quot;&gt;Login&lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;压缩包伪加密得到&amp;quot;实例-副本.txt&amp;quot;，也就得到了一个明文。&lt;/p&gt;
+&lt;p&gt;从而进行明文攻击，得</summary>
+      
+    
+    
+    
+    
+    <category term="challenge" scheme="http://mklkx.github.io/tags/challenge/"/>
+    
+    <category term="MISC" scheme="http://mklkx.github.io/tags/MISC/"/>
+    
+  </entry>
   
   <entry>
     <title>ByteCTF2021</title>
@@ -522,34 +550,6 @@
     
     
     
-    
-    <category term="MISC" scheme="http://mklkx.github.io/tags/MISC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>F5杯</title>
-    <link href="http://mklkx.github.io/2021/04/24/F5%E6%9D%AF/"/>
-    <id>http://mklkx.github.io/2021/04/24/F5%E6%9D%AF/</id>
-    <published>2021-04-24T02:24:46.000Z</published>
-    <updated>2021-05-04T11:39:52.577Z</updated>
-    
-    <content type="html"><![CDATA[<h1><span id="ctfshow-f5杯">ctfshow-F5杯</span></h1><hr><h2><span id="1取idatihdr部分重新排列">1：取IDAT,IHDR部分重新排列</span></h2><p>1）IHDR领先</p><p>2）IDAT尝试重新排列</p><p>3）前后补全</p><h3><span id="just-another-拼图">Just Another 拼图</span></h3><blockquote><p>史上最简单的拼图misc题！贴心到连序号都已经全部标注好，令gaps彻底失业、眼科医院纷纷倒闭！唯一的问题是图里好像没有flag？这点小问题应该无关紧要吧。</p><p>感谢@出题人说不要署名 师傅供题。</p><blockquote><p>strings *.jpg | grep IDAT</p></blockquote></blockquote><p><img lazyload src="/images/loading.svg" data-src="1-1.png" alt="1"></p><h2><span id="2数列问题">2：数列问题</span></h2><h3><span id="填字游戏">填字游戏</span></h3><blockquote><p>这什么鬼填字游戏啊，到底要填什么字啊。</p><p>感谢@出题人说这次匿名 师傅供题</p><blockquote><p><a class="link" href="http://oeis.org/">http://oeis.org/<i class="fas fa-external-link-alt"></i></a></p></blockquote></blockquote><p><img lazyload src="/images/loading.svg" data-src="2-1.png" alt="2"></p><p>通过搜索找到对应数字</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">65 69 97 53 121 70 108 52 103</span><br><span class="line"># AEa5yFl4g</span><br></pre></td></tr></table></figure><h2><span id="3">3</span></h2><blockquote><p>两行代码一纸情书</p><blockquote><p>A very simple dll, I promise you can get flag in seconds</p><p>感谢@Y4tacker师傅供题</p></blockquote></blockquote><p>搜索ctf得到一大串字符串</p><p>一把梭后发现base64末尾出现‘==’</p><p>连续解码后得到flag</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1&gt;&lt;span id=&quot;ctfshow-f5杯&quot;&gt;ctfshow-F5杯&lt;/span&gt;&lt;/h1&gt;
-&lt;hr&gt;
-&lt;h2&gt;&lt;span id=&quot;1取idatihdr部分重新排列&quot;&gt;1：取IDAT,IHDR部分重新排列&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;1）IHDR领先&lt;/p&gt;
-&lt;p&gt;2）</summary>
-      
-    
-    
-    
-    
-    <category term="challenge" scheme="http://mklkx.github.io/tags/challenge/"/>
     
     <category term="MISC" scheme="http://mklkx.github.io/tags/MISC/"/>
     
