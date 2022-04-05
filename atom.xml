@@ -6,7 +6,7 @@
   <link href="http://mklkx.github.io/atom.xml" rel="self"/>
   
   <link href="http://mklkx.github.io/"/>
-  <updated>2021-11-15T12:15:22.820Z</updated>
+  <updated>2021-11-15T12:16:01.792Z</updated>
   <id>http://mklkx.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://mklkx.github.io/2021/11/13/%E6%B7%B1%E8%82%B2%E6%9D%AF/"/>
     <id>http://mklkx.github.io/2021/11/13/%E6%B7%B1%E8%82%B2%E6%9D%AF/</id>
     <published>2021-11-13T12:11:21.000Z</published>
-    <updated>2021-11-15T12:15:22.820Z</updated>
+    <updated>2021-11-15T12:16:01.792Z</updated>
     
     <content type="html"><![CDATA[<h3><span id="深育杯">深育杯</span></h3><hr><h4><span id="login">Login</span></h4><p>压缩包伪加密得到&quot;实例-副本.txt&quot;，也就得到了一个明文。</p><p>从而进行明文攻击，得到example.zip的密码qwe@123</p><p>password.zip中三个txt大小都为6，想到crc32爆破</p><p><a class="link" href="https://blog.csdn.net/u011377996/article/details/79360820">https://blog.csdn.net/u011377996/article/details/79360820<i class="fas fa-external-link-alt"></i></a></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python2 crc32.py reverse 0x2E5EF0DE</span><br></pre></td></tr></table></figure><p>从而绕过压缩包密码这回事直接得到txt的内容</p><p><img lazyload src="/images/loading.svg" data-src="image1.png" alt="1"></p><p><img lazyload src="/images/loading.svg" data-src="image2.png" alt="2"></p><p><img lazyload src="/images/loading.svg" data-src="image3.png" alt="3"></p><p>得到【welc0m】【e_sang】【forctf】</p><p>解密压缩包，得到.password.swp</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim -r .password.swp</span><br></pre></td></tr></table></figure><p>还原得到</p><p><img lazyload src="/images/loading.svg" data-src="image4.png" alt="4"></p><p>登陆平台得到flag</p><p>Sangfor{ef3d229c-0d10-4d99-a768-ff41a4d624e7}</p>]]></content>
     
